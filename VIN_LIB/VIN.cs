@@ -24,7 +24,6 @@ namespace VIN_LIB
                 yearsModel.Add((char)i, year);
                 ++year;
             }
-            Console.WriteLine(yearsModel['Y'].ToString());
         }
 
         public Boolean CheckVIN(String vin)
@@ -32,11 +31,12 @@ namespace VIN_LIB
             if (vin.Contains('Q') || vin.Contains('O') || vin.Contains('I'))
                 return false;
             Regex rx = new Regex(
-                @"^(?<wmi>[a-z1-9]{3})(?<vds>[a-z0-9]{5})(?<sign>[0-9x]{1})(?<year>)(?<vis>[a-z0-9]{6})$",
+                @"^(?<wmi>[a-z1-9]{3})(?<vds>[a-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-z0-9]{7})$",
                 RegexOptions.IgnoreCase | RegexOptions.Compiled);
             Match matched = rx.Match(vin);
 
             Console.WriteLine(getValue(matched, "wmi"));
+            Console.WriteLine(GetYear(matched));
 
             return matched.Success;
         }
@@ -66,8 +66,10 @@ namespace VIN_LIB
 
         public int GetYear(Match matched)
         {
+            if (!matched.Success)
+                return -1;
             char val = matched.Groups["modelYear"].Value[0];
-            return 0;
+            return yearsModel[val];
         }
     }
 }
