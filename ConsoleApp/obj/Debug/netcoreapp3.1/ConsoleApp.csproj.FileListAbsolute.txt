@@ -16,3 +16,4 @@ D:\Ethosa\VIN_App\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CoreCompi
 D:\Ethosa\VIN_App\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 D:\Ethosa\VIN_App\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 D:\Ethosa\VIN_App\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache
+D:\Ethosa\VIN_App\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CopyComplete
