@@ -8,6 +8,9 @@ namespace VIN_LIB
     public class VIN
     {
         private Dictionary<char, int> yearsModel = new Dictionary<char, int>();
+        private Regex vin_rule = new Regex(
+            @"^(?<wmi>[a-z1-9]{3})(?<vds>[a-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-z0-9]{7})$",
+            RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public VIN()
         {
@@ -30,15 +33,7 @@ namespace VIN_LIB
         {
             if (vin.Contains('Q') || vin.Contains('O') || vin.Contains('I'))
                 return false;
-            Regex rx = new Regex(
-                @"^(?<wmi>[a-z1-9]{3})(?<vds>[a-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-z0-9]{7})$",
-                RegexOptions.IgnoreCase | RegexOptions.Compiled);
-            Match matched = rx.Match(vin);
-
-            Console.WriteLine(getValue(matched, "wmi"));
-            Console.WriteLine(GetYear(matched));
-
-            return matched.Success;
+            return vin_rule.Match(vin).Success;
         }
 
         public String GetVINCountry(String vin)
@@ -48,7 +43,7 @@ namespace VIN_LIB
 
         public int GetTransportYear(String vin)
         {
-            return 0;
+            return GetTransportYear(vin_rule.Match(vin));
         }
 
         /// <summary>
@@ -64,7 +59,7 @@ namespace VIN_LIB
             return "";
         }
 
-        public int GetYear(Match matched)
+        public int GetTransportYear(Match matched)
         {
             if (!matched.Success)
                 return -1;
