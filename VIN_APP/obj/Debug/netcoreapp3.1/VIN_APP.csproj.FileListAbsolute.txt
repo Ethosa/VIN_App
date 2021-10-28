@@ -17,3 +17,8 @@ D:\Ethosa\VIN_App\VIN_APP\obj\Debug\netcoreapp3.1\VIN_APP.csproj.CoreCompileInpu
 D:\Ethosa\VIN_App\VIN_APP\obj\Debug\netcoreapp3.1\VIN_APP.dll
 D:\Ethosa\VIN_App\VIN_APP\obj\Debug\netcoreapp3.1\VIN_APP.pdb
 D:\Ethosa\VIN_App\VIN_APP\obj\Debug\netcoreapp3.1\VIN_APP.genruntimeconfig.cache
+D:\Ethosa\VIN_App\VIN_APP\bin\Debug\netcoreapp3.1\REG_MARK_LIB.dll
+D:\Ethosa\VIN_App\VIN_APP\bin\Debug\netcoreapp3.1\VIN_LIB.dll
+D:\Ethosa\VIN_App\VIN_APP\bin\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
+D:\Ethosa\VIN_App\VIN_APP\bin\Debug\netcoreapp3.1\VIN_LIB.pdb
+D:\Ethosa\VIN_App\VIN_APP\obj\Debug\netcoreapp3.1\VIN_APP.csproj.AssemblyReference.cache

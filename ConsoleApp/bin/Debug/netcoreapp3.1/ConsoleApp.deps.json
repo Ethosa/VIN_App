@@ -6,13 +6,13 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "VIN_APP/1.0.0": {
+      "ConsoleApp/1.0.0": {
         "dependencies": {
           "REG_MARK_LIB": "1.0.0",
           "VIN_LIB": "1.0.0"
         },
         "runtime": {
-          "VIN_APP.dll": {}
+          "ConsoleApp.dll": {}
         }
       },
       "REG_MARK_LIB/1.0.0": {
@@ -28,7 +28,7 @@
     }
   },
   "libraries": {
-    "VIN_APP/1.0.0": {
+    "ConsoleApp/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
