@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using VIN_LIB;
 
 namespace VIN_APP
 {
@@ -23,9 +22,6 @@ namespace VIN_APP
     {
         public MainWindow()
         {
-            VIN vin = new VIN();
-            Console.WriteLine(vin.CheckVIN("JH4KB16535L011820"));
-            Console.WriteLine(vin.CheckVIN("KLAJB82Z2XK338143"));
             InitializeComponent();
         }
     }
