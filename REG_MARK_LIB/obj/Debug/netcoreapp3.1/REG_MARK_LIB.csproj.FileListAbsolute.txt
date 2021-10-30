@@ -18,3 +18,13 @@ D:\Ethosa\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfo.cs
 D:\Ethosa\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.CoreCompileInputs.cache
 D:\Ethosa\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.dll
 D:\Ethosa\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
+D:\C#\VIN_APP\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.deps.json
+D:\C#\VIN_APP\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.dll
+D:\C#\VIN_APP\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.AssemblyReference.cache
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfoInputs.cache
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfo.cs
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.CoreCompileInputs.cache
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.dll
+D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.pdb

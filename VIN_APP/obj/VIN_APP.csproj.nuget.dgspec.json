@@ -1,23 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Ethosa\\VIN_App\\VIN_APP\\VIN_APP.csproj": {}
+    "D:\\C#\\VIN_APP\\VIN_APP\\VIN_APP.csproj": {}
   },
   "projects": {
-    "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
+    "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
+        "projectUniqueName": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
         "projectName": "REG_MARK_LIB",
-        "projectPath": "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
-        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
-        "outputPath": "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\obj\\",
+        "projectPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
+        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -62,20 +64,22 @@
         }
       }
     },
-    "D:\\Ethosa\\VIN_App\\VIN_APP\\VIN_APP.csproj": {
+    "D:\\C#\\VIN_APP\\VIN_APP\\VIN_APP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ethosa\\VIN_App\\VIN_APP\\VIN_APP.csproj",
+        "projectUniqueName": "D:\\C#\\VIN_APP\\VIN_APP\\VIN_APP.csproj",
         "projectName": "VIN_APP",
-        "projectPath": "D:\\Ethosa\\VIN_App\\VIN_APP\\VIN_APP.csproj",
-        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
-        "outputPath": "D:\\Ethosa\\VIN_App\\VIN_APP\\obj\\",
+        "projectPath": "D:\\C#\\VIN_APP\\VIN_APP\\VIN_APP.csproj",
+        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\VIN_APP\\VIN_APP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -90,11 +94,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
-                "projectPath": "D:\\Ethosa\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj"
+              "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
+                "projectPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj"
               },
-              "D:\\Ethosa\\VIN_App\\VIN_LIB\\VIN_LIB.csproj": {
-                "projectPath": "D:\\Ethosa\\VIN_App\\VIN_LIB\\VIN_LIB.csproj"
+              "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj": {
+                "projectPath": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj"
               }
             }
           }
@@ -130,20 +134,22 @@
         }
       }
     },
-    "D:\\Ethosa\\VIN_App\\VIN_LIB\\VIN_LIB.csproj": {
+    "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Ethosa\\VIN_App\\VIN_LIB\\VIN_LIB.csproj",
+        "projectUniqueName": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj",
         "projectName": "VIN_LIB",
-        "projectPath": "D:\\Ethosa\\VIN_App\\VIN_LIB\\VIN_LIB.csproj",
-        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
-        "outputPath": "D:\\Ethosa\\VIN_App\\VIN_LIB\\obj\\",
+        "projectPath": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj",
+        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
+        "outputPath": "D:\\C#\\VIN_APP\\VIN_LIB\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
           "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
