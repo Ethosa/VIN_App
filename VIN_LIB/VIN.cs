@@ -7,11 +7,23 @@ namespace VIN_LIB
 {
     public class VIN
     {
+        // Словарь содержит в себе модельные годы автомобилей, начиная с 1980-го
+        // A: 1980, B: 1981, etc.
         private Dictionary<char, int> yearsModel = new Dictionary<char, int>();
+        
+        // Регулярка ниже парсит VIN и режет на отдельные куски.
+        // wmi - World Manufacturers entification
+        // vds - vehicle description section
+        // sign - Control sign
+        // modelYear - vehicle model year
+        // vis - vehicle identification section
         private Regex vin_rule = new Regex(
-            @"^(?<wmi>[a-z1-9]{3})(?<vds>[a-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-z0-9]{7})$",
+            @"^(?<wmi>[a-hj-npr-z1-9]{3})(?<vds>[a-hj-npr-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-hj-npr-z0-9]{7})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
+        /// <summary>
+        /// Простой конструктор, заполняющий словарь yearsModel при инициализации.
+        /// </summary>
         public VIN()
         {
             int year = 1980;
@@ -29,13 +41,21 @@ namespace VIN_LIB
             }
         }
 
+        /// <summary>
+        /// Проверяет валидность VIN
+        /// </summary>
+        /// <param name="vin">VIN, требующий проверки</param>
+        /// <returns>true, если VIN валиден</returns>
         public Boolean CheckVIN(String vin)
         {
-            if (vin.Contains('Q') || vin.Contains('O') || vin.Contains('I'))
-                return false;
             return vin_rule.Match(vin).Success;
         }
 
+        /// <summary>
+        /// Получает страну-изготовитель транспорта
+        /// </summary>
+        /// <param name="vin"></param>
+        /// <returns></returns>
         public String GetVINCountry(String vin)
         {
             return "";
@@ -47,19 +67,19 @@ namespace VIN_LIB
         }
 
         /// <summary>
-        /// Parses value from matched VIN.
+        /// Разбирает значения, полученные с matched.
         /// </summary>
-        /// <param name="matched"></param>
-        /// <param name="key"></param>
-        /// <returns></returns>
-        public String getValue(Match matched, String key)
+        /// <param name="matched">VIN, прошедший проверку регуляркой</param>
+        /// <param name="key">Требуемое значение</param>
+        /// <returns>Полученное значение</returns>
+        private String getValue(Match matched, String key)
         {
             if (matched.Success)
                 return matched.Groups[key].Value;
             return "";
         }
 
-        public int GetTransportYear(Match matched)
+        private int GetTransportYear(Match matched)
         {
             if (!matched.Success)
                 return -1;
