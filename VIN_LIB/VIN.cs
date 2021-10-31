@@ -136,8 +136,6 @@ namespace VIN_LIB
                     codeInfo[0][0] + "[" + codeInfo[0][1] + "-" + codeInfo[0][4] + "]",
                     codeInfo[1]);
             }
-
-            Console.WriteLine(countries["S[N-T]"]);
         }
     }
 }
