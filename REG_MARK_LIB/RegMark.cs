@@ -6,10 +6,10 @@ namespace REG_MARK_LIB
 {
     public class RegMark
     {
-        private string seriesAlphabet = "ABCEHKMOPTYX";
+        private string seriesChars = "ABCEHKMOPTYX";
 
         private Regex markRule = new Regex(
-            @"^(?<seriesBefore>[abekmhopctyx])(?<number>[0-9]{3})(?<seriesAfter>[abekmhopctyx]{2})(?<region>[0-9]{2,3})$",
+            @"^(?<before>[abekmhopctyx])(?<number>[0-9]{3})(?<after>[abekmhopctyx]{2})(?<region>[0-9]{2,3})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         public Boolean CheckMark(String mark)
@@ -25,26 +25,33 @@ namespace REG_MARK_LIB
                 return "";
 
             // Разбираем regMark
-            string series = GetValue(matched, "seriesBefore") + GetValue(matched, "seriesAfter");
+            string series = GetValue(matched, "before") + GetValue(matched, "after");
+            string number = GetValue(matched, "number");
             int num = int.Parse(GetValue(matched, "number"), NumberStyles.Number);
-            int length = seriesAlphabet.Length;
+            int length = seriesChars.Length;
             string result = "";
 
             if (num < 999)
             {
                 ++num;
-                result = GetValue(matched, "seriesBefore") + num.ToString() + GetValue(matched, "seriesAfter");
+                if (num < 10)
+                    number = "00" + num.ToString();
+                else if (num < 100)
+                    number = "0" + num.ToString();
+                else
+                    number = num.ToString();
+                result = GetValue(matched, "before") + number + GetValue(matched, "after");
             } else
             {
-                int[] indexes = { seriesAlphabet.IndexOf(series[0]), seriesAlphabet.IndexOf(series[1]), seriesAlphabet.IndexOf(series[2]) };
+                int[] indexes = { seriesChars.IndexOf(series[0]), seriesChars.IndexOf(series[1]), seriesChars.IndexOf(series[2]) };
                 if (indexes[0] < length)
-                    result = series[0] + num.ToString() + series[1] + seriesAlphabet[indexes[2]+1];
+                    result = series[0] + "000" + series[1] + seriesChars[indexes[2]+1];
                 else if (indexes[1] < length)
-                    result = series[0] + num.ToString() + seriesAlphabet[indexes[1] + 1] + seriesAlphabet[0];
+                    result = series[0] + "000" + seriesChars[indexes[1] + 1] + seriesChars[0];
                 else if (indexes[0] < length)
-                    result = seriesAlphabet[indexes[0] + 1] + num.ToString() + seriesAlphabet[0] + seriesAlphabet[0];
+                    result = seriesChars[indexes[0] + 1] + "000" + seriesChars[0] + seriesChars[0];
                 else
-                    result = seriesAlphabet[0] + num.ToString() + seriesAlphabet[0] + seriesAlphabet[0];
+                    result = seriesChars[0] + "000" + seriesChars[0] + seriesChars[0];
             }
 
             return result + GetValue(matched, "region");
