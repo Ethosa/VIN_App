@@ -66,6 +66,10 @@ namespace REG_MARK_LIB
 
         public int GetCombinationsCountInRange(String mark1, String mark2)
         {
+            int first = MarkToInt(markRule.Match(mark1));
+            int second = MarkToInt(markRule.Match(mark2));
+            Console.WriteLine(first);
+            Console.WriteLine(second);
             return 0;
         }
 
@@ -78,7 +82,11 @@ namespace REG_MARK_LIB
 
         private int MarkToInt(Match matched)
         {
-            return 0;
+            int result = Convert.ToInt32(GetValue(matched, "number"));
+            result += seriesChars.IndexOf(GetValue(matched, "after")[1]) * 1000;
+            result += seriesChars.IndexOf(GetValue(matched, "after")[0]) * 1000 * seriesChars.Length;
+            result += seriesChars.IndexOf(GetValue(matched, "before")[0]) * 1000 * seriesChars.Length*seriesChars.Length;
+            return result;
         }
     }
 }

@@ -97,7 +97,7 @@ namespace ConsoleApp
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
                 "Получение страны-изготовителя из VIN-кода\n\n" +
                 "Введите VIN: \n");
-            string par = Console.ReadLine();
+            string arg = Console.ReadLine();
 
             Console.WriteLine(vin.GetVINCountry(arg));
                 ExitActionsActivity();
@@ -107,7 +107,7 @@ namespace ConsoleApp
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
                "Получение года изготовления ТС из VIN-кода\n\n" +
                "Введите VIN: \n");
-            string par = Console.ReadLine();
+            string arg = Console.ReadLine();
 
             Console.WriteLine(vin.GetTransportYear(arg));
             ExitActionsActivity();
