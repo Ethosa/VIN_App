@@ -68,6 +68,11 @@ namespace VIN_LIB
         public String GetVINCountry(String vin)
         {
             string countryCode = GetValue(vinRule.Match(vin), "wmi");
+            foreach (KeyValuePair<string, string> entry in countries)
+            {
+                if (new Regex(entry.Key, RegexOptions.IgnoreCase | RegexOptions.Compiled).Match(countryCode).Success)
+                    return entry.Value;
+            }
             return "";
         }
 
