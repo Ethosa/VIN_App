@@ -68,9 +68,7 @@ namespace REG_MARK_LIB
         {
             int first = MarkToInt(markRule.Match(mark1));
             int second = MarkToInt(markRule.Match(mark2));
-            Console.WriteLine(first);
-            Console.WriteLine(second);
-            return 0;
+            return second - first;
         }
 
         private String GetValue(Match matched, String key)
