@@ -33,6 +33,7 @@ namespace REG_MARK_LIB
 
             if (num < 999)
             {
+                // Если число меньше 999, то просто увеличиваем его.
                 ++num;
                 if (num < 10)
                     number = "00" + num.ToString();
@@ -43,6 +44,7 @@ namespace REG_MARK_LIB
                 result = GetValue(matched, "before") + number + GetValue(matched, "after");
             } else
             {
+                // В противном случае возвращаем число к 000 и разбираем символы, если это возможно.
                 int[] indexes = { seriesChars.IndexOf(series[0]), seriesChars.IndexOf(series[1]), seriesChars.IndexOf(series[2]) };
                 if (indexes[0] < length)
                     result = series[0] + "000" + series[1] + seriesChars[indexes[2]+1];
@@ -72,6 +74,11 @@ namespace REG_MARK_LIB
             if (matched.Success)
                 return matched.Groups[key].Value;
             return "";
+        }
+
+        private int MarkToInt(Match matched)
+        {
+            return 0;
         }
     }
 }
