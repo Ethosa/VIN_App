@@ -34,7 +34,7 @@ namespace WindowsApp
         {
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
-            using (var db = new dbEntities()) //Инициализация базы
+            /*using (var db = new dbEntities()) //Инициализация базы
             {
                 //Ищем пользователя в базе по заданным критериям
                 var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
@@ -43,7 +43,7 @@ namespace WindowsApp
                 warnLabel.Text = "Пользователя не существует";
                 return;
                 of.MainForm();
-            }
+            }*/
         }
     }
 }
