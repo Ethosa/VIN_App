@@ -32,7 +32,7 @@ D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.GeneratedMSBuildEdit
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfoInputs.cache
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.AssemblyInfo.cs
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CoreCompileInputs.cache
-D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CopyComplete
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.dll
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.pdb
 D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.genruntimeconfig.cache
+D:\C#\VIN_APP\ConsoleApp\obj\Debug\netcoreapp3.1\ConsoleApp.csproj.CopyComplete

@@ -22,7 +22,7 @@ namespace VIN_LIB
         // modelYear - vehicle model year
         // vis - vehicle identification section
         private Regex vinRule = new Regex(
-            @"^(?<wmi>[a-hj-npr-z1-9]{3})(?<vds>[a-hj-npr-z0-9]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-hj-npr-tv-y1-9]{1})(?<vis>[a-hj-npr-z0-9]{7})$",
+            @"^(?<wmi>[a-z1-9-[oiq]]{3})(?<vds>[a-z0-9-[oiq]]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-y1-9-[oiqu]]{1})(?<vis>[a-z0-9-[oiq]]{7})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         // Сгенерированные коды стран с их названиями.
@@ -131,6 +131,7 @@ namespace VIN_LIB
             foreach (string code in codes)
             {
                 string[] codeInfo = code.Split(' ', 2);
+                // Преобразует AA-AH в правило A[A-H]
                 countries.Add(
                     codeInfo[0][0] + "[" + codeInfo[0][1] + "-" + codeInfo[0][4] + "]",
                     codeInfo[1]);
