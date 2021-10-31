@@ -79,8 +79,16 @@ namespace ConsoleApp
                 "Проверка валидности VIN-кода\n\n" +
                 "Введите VIN: \n");
             string par = Console.ReadLine();
-
-            Console.WriteLine(vin.CheckVIN(par));
+            bool resp = vin.CheckVIN(par);
+            switch (resp)
+            {
+                case true:
+                    Console.WriteLine($"Код {par} является действительным."); 
+                    break; 
+                case false:
+                    Console.WriteLine($"Код {par} не является действительным."); 
+                    break;
+            }
             ExitActionsActivity();
 
         }
@@ -92,6 +100,7 @@ namespace ConsoleApp
             string par = Console.ReadLine();
 
             Console.WriteLine(vin.GetVINCountry(par));
+                ExitActionsActivity();
         }
         public void GetTransportYearActivity()
         {
@@ -101,10 +110,27 @@ namespace ConsoleApp
             string par = Console.ReadLine();
 
             Console.WriteLine(vin.GetTransportYear(par));
+            ExitActionsActivity();
         }
         public void ParseTestActivity()
         {
+         
+            Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
+               "Парсинг VIN-кода\n\n" +
+               "Введите VIN: \n");
+            string par = Console.ReadLine();
+            string wmi = vin.GetValue(vin.vinRule.Match(par), "wmi"),
+                   vds = vin.GetValue(vin.vinRule.Match(par), "vds"),
+                   vis = vin.GetValue(vin.vinRule.Match(par), "vis"),
+                   csign = vin.GetValue(vin.vinRule.Match(par), "sign");
 
+            Console.WriteLine($"Детальная информация для {par}:\n\n" +
+                $"WMI: {wmi}\n" +
+                $"VDS: {vds}\n" +
+                $"VIS: {vis}\n" +
+                $"Контрольный знак: {csign}" +
+                $"");
+            ExitActionsActivity();
         }
 
         public void CheckMarkActivity()
@@ -113,8 +139,19 @@ namespace ConsoleApp
               "Проверка валидности номерного знака\n\n" +
               "Введите номер в формате а999аа999: \n");
             string pl = Console.ReadLine();
+            bool resp = reg.CheckMark(pl);
+            switch (resp)
+            {
+                case true:
+                    Console.WriteLine($"Гос.номер {pl} является действительным.");
+                    break;
+                case false:
+                    Console.WriteLine($"Гос.номер {pl} не является действительным.");
+                    break;
+            }
+            ExitActionsActivity();
 
-            Console.WriteLine(reg.CheckMark(pl));
+
         }
 
         public void GetNextMarkAfterActivity()
@@ -125,6 +162,7 @@ namespace ConsoleApp
             string pl = Console.ReadLine();
 
             Console.WriteLine(reg.GetNextMarkAfter(pl));
+            ExitActionsActivity();
         }
         public void GetNextMarkAfterInRangeActivity() { }
         public void GetCombinationsCountInRangeActivity() { }

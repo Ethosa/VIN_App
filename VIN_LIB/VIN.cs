@@ -21,7 +21,7 @@ namespace VIN_LIB
         // sign - Control sign
         // modelYear - vehicle model year
         // vis - vehicle identification section
-        private Regex vinRule = new Regex(
+        public Regex vinRule = new Regex(
             @"^(?<wmi>[a-z1-9-[oiq]]{3})(?<vds>[a-z0-9-[oiq]]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-y1-9-[oiqu]]{1})(?<vis>[a-z0-9-[oiq]]{7})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -87,7 +87,7 @@ namespace VIN_LIB
         /// <param name="matched">VIN, прошедший проверку регуляркой</param>
         /// <param name="key">Требуемое значение</param>
         /// <returns>Полученное значение</returns>
-        private String GetValue(Match matched, String key)
+        public String GetValue(Match matched, String key)
         {
             if (matched.Success)
                 return matched.Groups[key].Value;
