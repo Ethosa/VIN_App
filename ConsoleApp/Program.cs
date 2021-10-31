@@ -99,7 +99,7 @@ namespace ConsoleApp
                 "Введите VIN: \n");
             string par = Console.ReadLine();
 
-            Console.WriteLine(vin.GetVINCountry(par));
+            Console.WriteLine(vin.GetVINCountry(arg));
                 ExitActionsActivity();
         }
         public void GetTransportYearActivity()
@@ -109,7 +109,7 @@ namespace ConsoleApp
                "Введите VIN: \n");
             string par = Console.ReadLine();
 
-            Console.WriteLine(vin.GetTransportYear(par));
+            Console.WriteLine(vin.GetTransportYear(arg));
             ExitActionsActivity();
         }
         public void ParseTestActivity()
@@ -118,13 +118,13 @@ namespace ConsoleApp
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
                "Парсинг VIN-кода\n\n" +
                "Введите VIN: \n");
-            string par = Console.ReadLine();
-            string wmi = vin.GetValue(vin.vinRule.Match(par), "wmi"),
-                   vds = vin.GetValue(vin.vinRule.Match(par), "vds"),
-                   vis = vin.GetValue(vin.vinRule.Match(par), "vis"),
-                   csign = vin.GetValue(vin.vinRule.Match(par), "sign");
+            string arg = Console.ReadLine();
+            string wmi = vin.GetValue(vin.vinRule.Match(arg), "wmi"),
+                   vds = vin.GetValue(vin.vinRule.Match(arg), "vds"),
+                   vis = vin.GetValue(vin.vinRule.Match(arg), "vis"),
+                   csign = vin.GetValue(vin.vinRule.Match(arg), "sign");
 
-            Console.WriteLine($"Детальная информация для {par}:\n\n" +
+            Console.WriteLine($"Детальная информация для {arg}:\n\n" +
                 $"WMI: {wmi}\n" +
                 $"VDS: {vds}\n" +
                 $"VIS: {vis}\n" +
@@ -158,7 +158,7 @@ namespace ConsoleApp
         {
             Console.WriteLine($"Библиотека REG_MARK_LIB.dll\n\n" +
               "Генерация нового номерного знака\n\n" +
-              "Введите номер предидущего знака в формате а999аа999: \n");
+              "Введите номер предыдущего знака в формате а999аа999: \n");
             string pl = Console.ReadLine();
 
             Console.WriteLine(reg.GetNextMarkAfter(pl));
@@ -167,7 +167,6 @@ namespace ConsoleApp
         public void GetNextMarkAfterInRangeActivity() { }
         public void GetCombinationsCountInRangeActivity() { }
 
-        //Я не знаю зачемя это написал
         public void ExitActionsActivity()
         {
             Console.WriteLine($"\n\n9) Вернуться\n" +
