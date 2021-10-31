@@ -61,9 +61,9 @@ namespace REG_MARK_LIB
 
         public String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
         {
-            if (GetCombinationsCountInRange(prevMark, rangeEnd) < 0)
+            if (GetCombinationsCountInRange(prevMark, rangeEnd) <= 0)
                 return "out of stock";
-            if (GetCombinationsCountInRange(rangeStart, rangeEnd) < 0)
+            if (GetCombinationsCountInRange(rangeStart, rangeEnd) <= 0)
                 return "out of stock";
             return GetNextMarkAfter(prevMark);
         }
@@ -72,7 +72,7 @@ namespace REG_MARK_LIB
         {
             int first = MarkToInt(markRule.Match(mark1));
             int second = MarkToInt(markRule.Match(mark2));
-            return second - first;
+            return Math.Abs(second - first);
         }
 
         private String GetValue(Match matched, String key)

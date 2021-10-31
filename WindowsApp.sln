@@ -11,6 +11,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "REG_MARK_LIB", "REG_MARK_LI
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VIN_LIB", "VIN_LIB\VIN_LIB.csproj", "{39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibTest", "LibTest\LibTest.csproj", "{61FF109E-D105-40CC-9AD8-97BB1B0C6AE8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{47409E46-8323-4719-A87D-4AD2B41F4CB0} = {47409E46-8323-4719-A87D-4AD2B41F4CB0}
+		{39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F} = {39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +39,10 @@ Global
 		{39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{39EDBFB6-354A-49B3-9B3D-CA9DA3F3739F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61FF109E-D105-40CC-9AD8-97BB1B0C6AE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61FF109E-D105-40CC-9AD8-97BB1B0C6AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61FF109E-D105-40CC-9AD8-97BB1B0C6AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61FF109E-D105-40CC-9AD8-97BB1B0C6AE8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
