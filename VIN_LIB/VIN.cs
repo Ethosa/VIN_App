@@ -136,7 +136,7 @@ namespace VIN_LIB
                     codeInfo[1]);
             }
 
-            Console.WriteLine(countries["S[N-T]"]);
+           // Console.WriteLine(countries["S[N-T]"]);
         }
     }
 }

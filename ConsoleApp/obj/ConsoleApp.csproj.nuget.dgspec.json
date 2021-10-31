@@ -1,27 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#\\VIN_APP\\ConsoleApp\\ConsoleApp.csproj": {}
+    "D:\\Projects\\VIN_App\\ConsoleApp\\ConsoleApp.csproj": {}
   },
   "projects": {
-    "D:\\C#\\VIN_APP\\ConsoleApp\\ConsoleApp.csproj": {
+    "D:\\Projects\\VIN_App\\ConsoleApp\\ConsoleApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\VIN_APP\\ConsoleApp\\ConsoleApp.csproj",
+        "projectUniqueName": "D:\\Projects\\VIN_App\\ConsoleApp\\ConsoleApp.csproj",
         "projectName": "ConsoleApp",
-        "projectPath": "D:\\C#\\VIN_APP\\ConsoleApp\\ConsoleApp.csproj",
-        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\VIN_APP\\ConsoleApp\\obj\\",
+        "projectPath": "D:\\Projects\\VIN_App\\ConsoleApp\\ConsoleApp.csproj",
+        "packagesPath": "D:\\Users\\renardein\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\VIN_App\\ConsoleApp\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "D:\\Users\\renardein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -34,11 +28,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
-                "projectPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj"
+              "D:\\Projects\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
+                "projectPath": "D:\\Projects\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj"
               },
-              "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj": {
-                "projectPath": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj"
+              "D:\\Projects\\VIN_App\\VIN_LIB\\VIN_LIB.csproj": {
+                "projectPath": "D:\\Projects\\VIN_App\\VIN_LIB\\VIN_LIB.csproj"
               }
             }
           }
@@ -71,24 +65,18 @@
         }
       }
     },
-    "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
+    "D:\\Projects\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
+        "projectUniqueName": "D:\\Projects\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
         "projectName": "REG_MARK_LIB",
-        "projectPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
-        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\VIN_APP\\REG_MARK_LIB\\obj\\",
+        "projectPath": "D:\\Projects\\VIN_App\\REG_MARK_LIB\\REG_MARK_LIB.csproj",
+        "packagesPath": "D:\\Users\\renardein\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\VIN_App\\REG_MARK_LIB\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "D:\\Users\\renardein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -131,24 +119,18 @@
         }
       }
     },
-    "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj": {
+    "D:\\Projects\\VIN_App\\VIN_LIB\\VIN_LIB.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj",
+        "projectUniqueName": "D:\\Projects\\VIN_App\\VIN_LIB\\VIN_LIB.csproj",
         "projectName": "VIN_LIB",
-        "projectPath": "D:\\C#\\VIN_APP\\VIN_LIB\\VIN_LIB.csproj",
-        "packagesPath": "C:\\Users\\79833\\.nuget\\packages\\",
-        "outputPath": "D:\\C#\\VIN_APP\\VIN_LIB\\obj\\",
+        "projectPath": "D:\\Projects\\VIN_App\\VIN_LIB\\VIN_LIB.csproj",
+        "packagesPath": "D:\\Users\\renardein\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\VIN_App\\VIN_LIB\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\79833\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "D:\\Users\\renardein\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"

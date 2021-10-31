@@ -27,3 +27,13 @@ D:\C#\VIN_APP\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.pdb
 D:\C#\VIN_APP\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.deps.json
 D:\C#\VIN_APP\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.dll
 D:\C#\VIN_APP\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.pdb
+D:\Projects\VIN_App\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.deps.json
+D:\Projects\VIN_App\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.dll
+D:\Projects\VIN_App\VIN_LIB\bin\Debug\netcoreapp3.1\VIN_LIB.pdb
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.csproj.AssemblyReference.cache
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.AssemblyInfoInputs.cache
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.AssemblyInfo.cs
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.csproj.CoreCompileInputs.cache
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.dll
+D:\Projects\VIN_App\VIN_LIB\obj\Debug\netcoreapp3.1\VIN_LIB.pdb

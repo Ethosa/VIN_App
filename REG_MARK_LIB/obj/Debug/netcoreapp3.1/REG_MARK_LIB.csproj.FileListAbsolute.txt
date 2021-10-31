@@ -28,3 +28,13 @@ D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfo.cs
 D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.CoreCompileInputs.cache
 D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.dll
 D:\C#\VIN_APP\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
+D:\Projects\VIN_App\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.deps.json
+D:\Projects\VIN_App\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.dll
+D:\Projects\VIN_App\REG_MARK_LIB\bin\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.AssemblyReference.cache
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfoInputs.cache
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.AssemblyInfo.cs
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.csproj.CoreCompileInputs.cache
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.dll
+D:\Projects\VIN_App\REG_MARK_LIB\obj\Debug\netcoreapp3.1\REG_MARK_LIB.pdb
