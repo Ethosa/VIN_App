@@ -46,9 +46,19 @@ namespace LibTest
         {
             Assert.IsTrue(reg.CheckMark("A999AA999"));
             Assert.IsTrue(reg.CheckMark("X123YO124"));
-            Assert.IsFalse(reg.CheckMark("AAA999999"));
+            Assert.IsTrue(reg.CheckMark("C899OT50"));
             Assert.IsFalse(reg.CheckMark("999AAA999"));
             Assert.IsFalse(reg.CheckMark("I999QU999"));
+        }
+
+        [TestMethod]
+        public void GetNextMarkAfterTest()
+        {
+            Console.WriteLine("A999AA999 -> " + reg.GetNextMarkAfter("A999AA999"));
+            Console.WriteLine("X123YO124 -> " + reg.GetNextMarkAfter("X123YO124"));
+            Console.WriteLine("A123CB120 -> " + reg.GetNextMarkAfter("A123CB120"));
+            Console.WriteLine("C899OT50 -> " + reg.GetNextMarkAfter("C899OT50"));
+            Console.WriteLine("C899XX50 -> " + reg.GetNextMarkAfter("C899XX50"));
         }
     }
 }
