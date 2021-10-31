@@ -15,6 +15,9 @@
   - [x] String GetNextMarkAfter(String mark)
   - [x] int GetCombinationsCountInRange(String mark1, String mark2)
   - [ ] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
+   #### Unit tests
+    - [x] VIN_LIB
+    - [x] REG_MARK_LIB
 - [ ] Session 2
   #### Authorization
    - [x] Database
