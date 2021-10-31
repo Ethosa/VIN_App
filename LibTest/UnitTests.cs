@@ -60,5 +60,15 @@ namespace LibTest
             Console.WriteLine("C899OT50 -> " + reg.GetNextMarkAfter("C899OT50"));
             Console.WriteLine("C899XX50 -> " + reg.GetNextMarkAfter("C899XX50"));
         }
+
+        [TestMethod]
+        public void GetCombinationsCountInRangeTest()
+        {
+            Console.WriteLine("A000AA24::A005AA24 -> " + reg.GetCombinationsCountInRange("A000AA24", "A005AA24"));
+            Console.WriteLine("A000AA24::A064AA24 -> " + reg.GetCombinationsCountInRange("A000AA24", "A064AA24"));
+            Console.WriteLine("A128AA24::A000AA24 -> " + reg.GetCombinationsCountInRange("A128AA24", "A000AA24"));
+            Console.WriteLine("A000AA24::X000AA24 -> " + reg.GetCombinationsCountInRange("A000AA24", "X000AA24"));
+            Console.WriteLine("A000AA24::X000XX24 -> " + reg.GetCombinationsCountInRange("A000AA24", "X999XX24"));
+        }
     }
 }
