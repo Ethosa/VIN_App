@@ -16,6 +16,14 @@
   - [x] int GetCombinationsCountInRange(String mark1, String mark2)
   - [ ] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
 - [ ] Session 2
+  #### Authorization
+   - [x] Database
+   - [x] 'Users' table 
+   - [x] Form created
+   - [ ] Add single user
+   - [ ] Counter of wrong login attempts
+   - [ ] The lock remains after restarting the app
+   - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
 - [ ] Session 3
 - [ ] Session 4
 - [ ] Session 5
