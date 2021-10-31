@@ -61,7 +61,11 @@ namespace REG_MARK_LIB
 
         public String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
         {
-            return "";
+            if (GetCombinationsCountInRange(prevMark, rangeEnd) < 0)
+                return "out of stock";
+            if (GetCombinationsCountInRange(rangeStart, rangeEnd) < 0)
+                return "out of stock";
+            return GetNextMarkAfter(prevMark);
         }
 
         public int GetCombinationsCountInRange(String mark1, String mark2)
