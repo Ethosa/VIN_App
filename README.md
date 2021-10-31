@@ -13,7 +13,7 @@
   #### REG_MARK_LIB
   - [x] Boolean CheckMark(String mark)
   - [x] String GetNextMarkAfter(String mark)
-  - [ ] int GetCombinationsCountInRange(String mark1, String mark2)
+  - [x] int GetCombinationsCountInRange(String mark1, String mark2)
   - [ ] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
 - [ ] Session 2
 - [ ] Session 3
