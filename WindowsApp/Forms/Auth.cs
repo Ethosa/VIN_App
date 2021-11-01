@@ -21,11 +21,6 @@ namespace WindowsApp
 
         private void authButton_Click(object sender, EventArgs e)
         {
-           
-        }
-
-        private void authButton_Click_1(object sender, EventArgs e)
-        {
             warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
@@ -35,10 +30,11 @@ namespace WindowsApp
                 var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
                 //Если не нашелся
                 if (user == null)
-                warnLabel.Text = "Пользователя не существует";
+                    warnLabel.Text = "Пользователя не существует";
                 else
-                of.MainForm();
+                    of.MainForm();
             }
+
         }
     }
 }
