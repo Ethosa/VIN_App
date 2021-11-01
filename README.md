@@ -14,7 +14,7 @@
   - [x] Boolean CheckMark(String mark)
   - [x] String GetNextMarkAfter(String mark)
   - [x] int GetCombinationsCountInRange(String mark1, String mark2)
-  - [ ] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
+  - [x] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
    #### Unit tests
     - [x] VIN_LIB
     - [x] REG_MARK_LIB
