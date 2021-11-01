@@ -70,5 +70,17 @@ namespace LibTest
             Console.WriteLine("A000AA24::X000AA24 -> " + reg.GetCombinationsCountInRange("A000AA24", "X000AA24"));
             Console.WriteLine("A000AA24::X000XX24 -> " + reg.GetCombinationsCountInRange("A000AA24", "X999XX24"));
         }
+
+        [TestMethod]
+        public void GetNextMarkAfterInRangeTest()
+        {
+            string prevMark = "A000AA24";
+            Console.WriteLine("Range: A000AA24..A100AA24");
+            for (int i = 0; i < 101; ++i)
+            {
+                prevMark = reg.GetNextMarkAfterInRange(prevMark, "A000AA24", "A100AA24");
+                Console.WriteLine(prevMark);
+            }
+        }
     }
 }
