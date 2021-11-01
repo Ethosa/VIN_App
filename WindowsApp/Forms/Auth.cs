@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Windows.Forms;
 using WindowsApp.Modules;
+using WindowsApp.Database;
+using System.Linq;
 
 namespace WindowsApp
 {
@@ -24,18 +26,19 @@ namespace WindowsApp
 
         private void authButton_Click_1(object sender, EventArgs e)
         {
+            warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
-            /*using (var db = new dbEntities()) //Инициализация базы
+            using (var db = new gibddEntities()) //Инициализация базы
             {
                 //Ищем пользователя в базе по заданным критериям
                 var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
                 //Если не нашелся
                 if (user == null)
                 warnLabel.Text = "Пользователя не существует";
-                return;
+                else
                 of.MainForm();
-            }*/
+            }
         }
     }
 }

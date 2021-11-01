@@ -56,23 +56,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\Database.Context.cs">
+    <Compile Include="Database\GibddModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.Context.tt</DependentUpon>
+      <DependentUpon>GibddModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\Database.cs">
+    <Compile Include="Database\GibddModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>GibddModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\Database.Designer.cs">
+    <Compile Include="Database\GibddModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Database.edmx</DependentUpon>
+      <DependentUpon>GibddModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Database\user.cs">
-      <DependentUpon>Database.tt</DependentUpon>
+      <DependentUpon>GibddModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Auth.cs">
       <SubType>Form</SubType>
@@ -105,12 +105,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Database\Database.edmx">
+    <EntityDeploy Include="Database\GibddModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Database.Designer.cs</LastGenOutput>
+      <LastGenOutput>GibddModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Database\Database.edmx.diagram">
-      <DependentUpon>Database.edmx</DependentUpon>
+    <None Include="Database\GibddModel.edmx.diagram">
+      <DependentUpon>GibddModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -130,15 +130,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Database.Context.tt">
+    <Content Include="Database\GibddModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.Context.cs</LastGenOutput>
+      <DependentUpon>GibddModel.edmx</DependentUpon>
+      <LastGenOutput>GibddModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Database\Database.tt">
+    <Content Include="Database\GibddModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Database.edmx</DependentUpon>
-      <LastGenOutput>Database.cs</LastGenOutput>
+      <DependentUpon>GibddModel.edmx</DependentUpon>
+      <LastGenOutput>GibddModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -13,10 +13,10 @@ namespace WindowsApp.Database
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class dbEntities : DbContext
+    public partial class gibddEntities : DbContext
     {
-        public dbEntities()
-            : base("name=dbEntities")
+        public gibddEntities()
+            : base("name=gibddEntities")
         {
         }
     
