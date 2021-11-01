@@ -46,7 +46,7 @@
 
             if (user == null)
             {
-                if (wrongAuthCount == 3)
+                if (wrongAuthCount == 2)
                     await AttemptsTimer(60);
                 else
                     wrongAuthCount++;
