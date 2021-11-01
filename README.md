@@ -5,7 +5,7 @@
 
 </div>
 
-- [ ] Session 1
+- [x] Session 1
   #### VIN_LIB
   - [x] Boolean CheckVIN(String vin)
   - [x] String GetVINCountry(String vin)
