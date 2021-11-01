@@ -23,7 +23,7 @@
    - [x] Database
    - [x] 'Users' table 
    - [x] Form created
-   - [ ] Add single user
+   - [x] Add single user
    - [ ] Counter of wrong login attempts
    - [ ] The lock remains after restarting the app
    - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
