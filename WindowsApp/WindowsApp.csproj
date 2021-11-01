@@ -57,25 +57,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\blockLoginTime.cs">
-      <DependentUpon>GibddModel.tt</DependentUpon>
+      <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\GibddModel.Context.cs">
+    <Compile Include="Database\gibddModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GibddModel.Context.tt</DependentUpon>
+      <DependentUpon>gibddModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\GibddModel.cs">
+    <Compile Include="Database\gibddModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GibddModel.tt</DependentUpon>
+      <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Database\GibddModel.Designer.cs">
+    <Compile Include="Database\gibddModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>GibddModel.edmx</DependentUpon>
+      <DependentUpon>gibddModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Database\user.cs">
-      <DependentUpon>GibddModel.tt</DependentUpon>
+      <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Forms\Auth.cs">
       <SubType>Form</SubType>
@@ -108,12 +108,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EntityDeploy Include="Database\GibddModel.edmx">
+    <EntityDeploy Include="Database\gibddModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>GibddModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>gibddModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Database\GibddModel.edmx.diagram">
-      <DependentUpon>GibddModel.edmx</DependentUpon>
+    <None Include="Database\gibddModel.edmx.diagram">
+      <DependentUpon>gibddModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -132,16 +132,17 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Content Include="Database\GibddModel.Context.tt">
+    <Content Include="Database\gibddModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GibddModel.edmx</DependentUpon>
-      <LastGenOutput>GibddModel.Context.cs</LastGenOutput>
+      <DependentUpon>gibddModel.edmx</DependentUpon>
+      <LastGenOutput>gibddModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Database\GibddModel.tt">
+    <Content Include="Database\gibddModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>GibddModel.edmx</DependentUpon>
-      <LastGenOutput>GibddModel.cs</LastGenOutput>
+      <DependentUpon>gibddModel.edmx</DependentUpon>
+      <LastGenOutput>gibddModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
