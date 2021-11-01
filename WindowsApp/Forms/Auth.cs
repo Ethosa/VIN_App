@@ -21,6 +21,7 @@
         /// Defines the of.
         /// </summary>
         internal OpenForms of = new OpenForms();
+        internal gibddEntities db = new gibddEntities();
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Auth"/> class.
@@ -40,26 +41,22 @@
             warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
-            using (var db = new gibddEntities()) //Инициализация базы
-            {
-                //Ищем пользователя в базе по заданным критериям
-                var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
-                //Если не нашелся
+            var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
+            //Если не нашелся
 
-                if (user == null)
-                {
-                    if (wrongAuthCount == 3)
-                        await AttemptsTimer(60);
-                    else
-                        wrongAuthCount++;
-                    warnLabel.Text = "Пользователя не существует";
-                }
+            if (user == null)
+            {
+                if (wrongAuthCount == 3)
+                    await AttemptsTimer(60);
                 else
-                {
-                    of.MainForm();
-                    this.Hide();
-                }
+                    wrongAuthCount++;
+                warnLabel.Text = "Пользователя не существует";
+            } else
+            {
+                of.MainForm();
+                this.Hide();
             }
+           
         }
 
         /// <summary>
@@ -69,14 +66,12 @@
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task AttemptsTimer(int sec)
         {
-            using (var db = new gibddEntities())
-                db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
+            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
             authButton.Enabled = false;
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
             await Task.Delay(sec * 1000);
             wrongAuthCount = 0;
-            using (var db = new gibddEntities())
-                db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
+            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
             authButton.Enabled = true;
         }
 
