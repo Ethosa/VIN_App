@@ -31,12 +31,12 @@ namespace WindowsApp
         {
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label1 = new System.Windows.Forms.Label();
+            this.warnLabel = new System.Windows.Forms.Label();
             this.passLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
             this.loginText = new System.Windows.Forms.TextBox();
             this.authButton = new System.Windows.Forms.Button();
-            this.warnLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -77,6 +77,15 @@ namespace WindowsApp
             this.label1.TabIndex = 0;
             this.label1.Text = "Логотип";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // warnLabel
+            // 
+            this.warnLabel.AutoSize = true;
+            this.warnLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.warnLabel.Location = new System.Drawing.Point(86, 85);
+            this.warnLabel.Name = "warnLabel";
+            this.warnLabel.Size = new System.Drawing.Size(0, 13);
+            this.warnLabel.TabIndex = 10;
             // 
             // passLabel
             // 
@@ -123,16 +132,7 @@ namespace WindowsApp
             this.authButton.TabIndex = 5;
             this.authButton.Text = "Войти";
             this.authButton.UseVisualStyleBackColor = true;
-           
-            // 
-            // warnLabel
-            // 
-            this.warnLabel.AutoSize = true;
-            this.warnLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.warnLabel.Location = new System.Drawing.Point(86, 85);
-            this.warnLabel.Name = "warnLabel";
-            this.warnLabel.Size = new System.Drawing.Size(0, 13);
-            this.warnLabel.TabIndex = 10;
+            this.authButton.Click += new System.EventHandler(this.authButton_Click);
             // 
             // Auth
             // 

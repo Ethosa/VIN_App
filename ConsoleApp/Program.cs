@@ -1,20 +1,37 @@
-﻿using System;
-using VIN_LIB;
-using REG_MARK_LIB;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp
 {
-    class Program
+    using REG_MARK_LIB;
+    using System;
+    using VIN_LIB;
+
+    /// <summary>
+    /// Defines the <see cref="Program" />.
+    /// </summary>
+    internal class Program
     {
+        /// <summary>
+        /// Defines the vin.
+        /// </summary>
         private VIN vin = new VIN();
+
+        /// <summary>
+        /// Defines the reg.
+        /// </summary>
         private RegMark reg = new RegMark();
 
-        static void Main(string[] args)
+        /// <summary>
+        /// The Main.
+        /// </summary>
+        /// <param name="args">The args<see cref="string[]"/>.</param>
+        internal static void Main(string[] args)
         {
             Program main = new Program();
             main.StartMenu();
         }
 
+        /// <summary>
+        /// The StartMenu.
+        /// </summary>
         private void StartMenu()
         {
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
@@ -70,9 +87,11 @@ namespace ConsoleApp
                     StartMenu();
                     break;
             }
-
         }
 
+        /// <summary>
+        /// The CheckVinActivity.
+        /// </summary>
         public void CheckVinActivity()
         {
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
@@ -90,8 +109,11 @@ namespace ConsoleApp
                     break;
             }
             ExitActionsActivity();
-
         }
+
+        /// <summary>
+        /// The GetVinCountryActivity.
+        /// </summary>
         public void GetVinCountryActivity()
         {
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
@@ -102,6 +124,10 @@ namespace ConsoleApp
             Console.WriteLine(vin.GetVINCountry(arg));
                 ExitActionsActivity();
         }
+
+        /// <summary>
+        /// The GetTransportYearActivity.
+        /// </summary>
         public void GetTransportYearActivity()
         {
             Console.WriteLine($"Библиотека VIN_LIB.dll\n\n" +
@@ -112,6 +138,10 @@ namespace ConsoleApp
             Console.WriteLine(vin.GetTransportYear(arg));
             ExitActionsActivity();
         }
+
+        /// <summary>
+        /// The ParseTestActivity.
+        /// </summary>
         public void ParseTestActivity()
         {
          
@@ -133,6 +163,9 @@ namespace ConsoleApp
             ExitActionsActivity();
         }
 
+        /// <summary>
+        /// The CheckMarkActivity.
+        /// </summary>
         public void CheckMarkActivity()
         {
             Console.WriteLine($"Библиотека REG_MARK_LIB.dll\n\n" +
@@ -150,10 +183,11 @@ namespace ConsoleApp
                     break;
             }
             ExitActionsActivity();
-
-
         }
 
+        /// <summary>
+        /// The GetNextMarkAfterActivity.
+        /// </summary>
         public void GetNextMarkAfterActivity()
         {
             Console.WriteLine($"Библиотека REG_MARK_LIB.dll\n\n" +
@@ -164,9 +198,22 @@ namespace ConsoleApp
             Console.WriteLine(reg.GetNextMarkAfter(pl));
             ExitActionsActivity();
         }
-        public void GetNextMarkAfterInRangeActivity() { }
-        public void GetCombinationsCountInRangeActivity() { }
 
+        /// <summary>
+        /// The GetNextMarkAfterInRangeActivity.
+        /// </summary>
+        public void GetNextMarkAfterInRangeActivity()         {
+        }
+
+        /// <summary>
+        /// The GetCombinationsCountInRangeActivity.
+        /// </summary>
+        public void GetCombinationsCountInRangeActivity()         {
+        }
+
+        /// <summary>
+        /// The ExitActionsActivity.
+        /// </summary>
         public void ExitActionsActivity()
         {
             Console.WriteLine($"\n\n9) Вернуться\n" +

@@ -4,7 +4,13 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище gibddModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище gibddModel" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="blockLoginTime">
+          <Key>
+            <PropertyRef Name="time" />
+          </Key>
+          <Property Name="time" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="uid" />
@@ -14,10 +20,10 @@
           <Property Name="upass" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
         <EntityContainer Name="Хранилище gibddModelContainer">
+          <EntitySet Name="blockLoginTime" EntityType="Self.blockLoginTime" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="gibddModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -31,7 +37,14 @@
         </EntityType>
         <EntityContainer Name="gibddEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="user" EntityType="Self.user" />
+          <EntitySet Name="blockLoginTime" EntityType="gibddModel.blockLoginTime" />
         </EntityContainer>
+        <EntityType Name="blockLoginTime">
+          <Key>
+            <PropertyRef Name="time" />
+          </Key>
+          <Property Name="time" Type="Int32" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -44,6 +57,13 @@
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="uname" ColumnName="uname" />
                 <ScalarProperty Name="upass" ColumnName="upass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="blockLoginTime">
+            <EntityTypeMapping TypeName="gibddModel.blockLoginTime">
+              <MappingFragment StoreEntitySet="blockLoginTime">
+                <ScalarProperty Name="time" ColumnName="time" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
