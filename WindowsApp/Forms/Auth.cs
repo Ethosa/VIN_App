@@ -62,17 +62,18 @@
         /// <summary>
         /// The AttemptsTimer.
         /// </summary>
-        /// <param name="sec">The sec<see cref="int"/>.</param>
+        /// <param name="sec">Timeout seconds<see cref="int"/>.</param>
         /// <returns>The <see cref="Task"/>.</returns>
         public async Task AttemptsTimer(int sec)
         {
-            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
-            authButton.Enabled = false;
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
+            authButton.Enabled = false;
+            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
             await Task.Delay(sec * 1000);
-            wrongAuthCount = 0;
-            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
+            warnLabel.Text = null;
             authButton.Enabled = true;
+            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
+            wrongAuthCount = 0;
         }
 
         /// <summary>
