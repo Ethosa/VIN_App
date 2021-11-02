@@ -42,22 +42,24 @@
             warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
-            var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
-            //Если не нашелся
-
-            if (user == null)
+            else
             {
-                if (wrongAuthCount == 3)
-                    await AttemptsTimer(60);
+                var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
+                //Если не нашелся
+                if (user == null)
+                {
+                    if (wrongAuthCount == 3)
+                        await AttemptsTimer(60);
+                    else
+                        wrongAuthCount++;
+                    warnLabel.Text = "Пользователя не существует";
+                }
                 else
-                    wrongAuthCount++;
-                warnLabel.Text = "Пользователя не существует";
-            } else
-            {
-                of.MainForm();
-                this.Hide();
+                {
+                    of.MainForm();
+                    this.Hide();
+                }
             }
-           
         }
 
         /// <summary>
