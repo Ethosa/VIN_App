@@ -18,6 +18,8 @@
    #### Unit tests
     - [x] VIN_LIB
     - [x] REG_MARK_LIB
+   #### Database
+    - [x] Import Region Codes.xlsx to database
 - [ ] Session 2
   #### Authorization
    - [x] Form created
@@ -28,7 +30,8 @@
     - [x] Database
     - [x] 'Users' table 
     - [x] Add single user
-    - [ ] Upload data from drivers.zip to database
+    - [x] Upload data from drivers.zip to database
+
   #### Driver Create form
     - [ ] Form created
     - [ ] Driver picture upload
