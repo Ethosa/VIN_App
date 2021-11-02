@@ -110,5 +110,15 @@
         {
             LoadTimeout().Wait();
         }
+
+        private void showPassBtn_MouseHover(object sender, EventArgs e)
+        {
+            passText.PasswordChar='\0';
+        }
+
+        private void showPassBtn_MouseLeave(object sender, EventArgs e)
+        {
+            passText.PasswordChar = '*';
+        }
     }
 }

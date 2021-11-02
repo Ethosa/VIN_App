@@ -140,6 +140,7 @@
       <DependentUpon>gibddModel.edmx</DependentUpon>
       <LastGenOutput>gibddModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\gibdd_logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
