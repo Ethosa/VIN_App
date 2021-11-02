@@ -7,6 +7,7 @@
     using WindowsApp.Database;
     using WindowsApp.Modules;
 
+
     /// <summary>
     /// Defines the <see cref="Auth" />.
     /// </summary>
@@ -68,11 +69,11 @@
         {
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
             authButton.Enabled = false;
-            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
+            //db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
             await Task.Delay(sec * 1000);
             warnLabel.Text = null;
             authButton.Enabled = true;
-            db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
+            //db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
             wrongAuthCount = 0;
         }
 
@@ -83,6 +84,7 @@
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
         private void Auth_Load(object sender, EventArgs e)
         {
+            
         }
     }
 }

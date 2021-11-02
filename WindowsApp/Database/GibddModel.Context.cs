@@ -25,7 +25,6 @@ namespace WindowsApp.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<blockLoginTime> blockLoginTime { get; set; }
         public virtual DbSet<user> user { get; set; }
     }
 }

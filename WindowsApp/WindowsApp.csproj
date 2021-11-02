@@ -56,9 +56,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\blockLoginTime.cs">
-      <DependentUpon>gibddModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Database\gibddModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
