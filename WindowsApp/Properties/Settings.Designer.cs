@@ -22,5 +22,14 @@ namespace WindowsApp.Properties {
                 return defaultInstance;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int sec {
+            get {
+                return ((int)(this["sec"]));
+            }
+        }
     }
 }

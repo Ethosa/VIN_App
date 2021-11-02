@@ -47,7 +47,7 @@
 
             if (user == null)
             {
-                if (wrongAuthCount == 2)
+                if (wrongAuthCount == 3)
                     await AttemptsTimer(60);
                 else
                     wrongAuthCount++;
@@ -65,16 +65,38 @@
         /// </summary>
         /// <param name="sec">Timeout seconds<see cref="int"/>.</param>
         /// <returns>The <see cref="Task"/>.</returns>
-        public async Task AttemptsTimer(int sec)
+        private async Task AttemptsTimer(int sec)
         {
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
             authButton.Enabled = false;
-            //db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time={sec}");
-            await Task.Delay(sec * 1000);
+            while (sec > 0)
+            {
+                sec = await UpdateTimeout(sec);
+            }
             warnLabel.Text = null;
             authButton.Enabled = true;
-            //db.Database.ExecuteSqlCommand($"UPDATE blockLoginTime SET time=0");
             wrongAuthCount = 0;
+        }
+
+        private async Task<int> UpdateTimeout(int sec)
+        {
+            warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
+            --sec;
+            SaveTimeout(sec);
+            await Task.Delay(1000);
+            return sec;
+        }
+
+        private async Task LoadTimeout()
+        {
+            int timeout = (int) Properties.Settings.Default["sec"];
+            await AttemptsTimer(timeout);
+        }
+
+        private void SaveTimeout(int sec)
+        {
+            Properties.Settings.Default["sec"] = sec;
+            Properties.Settings.Default.Save();
         }
 
         /// <summary>
@@ -84,7 +106,7 @@
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
         private void Auth_Load(object sender, EventArgs e)
         {
-            
+            LoadTimeout().Wait();
         }
     }
 }

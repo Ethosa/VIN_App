@@ -63,7 +63,7 @@ namespace WindowsApp
             this.splitContainer1.Panel2.Controls.Add(this.passText);
             this.splitContainer1.Panel2.Controls.Add(this.loginText);
             this.splitContainer1.Panel2.Controls.Add(this.authButton);
-            this.splitContainer1.Size = new System.Drawing.Size(434, 241);
+            this.splitContainer1.Size = new System.Drawing.Size(496, 241);
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 5;
             // 
@@ -71,7 +71,7 @@ namespace WindowsApp
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(111, 9);
+            this.label1.Location = new System.Drawing.Point(139, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(231, 63);
             this.label1.TabIndex = 0;
@@ -112,7 +112,7 @@ namespace WindowsApp
             this.passText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.passText.Location = new System.Drawing.Point(89, 53);
             this.passText.Name = "passText";
-            this.passText.Size = new System.Drawing.Size(333, 26);
+            this.passText.Size = new System.Drawing.Size(395, 26);
             this.passText.TabIndex = 7;
             // 
             // loginText
@@ -120,7 +120,7 @@ namespace WindowsApp
             this.loginText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.loginText.Location = new System.Drawing.Point(89, 21);
             this.loginText.Name = "loginText";
-            this.loginText.Size = new System.Drawing.Size(333, 26);
+            this.loginText.Size = new System.Drawing.Size(395, 26);
             this.loginText.TabIndex = 6;
             // 
             // authButton
@@ -128,7 +128,7 @@ namespace WindowsApp
             this.authButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.authButton.Location = new System.Drawing.Point(12, 101);
             this.authButton.Name = "authButton";
-            this.authButton.Size = new System.Drawing.Size(410, 36);
+            this.authButton.Size = new System.Drawing.Size(472, 36);
             this.authButton.TabIndex = 5;
             this.authButton.Text = "Войти";
             this.authButton.UseVisualStyleBackColor = true;
@@ -138,10 +138,10 @@ namespace WindowsApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(434, 241);
+            this.ClientSize = new System.Drawing.Size(496, 241);
             this.Controls.Add(this.splitContainer1);
-            this.MaximumSize = new System.Drawing.Size(450, 280);
-            this.MinimumSize = new System.Drawing.Size(450, 280);
+            this.MaximumSize = new System.Drawing.Size(512, 280);
+            this.MinimumSize = new System.Drawing.Size(512, 280);
             this.Name = "Auth";
             this.Text = "Авторизация в системе";
             this.Load += new System.EventHandler(this.Auth_Load);
