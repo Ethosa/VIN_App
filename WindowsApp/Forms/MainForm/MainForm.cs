@@ -16,7 +16,8 @@ namespace WindowsApp.Forms
         public MainForm()
         {
             InitializeComponent();
-            pictureBox1.Image = imageList1.Images[photoTextBox.Text];
+           
+
         }
 
         private void MainForm_Load(object sender, EventArgs e)

@@ -31,8 +31,8 @@ namespace WindowsApp.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label firstnameLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.Label photoLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -68,12 +68,10 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.photoTextBox = new System.Windows.Forms.TextBox();
             this.firstnameTextBox = new System.Windows.Forms.TextBox();
             this.driversTableAdapter = new WindowsApp.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.gibddDataSetTableAdapters.TableAdapterManager();
-            this.photoTextBox = new System.Windows.Forms.TextBox();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -92,7 +90,6 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -103,6 +100,15 @@ namespace WindowsApp.Forms
             firstnameLabel.Size = new System.Drawing.Size(52, 13);
             firstnameLabel.TabIndex = 0;
             firstnameLabel.Text = "firstname:";
+            // 
+            // photoLabel
+            // 
+            photoLabel.AutoSize = true;
+            photoLabel.Location = new System.Drawing.Point(17, 156);
+            photoLabel.Name = "photoLabel";
+            photoLabel.Size = new System.Drawing.Size(37, 13);
+            photoLabel.TabIndex = 3;
+            photoLabel.Text = "photo:";
             // 
             // splitContainer1
             // 
@@ -193,7 +199,6 @@ namespace WindowsApp.Forms
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.splitContainer2.Panel2.Controls.Add(photoLabel);
             this.splitContainer2.Panel2.Controls.Add(this.photoTextBox);
-            this.splitContainer2.Panel2.Controls.Add(this.pictureBox2);
             this.splitContainer2.Panel2.Controls.Add(firstnameLabel);
             this.splitContainer2.Panel2.Controls.Add(this.firstnameTextBox);
             this.splitContainer2.Size = new System.Drawing.Size(786, 329);
@@ -441,14 +446,13 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn14.HeaderText = "Фотография";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // pictureBox2
+            // photoTextBox
             // 
-            this.pictureBox2.Location = new System.Drawing.Point(33, 245);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "photo", true));
+            this.photoTextBox.Location = new System.Drawing.Point(60, 153);
+            this.photoTextBox.Name = "photoTextBox";
+            this.photoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.photoTextBox.TabIndex = 4;
             // 
             // firstnameTextBox
             // 
@@ -469,228 +473,6 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.regionCodesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsApp.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
-            // 
-            // photoLabel
-            // 
-            photoLabel.AutoSize = true;
-            photoLabel.Location = new System.Drawing.Point(17, 156);
-            photoLabel.Name = "photoLabel";
-            photoLabel.Size = new System.Drawing.Size(37, 13);
-            photoLabel.TabIndex = 3;
-            photoLabel.Text = "photo:";
-            // 
-            // photoTextBox
-            // 
-            this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "photo", true));
-            this.photoTextBox.Location = new System.Drawing.Point(60, 153);
-            this.photoTextBox.Name = "photoTextBox";
-            this.photoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.photoTextBox.TabIndex = 4;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "001-happy-18.png");
-            this.imageList1.Images.SetKeyName(1, "002-cool-5.png");
-            this.imageList1.Images.SetKeyName(2, "003-happy-17.png");
-            this.imageList1.Images.SetKeyName(3, "004-surprised-9.png");
-            this.imageList1.Images.SetKeyName(4, "005-shocked-4.png");
-            this.imageList1.Images.SetKeyName(5, "006-shocked-3.png");
-            this.imageList1.Images.SetKeyName(6, "007-nervous-2.png");
-            this.imageList1.Images.SetKeyName(7, "008-nervous-1.png");
-            this.imageList1.Images.SetKeyName(8, "009-angry-6.png");
-            this.imageList1.Images.SetKeyName(9, "010-drool.png");
-            this.imageList1.Images.SetKeyName(10, "011-tired-2.png");
-            this.imageList1.Images.SetKeyName(11, "012-tongue-7.png");
-            this.imageList1.Images.SetKeyName(12, "013-tongue-6.png");
-            this.imageList1.Images.SetKeyName(13, "014-tongue-5.png");
-            this.imageList1.Images.SetKeyName(14, "015-smile-1.png");
-            this.imageList1.Images.SetKeyName(15, "016-sleeping-1.png");
-            this.imageList1.Images.SetKeyName(16, "017-nervous.png");
-            this.imageList1.Images.SetKeyName(17, "018-surprised-8.png");
-            this.imageList1.Images.SetKeyName(18, "019-tongue-4.png");
-            this.imageList1.Images.SetKeyName(19, "020-happy-16.png");
-            this.imageList1.Images.SetKeyName(20, "021-wink-1.png");
-            this.imageList1.Images.SetKeyName(21, "022-laughing-2.png");
-            this.imageList1.Images.SetKeyName(22, "023-laughing-1.png");
-            this.imageList1.Images.SetKeyName(23, "024-sweat-1.png");
-            this.imageList1.Images.SetKeyName(24, "025-happy-15.png");
-            this.imageList1.Images.SetKeyName(25, "026-happy-14.png");
-            this.imageList1.Images.SetKeyName(26, "027-laughing.png");
-            this.imageList1.Images.SetKeyName(27, "028-happy-13.png");
-            this.imageList1.Images.SetKeyName(28, "029-happy-12.png");
-            this.imageList1.Images.SetKeyName(29, "030-crying-8.png");
-            this.imageList1.Images.SetKeyName(30, "031-crying-7.png");
-            this.imageList1.Images.SetKeyName(31, "032-bored.png");
-            this.imageList1.Images.SetKeyName(32, "033-cool-4.png");
-            this.imageList1.Images.SetKeyName(33, "034-angry-5.png");
-            this.imageList1.Images.SetKeyName(34, "035-sad-14.png");
-            this.imageList1.Images.SetKeyName(35, "036-angry-4.png");
-            this.imageList1.Images.SetKeyName(36, "037-happy-11.png");
-            this.imageList1.Images.SetKeyName(37, "038-angry-3.png");
-            this.imageList1.Images.SetKeyName(38, "039-cyclops-1.png");
-            this.imageList1.Images.SetKeyName(39, "040-surprised-7.png");
-            this.imageList1.Images.SetKeyName(40, "041-thinking-2.png");
-            this.imageList1.Images.SetKeyName(41, "042-book.png");
-            this.imageList1.Images.SetKeyName(42, "043-baby-boy.png");
-            this.imageList1.Images.SetKeyName(43, "044-dead-1.png");
-            this.imageList1.Images.SetKeyName(44, "045-star.png");
-            this.imageList1.Images.SetKeyName(45, "046-dubious.png");
-            this.imageList1.Images.SetKeyName(46, "047-phone-call.png");
-            this.imageList1.Images.SetKeyName(47, "048-moon.png");
-            this.imageList1.Images.SetKeyName(48, "049-robot.png");
-            this.imageList1.Images.SetKeyName(49, "050-flower.png");
-            this.imageList1.Images.SetKeyName(50, "051-happy-10.png");
-            this.imageList1.Images.SetKeyName(51, "052-happy-9.png");
-            this.imageList1.Images.SetKeyName(52, "053-tired-1.png");
-            this.imageList1.Images.SetKeyName(53, "054-ugly-3.png");
-            this.imageList1.Images.SetKeyName(54, "055-tongue-3.png");
-            this.imageList1.Images.SetKeyName(55, "056-vampire.png");
-            this.imageList1.Images.SetKeyName(56, "057-music-1.png");
-            this.imageList1.Images.SetKeyName(57, "058-popcorn.png");
-            this.imageList1.Images.SetKeyName(58, "059-nurse.png");
-            this.imageList1.Images.SetKeyName(59, "060-sad-13.png");
-            this.imageList1.Images.SetKeyName(60, "061-graduated-1.png");
-            this.imageList1.Images.SetKeyName(61, "062-happy-8.png");
-            this.imageList1.Images.SetKeyName(62, "063-hungry.png");
-            this.imageList1.Images.SetKeyName(63, "064-police.png");
-            this.imageList1.Images.SetKeyName(64, "065-crying-6.png");
-            this.imageList1.Images.SetKeyName(65, "066-happy-7.png");
-            this.imageList1.Images.SetKeyName(66, "067-sun.png");
-            this.imageList1.Images.SetKeyName(67, "068-father-2.png");
-            this.imageList1.Images.SetKeyName(68, "069-happy-6.png");
-            this.imageList1.Images.SetKeyName(69, "070-late.png");
-            this.imageList1.Images.SetKeyName(70, "071-heart.png");
-            this.imageList1.Images.SetKeyName(71, "072-sick-3.png");
-            this.imageList1.Images.SetKeyName(72, "073-sad-12.png");
-            this.imageList1.Images.SetKeyName(73, "074-in-love-10.png");
-            this.imageList1.Images.SetKeyName(74, "075-shocked-2.png");
-            this.imageList1.Images.SetKeyName(75, "076-happy-5.png");
-            this.imageList1.Images.SetKeyName(76, "077-shocked-1.png");
-            this.imageList1.Images.SetKeyName(77, "078-cool-3.png");
-            this.imageList1.Images.SetKeyName(78, "079-crying-5.png");
-            this.imageList1.Images.SetKeyName(79, "080-zombie.png");
-            this.imageList1.Images.SetKeyName(80, "081-pain.png");
-            this.imageList1.Images.SetKeyName(81, "082-cyclops.png");
-            this.imageList1.Images.SetKeyName(82, "083-sweat.png");
-            this.imageList1.Images.SetKeyName(83, "084-thief.png");
-            this.imageList1.Images.SetKeyName(84, "085-sad-11.png");
-            this.imageList1.Images.SetKeyName(85, "086-kiss-4.png");
-            this.imageList1.Images.SetKeyName(86, "087-father-1.png");
-            this.imageList1.Images.SetKeyName(87, "088-father.png");
-            this.imageList1.Images.SetKeyName(88, "089-angel-1.png");
-            this.imageList1.Images.SetKeyName(89, "090-happy-4.png");
-            this.imageList1.Images.SetKeyName(90, "091-sad-10.png");
-            this.imageList1.Images.SetKeyName(91, "092-outrage-1.png");
-            this.imageList1.Images.SetKeyName(92, "093-ugly-2.png");
-            this.imageList1.Images.SetKeyName(93, "094-ugly-1.png");
-            this.imageList1.Images.SetKeyName(94, "095-scared.png");
-            this.imageList1.Images.SetKeyName(95, "096-tongue-2.png");
-            this.imageList1.Images.SetKeyName(96, "097-sad-9.png");
-            this.imageList1.Images.SetKeyName(97, "098-nerd-9.png");
-            this.imageList1.Images.SetKeyName(98, "099-greed-2.png");
-            this.imageList1.Images.SetKeyName(99, "100-whistle.png");
-            this.imageList1.Images.SetKeyName(100, "101-nerd-8.png");
-            this.imageList1.Images.SetKeyName(101, "102-muted-4.png");
-            this.imageList1.Images.SetKeyName(102, "103-in-love-9.png");
-            this.imageList1.Images.SetKeyName(103, "104-in-love-8.png");
-            this.imageList1.Images.SetKeyName(104, "105-kiss-3.png");
-            this.imageList1.Images.SetKeyName(105, "106-in-love-7.png");
-            this.imageList1.Images.SetKeyName(106, "107-ugly.png");
-            this.imageList1.Images.SetKeyName(107, "108-nerd-7.png");
-            this.imageList1.Images.SetKeyName(108, "109-nerd-6.png");
-            this.imageList1.Images.SetKeyName(109, "110-crying-4.png");
-            this.imageList1.Images.SetKeyName(110, "111-muted-3.png");
-            this.imageList1.Images.SetKeyName(111, "112-nerd-5.png");
-            this.imageList1.Images.SetKeyName(112, "113-kiss-2.png");
-            this.imageList1.Images.SetKeyName(113, "114-greed-1.png");
-            this.imageList1.Images.SetKeyName(114, "115-pirate-1.png");
-            this.imageList1.Images.SetKeyName(115, "116-music.png");
-            this.imageList1.Images.SetKeyName(116, "117-confused-2.png");
-            this.imageList1.Images.SetKeyName(117, "118-nerd-4.png");
-            this.imageList1.Images.SetKeyName(118, "119-greed.png");
-            this.imageList1.Images.SetKeyName(119, "120-nerd-3.png");
-            this.imageList1.Images.SetKeyName(120, "121-crying-3.png");
-            this.imageList1.Images.SetKeyName(121, "122-cheering.png");
-            this.imageList1.Images.SetKeyName(122, "123-surprised-6.png");
-            this.imageList1.Images.SetKeyName(123, "124-muted-2.png");
-            this.imageList1.Images.SetKeyName(124, "125-sick-2.png");
-            this.imageList1.Images.SetKeyName(125, "126-graduated.png");
-            this.imageList1.Images.SetKeyName(126, "127-angry-2.png");
-            this.imageList1.Images.SetKeyName(127, "128-in-love-6.png");
-            this.imageList1.Images.SetKeyName(128, "129-cool-2.png");
-            this.imageList1.Images.SetKeyName(129, "130-confused-1.png");
-            this.imageList1.Images.SetKeyName(130, "131-sad-8.png");
-            this.imageList1.Images.SetKeyName(131, "132-nerd-2.png");
-            this.imageList1.Images.SetKeyName(132, "133-birthday-boy.png");
-            this.imageList1.Images.SetKeyName(133, "134-surprised-5.png");
-            this.imageList1.Images.SetKeyName(134, "135-selfie.png");
-            this.imageList1.Images.SetKeyName(135, "136-tongue-1.png");
-            this.imageList1.Images.SetKeyName(136, "137-smart-1.png");
-            this.imageList1.Images.SetKeyName(137, "138-smart.png");
-            this.imageList1.Images.SetKeyName(138, "139-surprised-4.png");
-            this.imageList1.Images.SetKeyName(139, "140-3d-glasses.png");
-            this.imageList1.Images.SetKeyName(140, "141-in-love-5.png");
-            this.imageList1.Images.SetKeyName(141, "142-sleeping.png");
-            this.imageList1.Images.SetKeyName(142, "143-pirate.png");
-            this.imageList1.Images.SetKeyName(143, "144-santa-claus.png");
-            this.imageList1.Images.SetKeyName(144, "145-wink.png");
-            this.imageList1.Images.SetKeyName(145, "146-in-love-4.png");
-            this.imageList1.Images.SetKeyName(146, "147-tired.png");
-            this.imageList1.Images.SetKeyName(147, "148-bang.png");
-            this.imageList1.Images.SetKeyName(148, "149-baby.png");
-            this.imageList1.Images.SetKeyName(149, "150-tongue.png");
-            this.imageList1.Images.SetKeyName(150, "151-sick-1.png");
-            this.imageList1.Images.SetKeyName(151, "152-outrage.png");
-            this.imageList1.Images.SetKeyName(152, "153-injury.png");
-            this.imageList1.Images.SetKeyName(153, "154-dead.png");
-            this.imageList1.Images.SetKeyName(154, "155-rich-1.png");
-            this.imageList1.Images.SetKeyName(155, "156-sick.png");
-            this.imageList1.Images.SetKeyName(156, "157-angel.png");
-            this.imageList1.Images.SetKeyName(157, "158-nerd-1.png");
-            this.imageList1.Images.SetKeyName(158, "159-crying-2.png");
-            this.imageList1.Images.SetKeyName(159, "160-crying-1.png");
-            this.imageList1.Images.SetKeyName(160, "161-muted-1.png");
-            this.imageList1.Images.SetKeyName(161, "162-surprised-3.png");
-            this.imageList1.Images.SetKeyName(162, "163-crying.png");
-            this.imageList1.Images.SetKeyName(163, "164-sad-7.png");
-            this.imageList1.Images.SetKeyName(164, "165-cool-1.png");
-            this.imageList1.Images.SetKeyName(165, "166-happy-3.png");
-            this.imageList1.Images.SetKeyName(166, "167-thinking-1.png");
-            this.imageList1.Images.SetKeyName(167, "168-muted.png");
-            this.imageList1.Images.SetKeyName(168, "169-confused.png");
-            this.imageList1.Images.SetKeyName(169, "170-happy-2.png");
-            this.imageList1.Images.SetKeyName(170, "171-thinking.png");
-            this.imageList1.Images.SetKeyName(171, "172-nerd.png");
-            this.imageList1.Images.SetKeyName(172, "173-in-love-3.png");
-            this.imageList1.Images.SetKeyName(173, "174-hypnotized.png");
-            this.imageList1.Images.SetKeyName(174, "175-cool.png");
-            this.imageList1.Images.SetKeyName(175, "176-shocked.png");
-            this.imageList1.Images.SetKeyName(176, "177-easter.png");
-            this.imageList1.Images.SetKeyName(177, "178-surprised-2.png");
-            this.imageList1.Images.SetKeyName(178, "179-surprised-1.png");
-            this.imageList1.Images.SetKeyName(179, "180-surprised.png");
-            this.imageList1.Images.SetKeyName(180, "181-furious.png");
-            this.imageList1.Images.SetKeyName(181, "182-sad-6.png");
-            this.imageList1.Images.SetKeyName(182, "183-sad-5.png");
-            this.imageList1.Images.SetKeyName(183, "184-sad-4.png");
-            this.imageList1.Images.SetKeyName(184, "185-sad-3.png");
-            this.imageList1.Images.SetKeyName(185, "186-angry-1.png");
-            this.imageList1.Images.SetKeyName(186, "187-rich.png");
-            this.imageList1.Images.SetKeyName(187, "188-sad-2.png");
-            this.imageList1.Images.SetKeyName(188, "189-happy-1.png");
-            this.imageList1.Images.SetKeyName(189, "190-sad-1.png");
-            this.imageList1.Images.SetKeyName(190, "191-sad.png");
-            this.imageList1.Images.SetKeyName(191, "192-smile.png");
-            this.imageList1.Images.SetKeyName(192, "193-in-love-2.png");
-            this.imageList1.Images.SetKeyName(193, "194-happy.png");
-            this.imageList1.Images.SetKeyName(194, "195-kiss-1.png");
-            this.imageList1.Images.SetKeyName(195, "196-in-love-1.png");
-            this.imageList1.Images.SetKeyName(196, "197-in-love.png");
-            this.imageList1.Images.SetKeyName(197, "198-kiss.png");
-            this.imageList1.Images.SetKeyName(198, "199-angry.png");
-            this.imageList1.Images.SetKeyName(199, "200-sleepy.png");
             // 
             // MainForm
             // 
@@ -721,7 +503,6 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -766,8 +547,6 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.TextBox firstnameTextBox;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.TextBox photoTextBox;
-        private System.Windows.Forms.ImageList imageList1;
     }
 }
