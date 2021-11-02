@@ -20,13 +20,27 @@
     - [x] REG_MARK_LIB
 - [ ] Session 2
   #### Authorization
-   - [x] Database
-   - [x] 'Users' table 
    - [x] Form created
-   - [x] Add single user
-   - [ ] Counter of wrong login attempts
+   - [x] Counter of wrong login attempts
    - [ ] The lock remains after restarting the app
    - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
+  #### Database
+    - [x] Database
+    - [x] 'Users' table 
+    - [x] Add single user
+    - [ ] Upload data from drivers.zip to database
+  #### Driver Create form
+    - [ ] Form created
+    - [ ] Driver picture upload
+    - [ ] Separate address fields on form
+    - [ ] Suggestions on City field
+    - [ ] Is E-Mail valid check
+  #### Driver profile form
+    - [ ] Form created<br>
+    It is necessary to implement an interface in which the user can change information about the driver, as well as additional    information that will be implemented in the next sessions.
+  #### Fines
+    - [ ] Form created<br>
+
 - [ ] Session 3
 - [ ] Session 4
 - [ ] Session 5
