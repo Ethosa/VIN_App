@@ -47,7 +47,7 @@
                 warnLabel.Text = "Проверьте заполненность полей";
             else
             {
-                var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
+                user user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
                 //Если не нашелся
                 if (user == null)
                 {
@@ -92,12 +92,10 @@
             return sec;
         }
 
-        private void LoadTimeout()
+        private async Task LoadTimeout()
         {
             int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
-            if (timeout > 0)
-                wrongAuthCount = 3;
-            AttemptsTimer(timeout).Wait();
+            await AttemptsTimer(timeout);
         }
 
         private void SaveTimeout(int sec)
@@ -111,9 +109,9 @@
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private void Auth_Load(object sender, EventArgs e)
+        private async void Auth_Load(object sender, EventArgs e)
         {
-            LoadTimeout();
+            await LoadTimeout();
         }
         private void showPassBtn_MouseHover(object sender, EventArgs e)
         {
