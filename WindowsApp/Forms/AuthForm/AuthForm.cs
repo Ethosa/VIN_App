@@ -6,6 +6,8 @@
     using System.Windows.Forms;
     using WindowsApp.Database;
     using WindowsApp.Modules;
+    using System.Collections.Specialized;
+    using System.Configuration;
 
 
     /// <summary>
@@ -23,6 +25,7 @@
         /// </summary>
         internal OpenForms of = new OpenForms();
         internal gibddEntities db = new gibddEntities();
+        internal Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Auth"/> class.
@@ -89,16 +92,18 @@
             return sec;
         }
 
-        private async Task LoadTimeout()
+        private void LoadTimeout()
         {
-            int timeout = Properties.Settings.Default.sec;
-            await AttemptsTimer(timeout);
+            int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
+            if (timeout > 0)
+                wrongAuthCount = 3;
+            AttemptsTimer(timeout).Wait();
         }
 
         private void SaveTimeout(int sec)
         {
-            Properties.Settings.Default["sec"] = sec;
-            Properties.Settings.Default.Save();
+            config.AppSettings.Settings["timeout"].Value = sec.ToString();
+            config.Save();
         }
 
         /// <summary>
@@ -108,7 +113,7 @@
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
         private void Auth_Load(object sender, EventArgs e)
         {
-            LoadTimeout().Wait();
+            LoadTimeout();
         }
         private void showPassBtn_MouseHover(object sender, EventArgs e)
         {
