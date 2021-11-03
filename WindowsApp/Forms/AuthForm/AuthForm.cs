@@ -6,7 +6,6 @@
     using System.Windows.Forms;
     using WindowsApp.Database;
     using WindowsApp.Modules;
-    using System.Collections.Specialized;
     using System.Configuration;
 
 
@@ -113,6 +112,7 @@
         {
             await LoadTimeout();
         }
+
         private void showPassBtn_MouseHover(object sender, EventArgs e)
         {
             passText.PasswordChar='\0';
