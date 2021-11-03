@@ -5,7 +5,7 @@
 
 </div>
 
-- [x] Session 1
+## Session 1
   #### VIN_LIB
   - [x] Boolean CheckVIN(String vin)
   - [x] String GetVINCountry(String vin)
@@ -16,18 +16,39 @@
   - [x] int GetCombinationsCountInRange(String mark1, String mark2)
   - [x] String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
    #### Unit tests
-    - [x] VIN_LIB
-    - [x] REG_MARK_LIB
-- [ ] Session 2
+  - [x] VIN_LIB
+  - [x] REG_MARK_LIB
+   #### Database
+  - [x] Import Region Codes.xlsx to database
+## Session 2
   #### Authorization
-   - [x] Database
-   - [x] 'Users' table 
-   - [x] Form created
-   - [x] Add single user
-   - [ ] Counter of wrong login attempts
-   - [ ] The lock remains after restarting the app
-   - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
-- [ ] Session 3
-- [ ] Session 4
-- [ ] Session 5
-- [ ] Session 6
+  - [x] Form created
+  - [x] Counter of wrong login attempts
+  - [ ] The lock remains after restarting the app
+  - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
+  #### Database
+  - [x] Database
+  - [x] 'Users' table 
+  - [x] Add single user
+  - [x] Upload data from drivers.zip to database
+
+  #### Driver Create form
+  - [ ] Form created
+  - [ ] Driver picture upload
+  - [ ] Separate address fields on form
+  - [ ] Suggestions on City field
+  - [ ] Is E-Mail valid check
+  #### Driver profile form
+  - [ ] Form created<br>
+It is necessary to implement an interface in which the user can change information about the driver, as well as additional    information that will be implemented in the next sessions.
+  #### Fines
+  - [ ] Form created<br>
+
+## Session 3
+  - [ ] Soon
+## Session 4
+  - [ ] Soon
+## Session 5
+  - [ ] Soon
+## Session 6
+  - [ ] Soon

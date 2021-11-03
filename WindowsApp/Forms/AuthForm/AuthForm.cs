@@ -42,22 +42,24 @@
             warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
                 warnLabel.Text = "Проверьте заполненность полей";
-            var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
-            //Если не нашелся
-
-            if (user == null)
+            else
             {
-                if (wrongAuthCount == 3)
-                    await AttemptsTimer(60);
+                var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
+                //Если не нашелся
+                if (user == null)
+                {
+                    if (wrongAuthCount == 3)
+                        await AttemptsTimer(60);
+                    else
+                        wrongAuthCount++;
+                    warnLabel.Text = "Пользователя не существует";
+                }
                 else
-                    wrongAuthCount++;
-                warnLabel.Text = "Пользователя не существует";
-            } else
-            {
-                of.MainForm();
-                this.Hide();
+                {
+                    of.MainForm();
+                    this.Hide();
+                }
             }
-           
         }
 
         /// <summary>
@@ -108,10 +110,14 @@
         {
             LoadTimeout().Wait();
         }
-
-        private void Auth_Closing(object sender, EventArgs e)
+        private void showPassBtn_MouseHover(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Save();
+            passText.PasswordChar='\0';
+        }
+
+        private void showPassBtn_MouseLeave(object sender, EventArgs e)
+        {
+            passText.PasswordChar = '*';
         }
     }
 }

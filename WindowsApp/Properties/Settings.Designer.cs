@@ -31,5 +31,16 @@ namespace WindowsApp.Properties {
                 return ((int)(this["sec"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=db-aws.rndn.ga;Initial Catalog=gibdd;Persist Security Info=True;User " +
+            "ID=app;Password=CallMeBigDeuce123")]
+        public string gibddDataSetConnectionString {
+            get {
+                return ((string)(this["gibddDataSetConnectionString"]));
+            }
+        }
     }
 }

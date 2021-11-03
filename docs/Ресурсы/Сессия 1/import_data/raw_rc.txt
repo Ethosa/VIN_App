@@ -1,0 +1,87 @@
+Region name (EN)	Region name (RU)	Subject code	Code	OKATO code	ISO 3166-2
+Republic of Adygea	Республика Адыгея	1	1	79	RU-AD
+Republic of Bashkortostan	Республика Башкортостан	2	02, 102	80	RU-BA
+The Republic of Buryatia	Республика Бурятия	3	3	81	RU-BU
+Altai Republic	Республика Алтай	4	4	84	RU-AL
+The Republic of Dagestan	Республика Дагестан	5	5	82	RU-DA
+The Republic of Ingushetia	Республика Ингушетия	6	6	26	RU-IN
+Kabardino-Balkaria Republic	Кабардино-Балкарская республика	7	7	83	RU-KB
+Republic of Kalmykia	Республика Калмыкия	8	8	85	RU-KL
+Karachay-Cherkess Republic	Карачаево-Черкесская республика	9	9	91	RU-KC
+Republic of Karelia	Республика Карелия	10	10	86	RU-KR
+Komi Republic	Республика Коми	11	11, 111	87	RU-KO
+Mari El Republic	Республика Марий Эл	12	12	88	RU-ME
+The Republic of Mordovia	Республика Мордовия	13	13, 113	89	RU-MO
+The Republic of Sakha (Yakutia)	Республика Саха (Якутия)	14	14	98	RU-SA
+Republic of North Ossetia - Alania	Республика Северная Осетия — Алания	15	15	90	RU-SE
+Republic of Tatarstan	Республика Татарстан	16	16, 116	92	RU-TA
+Tyva Republic	Республика Тыва	17	17	93	RU-TY
+Udmurtia	Удмуртская республика	18	18	94	RU-UD
+The Republic of Khakassia	Республика Хакасия	19	19	95	RU-KK
+Chechen Republic	Чеченская республика	20	95	96	RU-CE
+Chuvash Republic	Чувашская республика	21	21, 121	97	RU-CU
+Altai region	Алтайский край	22	22	1	RU-ALT
+Krasnodar region	Краснодарский край	23	23, 93, 123	3	RU-KDA
+Krasnoyarsk region	Красноярский край	24	24, 124, 84, 88	4	RU-KYA
+Primorsky Krai	Приморский край	25	25, 125	5	RU-PRI
+Stavropol region	Ставропольский край	26	26, 126	7	RU-STA
+Khabarovsk region	Хабаровский край	27	27	8	RU-KHA
+Amur region	Амурская область	28	28	10	RU-AMU
+Arkhangelsk region	Архангельская область	29	29	11	RU-ARK
+Astrakhan region	Астраханская область	30	30	12	RU-AST
+Belgorod region	Белгородская область	31	31	14	RU-BEL
+Bryansk region	Брянская область	32	32	15	RU-BRY
+Vladimir region	Владимирская область	33	33	17	RU-VLA
+Volgograd region	Волгоградская область	34	34, 134	18	RU-VGG
+Vologodskaya Oblast	Вологодская область	35	35	19	RU-VLG
+Voronezh region	Воронежская область	36	36, 136	20	RU-VOR
+Ivanovo region	Ивановская область	37	37	24	RU-IVA
+Irkutsk region	Иркутская область	38	38, 138, 85	25	RU-IRK
+Kaliningrad region	Калининградская область	39	39, 91	27	RU-KGD
+Kaluga region	Калужская область	40	40	29	RU-KLU
+Kamchatka Krai	Камчатский край	41	41	30	RU-KAM
+Kemerovo region	Кемеровская область	42	42, 142	32	RU-KEM
+Kirov region	Кировская область	43	43	33	RU-KIR
+Kostroma region	Костромская область	44	44	34	RU-KOS
+Kurgan region	Курганская область	45	45	37	RU-KGN
+Kursk region	Курская область	46	46	38	RU-KRS
+Leningrad region	Ленинградская область	47	47	41	RU-LEN
+Lipetsk region	Липецкая область	48	48	42	RU-LIP
+Magadan Region	Магаданская область	49	49	44	RU-MAG
+Moscow region	Московская область	50	50, 90, 150, 190, 750	46	RU-MOS
+Murmansk region	Мурманская область	51	51	47	RU-MUR
+Nizhny Novgorod Region	Нижегородская область	52	52, 152	22	RU-NIZ
+Novgorod region	Новгородская область	53	53	49	RU-NGR
+Novosibirsk region	Новосибирская область	54	54, 154	50	RU-NVS
+Omsk region	Омская область	55	55	52	RU-OMS
+Orenburg region	Оренбургская область	56	56	53	RU-ORE
+Oryol Region	Орловская область	57	57	54	RU-ORL
+Penza region	Пензенская область	58	58	56	RU-PNZ
+Perm region	Пермский край	59	59, 81, 159	57	RU-PER
+Pskov region	Псковская область	60	60	58	RU-PSK
+Rostov region	Ростовская область	61	61, 161	60	RU-ROS
+Ryazan Oblast	Рязанская область	62	62	61	RU-RYA
+Samara Region	Самарская область	63	63, 163	36	RU-SAM
+Saratov region	Саратовская область	64	64, 164	63	RU-SAR
+Sakhalin region	Сахалинская область	65	65	64	RU-SAK
+Sverdlovsk region	Свердловская область	66	66, 96, 196	65	RU-SVE
+Smolensk region	Смоленская область	67	67	66	RU-SMO
+Tambov Region	Тамбовская область	68	68	68	RU-TAM
+Tver region	Тверская область	69	69	28	RU-TVE
+Tomsk region	Томская область	70	70	69	RU-TOM
+Tula region	Тульская область	71	71	70	RU-TUL
+Tyumen region	Тюменская область	72	72	71	RU-TYU
+Ulyanovsk region	Ульяновская область	73	73, 173	73	RU-ULY
+Chelyabinsk region	Челябинская область	74	74, 174	75	RU-CHE
+Transbaikal region	Забайкальский край	75	75, 80	76	RU-ZAB
+Yaroslavskaya oblast	Ярославская область	76	76	78	RU-YAR
+Moscow	Москва	77	77, 97, 99, 177, 197, 199, 777	45	RU-MOW
+St. Petersburg	Санкт-Петербург	78	78, 98, 178	40	RU-SPE
+Jewish Autonomous Region	Еврейская автономная область	79	79	99	RU-YEV
+Nenets Autonomous Okrug	Ненецкий автономный округ	83	83	11.авг	RU-NEN
+Khanty-Mansi Autonomous Area - Ugra	Ханты-Мансийский автономный округ - Югра	86	86, 186	71-8	RU-KHM
+Chukotka Autonomous Region	Чукотский автономный округ	87	87	77	RU-CHU
+Yamalo-Nenets Autonomous District	Ямало-Ненецкий автономный округ	89	89	71-9	RU-YAN
+Republic of Crimea	Республика Крым	91	82 	35	RU-CR
+Sevastopol	Севастополь	92	92	67	RU-SEV
+Baikonur (Kazakhstan)	Байконур (Казахстан)	NULL	94	NULL	NULL
