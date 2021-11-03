@@ -89,7 +89,7 @@
 
         private async Task LoadTimeout()
         {
-            int timeout = (int) Properties.Settings.Default["sec"];
+            int timeout = Properties.Settings.Default.sec;
             await AttemptsTimer(timeout);
         }
 
@@ -107,6 +107,11 @@
         private void Auth_Load(object sender, EventArgs e)
         {
             LoadTimeout().Wait();
+        }
+
+        private void Auth_Closing(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.Save();
         }
     }
 }
