@@ -63,6 +63,16 @@ namespace WindowsApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap emptyPhoto {
+            get {
+                object obj = ResourceManager.GetObject("emptyPhoto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gibdd_logo {
             get {
                 object obj = ResourceManager.GetObject("gibdd_logo", resourceCulture);

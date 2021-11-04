@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WindowsApp {
+namespace WindowsApp.Database {
     
     
     /// <summary>
@@ -1941,7 +1941,7 @@ namespace WindowsApp {
         }
     }
 }
-namespace WindowsApp.gibddDataSetTableAdapters {
+namespace WindowsApp.Database.gibddDataSetTableAdapters {
     
     
     /// <summary>

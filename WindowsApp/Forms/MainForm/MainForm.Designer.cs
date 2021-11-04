@@ -1,4 +1,4 @@
-﻿
+﻿using WindowsApp.Database;
 namespace WindowsApp.Forms
 {
     partial class MainForm
@@ -32,28 +32,23 @@ namespace WindowsApp.Forms
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label firstnameLabel;
             System.Windows.Forms.Label photoLabel;
+            System.Windows.Forms.Label middlenameLabel;
+            System.Windows.Forms.Label lastnameLabel;
+            System.Windows.Forms.Label passport_serialLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.driversPage = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.driversBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gibddDataSet = new WindowsApp.gibddDataSet();
+            this.gibddDataSet = new WindowsApp.Database.gibddDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.driversBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.driversDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,17 +63,31 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passport_serialTextBox = new System.Windows.Forms.TextBox();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
+            this.middlenameTextBox = new System.Windows.Forms.TextBox();
             this.photoTextBox = new System.Windows.Forms.TextBox();
             this.firstnameTextBox = new System.Windows.Forms.TextBox();
-            this.driversTableAdapter = new WindowsApp.gibddDataSetTableAdapters.driversTableAdapter();
-            this.tableAdapterManager = new WindowsApp.gibddDataSetTableAdapters.TableAdapterManager();
+            this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
+            this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.driversBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.driverPhoto = new System.Windows.Forms.PictureBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
+            middlenameLabel = new System.Windows.Forms.Label();
+            lastnameLabel = new System.Windows.Forms.Label();
+            passport_serialLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.driversPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -90,6 +99,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -104,11 +115,38 @@ namespace WindowsApp.Forms
             // photoLabel
             // 
             photoLabel.AutoSize = true;
-            photoLabel.Location = new System.Drawing.Point(17, 156);
+            photoLabel.Location = new System.Drawing.Point(17, 307);
             photoLabel.Name = "photoLabel";
             photoLabel.Size = new System.Drawing.Size(37, 13);
             photoLabel.TabIndex = 3;
             photoLabel.Text = "photo:";
+            // 
+            // middlenameLabel
+            // 
+            middlenameLabel.AutoSize = true;
+            middlenameLabel.Location = new System.Drawing.Point(-12, 41);
+            middlenameLabel.Name = "middlenameLabel";
+            middlenameLabel.Size = new System.Drawing.Size(66, 13);
+            middlenameLabel.TabIndex = 4;
+            middlenameLabel.Text = "middlename:";
+            // 
+            // lastnameLabel
+            // 
+            lastnameLabel.AutoSize = true;
+            lastnameLabel.Location = new System.Drawing.Point(2, 72);
+            lastnameLabel.Name = "lastnameLabel";
+            lastnameLabel.Size = new System.Drawing.Size(52, 13);
+            lastnameLabel.TabIndex = 6;
+            lastnameLabel.Text = "lastname:";
+            // 
+            // passport_serialLabel
+            // 
+            passport_serialLabel.AutoSize = true;
+            passport_serialLabel.Location = new System.Drawing.Point(-23, 104);
+            passport_serialLabel.Name = "passport_serialLabel";
+            passport_serialLabel.Size = new System.Drawing.Size(77, 13);
+            passport_serialLabel.TabIndex = 8;
+            passport_serialLabel.Text = "passport serial:";
             // 
             // splitContainer1
             // 
@@ -132,17 +170,6 @@ namespace WindowsApp.Forms
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 0;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::WindowsApp.Properties.Resources.gibdd_logo;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 67);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -153,7 +180,6 @@ namespace WindowsApp.Forms
             this.label1.TabIndex = 2;
             this.label1.Text = "Госавтоинспекция\r\nМВД России";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // tabControl1
             // 
@@ -197,6 +223,13 @@ namespace WindowsApp.Forms
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.splitContainer2.Panel2.Controls.Add(this.driverPhoto);
+            this.splitContainer2.Panel2.Controls.Add(passport_serialLabel);
+            this.splitContainer2.Panel2.Controls.Add(this.passport_serialTextBox);
+            this.splitContainer2.Panel2.Controls.Add(lastnameLabel);
+            this.splitContainer2.Panel2.Controls.Add(this.lastnameTextBox);
+            this.splitContainer2.Panel2.Controls.Add(middlenameLabel);
+            this.splitContainer2.Panel2.Controls.Add(this.middlenameTextBox);
             this.splitContainer2.Panel2.Controls.Add(photoLabel);
             this.splitContainer2.Panel2.Controls.Add(this.photoTextBox);
             this.splitContainer2.Panel2.Controls.Add(firstnameLabel);
@@ -236,15 +269,6 @@ namespace WindowsApp.Forms
             this.driversBindingNavigator.TabIndex = 1;
             this.driversBindingNavigator.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
             // driversBindingSource
             // 
             this.driversBindingSource.DataMember = "drivers";
@@ -261,33 +285,6 @@ namespace WindowsApp.Forms
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator
             // 
@@ -309,37 +306,10 @@ namespace WindowsApp.Forms
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
-            // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // driversBindingNavigatorSaveItem
-            // 
-            this.driversBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.driversBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("driversBindingNavigatorSaveItem.Image")));
-            this.driversBindingNavigatorSaveItem.Name = "driversBindingNavigatorSaveItem";
-            this.driversBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.driversBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.driversBindingNavigatorSaveItem.Click += new System.EventHandler(this.driversBindingNavigatorSaveItem_Click);
             // 
             // driversDataGridView
             // 
@@ -367,6 +337,7 @@ namespace WindowsApp.Forms
             this.driversDataGridView.RowHeadersVisible = false;
             this.driversDataGridView.Size = new System.Drawing.Size(614, 329);
             this.driversDataGridView.TabIndex = 0;
+            this.driversDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.driversDataGridView_CellContentClick);
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -446,10 +417,34 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn14.HeaderText = "Фотография";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // passport_serialTextBox
+            // 
+            this.passport_serialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_serial", true));
+            this.passport_serialTextBox.Location = new System.Drawing.Point(60, 101);
+            this.passport_serialTextBox.Name = "passport_serialTextBox";
+            this.passport_serialTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passport_serialTextBox.TabIndex = 9;
+            // 
+            // lastnameTextBox
+            // 
+            this.lastnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "lastname", true));
+            this.lastnameTextBox.Location = new System.Drawing.Point(60, 69);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.lastnameTextBox.TabIndex = 7;
+            // 
+            // middlenameTextBox
+            // 
+            this.middlenameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "middlename", true));
+            this.middlenameTextBox.Location = new System.Drawing.Point(60, 38);
+            this.middlenameTextBox.Name = "middlenameTextBox";
+            this.middlenameTextBox.Size = new System.Drawing.Size(100, 20);
+            this.middlenameTextBox.TabIndex = 5;
+            // 
             // photoTextBox
             // 
             this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "photo", true));
-            this.photoTextBox.Location = new System.Drawing.Point(60, 153);
+            this.photoTextBox.Location = new System.Drawing.Point(60, 304);
             this.photoTextBox.Name = "photoTextBox";
             this.photoTextBox.Size = new System.Drawing.Size(100, 20);
             this.photoTextBox.TabIndex = 4;
@@ -471,8 +466,91 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.driversTableAdapter = this.driversTableAdapter;
             this.tableAdapterManager.regionCodesTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = WindowsApp.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::WindowsApp.Properties.Resources.gibdd_logo;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Добавить";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Удалить";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Переместить в начало";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Переместить назад";
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Переместить в конец";
+            // 
+            // driversBindingNavigatorSaveItem
+            // 
+            this.driversBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driversBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("driversBindingNavigatorSaveItem.Image")));
+            this.driversBindingNavigatorSaveItem.Name = "driversBindingNavigatorSaveItem";
+            this.driversBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.driversBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.driversBindingNavigatorSaveItem.Click += new System.EventHandler(this.driversBindingNavigatorSaveItem_Click);
+            // 
+            // driverPhoto
+            // 
+            this.driverPhoto.Image = global::WindowsApp.Properties.Resources.emptyPhoto;
+            this.driverPhoto.Location = new System.Drawing.Point(60, 248);
+            this.driverPhoto.Name = "driverPhoto";
+            this.driverPhoto.Size = new System.Drawing.Size(100, 50);
+            this.driverPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.driverPhoto.TabIndex = 10;
+            this.driverPhoto.TabStop = false;
             // 
             // MainForm
             // 
@@ -488,7 +566,6 @@ namespace WindowsApp.Forms
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.driversPage.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
@@ -503,6 +580,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -517,8 +596,8 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.SplitContainer splitContainer2;
         private gibddDataSet gibddDataSet;
         private System.Windows.Forms.BindingSource driversBindingSource;
-        private gibddDataSetTableAdapters.driversTableAdapter driversTableAdapter;
-        private gibddDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private Database.gibddDataSetTableAdapters.driversTableAdapter driversTableAdapter;
+        private Database.gibddDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.BindingNavigator driversBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
@@ -548,5 +627,9 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.TextBox firstnameTextBox;
         private System.Windows.Forms.TextBox photoTextBox;
+        private System.Windows.Forms.TextBox passport_serialTextBox;
+        private System.Windows.Forms.TextBox lastnameTextBox;
+        private System.Windows.Forms.TextBox middlenameTextBox;
+        private System.Windows.Forms.PictureBox driverPhoto;
     }
 }
