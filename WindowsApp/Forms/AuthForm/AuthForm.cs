@@ -6,6 +6,7 @@
     using System.Windows.Forms;
     using WindowsApp.Database;
     using WindowsApp.Modules;
+    using System.Configuration;
 
 
     /// <summary>
@@ -23,6 +24,7 @@
         /// </summary>
         internal OpenForms of = new OpenForms();
         internal gibddEntities db = new gibddEntities();
+        internal Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
         /// <summary>
         /// Initializes a new instance of the <see cref="Auth"/> class.
@@ -44,7 +46,7 @@
                 warnLabel.Text = "Проверьте заполненность полей";
             else
             {
-                var user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
+                user user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
                 //Если не нашелся
                 if (user == null)
                 {
@@ -91,14 +93,14 @@
 
         private async Task LoadTimeout()
         {
-            int timeout = (int) Properties.Settings.Default["sec"];
+            int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
             await AttemptsTimer(timeout);
         }
 
         private void SaveTimeout(int sec)
         {
-            Properties.Settings.Default["sec"] = sec;
-            Properties.Settings.Default.Save();
+            config.AppSettings.Settings["timeout"].Value = sec.ToString();
+            config.Save();
         }
 
         /// <summary>
@@ -106,9 +108,9 @@
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private void Auth_Load(object sender, EventArgs e)
+        private async void Auth_Load(object sender, EventArgs e)
         {
-            LoadTimeout().Wait();
+            await LoadTimeout();
         }
 
         private void showPassBtn_MouseHover(object sender, EventArgs e)

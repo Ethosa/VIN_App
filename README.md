@@ -24,7 +24,7 @@
   #### Authorization
   - [x] Form created
   - [x] Counter of wrong login attempts
-  - [ ] The lock remains after restarting the app
+  - [x] The lock remains after restarting the app
   - [ ] If the application is not used for more than one minute, then it is necessary to close all open application windows. 
   #### Database
   - [x] Database
