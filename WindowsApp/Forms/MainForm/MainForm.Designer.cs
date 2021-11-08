@@ -43,8 +43,9 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label jobnameLabel;
             System.Windows.Forms.Label phoneLabel;
             System.Windows.Forms.Label emailLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             System.Windows.Forms.Label passport_serialLabel1;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.Label idLabel;
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -53,8 +54,6 @@ namespace WindowsApp.Forms
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.driversBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gibddDataSet = new WindowsApp.Database.gibddDataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -67,6 +66,32 @@ namespace WindowsApp.Forms
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.driversBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.driversDataGridView = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.photoTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.jobnameTextBox = new System.Windows.Forms.TextBox();
+            this.companyTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.driverPhoto = new System.Windows.Forms.PictureBox();
+            this.firstnameTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.phoneTextBox = new System.Windows.Forms.TextBox();
+            this.middlenameTextBox = new System.Windows.Forms.TextBox();
+            this.lastnameTextBox = new System.Windows.Forms.TextBox();
+            this.postcodeTextBox = new System.Windows.Forms.TextBox();
+            this.addressTextBox = new System.Windows.Forms.TextBox();
+            this.address_lifeTextBox = new System.Windows.Forms.TextBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.passport_numberTextBox = new System.Windows.Forms.TextBox();
+            this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
+            this.passport_serialTextBox = new System.Windows.Forms.TextBox();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gibddDataSet = new WindowsApp.Database.gibddDataSet();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,32 +105,9 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailTextBox = new System.Windows.Forms.TextBox();
-            this.phoneTextBox = new System.Windows.Forms.TextBox();
-            this.jobnameTextBox = new System.Windows.Forms.TextBox();
-            this.companyTextBox = new System.Windows.Forms.TextBox();
-            this.address_lifeTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.postcodeTextBox = new System.Windows.Forms.TextBox();
-            this.passport_numberTextBox = new System.Windows.Forms.TextBox();
-            this.driverPhoto = new System.Windows.Forms.PictureBox();
-            this.passport_serialTextBox = new System.Windows.Forms.TextBox();
-            this.lastnameTextBox = new System.Windows.Forms.TextBox();
-            this.middlenameTextBox = new System.Windows.Forms.TextBox();
-            this.photoTextBox = new System.Windows.Forms.TextBox();
-            this.firstnameTextBox = new System.Windows.Forms.TextBox();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.idTextBox = new System.Windows.Forms.TextBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -120,6 +122,7 @@ namespace WindowsApp.Forms
             phoneLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             passport_serialLabel1 = new System.Windows.Forms.Label();
+            idLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -133,14 +136,14 @@ namespace WindowsApp.Forms
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingNavigator)).BeginInit();
             this.driversBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -261,6 +264,15 @@ namespace WindowsApp.Forms
             emailLabel.TabIndex = 25;
             emailLabel.Text = "E-Mail";
             // 
+            // passport_serialLabel1
+            // 
+            passport_serialLabel1.AutoSize = true;
+            passport_serialLabel1.Location = new System.Drawing.Point(7, 25);
+            passport_serialLabel1.Name = "passport_serialLabel1";
+            passport_serialLabel1.Size = new System.Drawing.Size(38, 13);
+            passport_serialLabel1.TabIndex = 26;
+            passport_serialLabel1.Text = "Серия";
+            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -346,6 +358,8 @@ namespace WindowsApp.Forms
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.splitContainer2.Panel2.Controls.Add(idLabel);
+            this.splitContainer2.Panel2.Controls.Add(this.idTextBox);
             this.splitContainer2.Panel2.Controls.Add(this.button5);
             this.splitContainer2.Panel2.Controls.Add(this.button4);
             this.splitContainer2.Panel2.Controls.Add(this.button3);
@@ -400,16 +414,6 @@ namespace WindowsApp.Forms
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataMember = "drivers";
-            this.driversBindingSource.DataSource = this.gibddDataSet;
-            // 
-            // gibddDataSet
-            // 
-            this.gibddDataSet.DataSetName = "gibddDataSet";
-            this.gibddDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -523,7 +527,251 @@ namespace WindowsApp.Forms
             this.driversDataGridView.RowHeadersVisible = false;
             this.driversDataGridView.Size = new System.Drawing.Size(900, 740);
             this.driversDataGridView.TabIndex = 0;
-            this.driversDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.driversDataGridView_CellContentClick);
+                    // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(10, 577);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(245, 23);
+            this.button5.TabIndex = 35;
+            this.button5.Text = "Удалить";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(142, 548);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(113, 23);
+            this.button4.TabIndex = 34;
+            this.button4.Text = "Сохранить";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 548);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(113, 23);
+            this.button3.TabIndex = 33;
+            this.button3.Text = "Новая запись";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(142, 519);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(113, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = ">>";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(10, 519);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(113, 23);
+            this.button1.TabIndex = 31;
+            this.button1.Text = "<<";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.photoTextBox);
+            this.groupBox4.Controls.Add(photoLabel);
+            this.groupBox4.Location = new System.Drawing.Point(10, 454);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(251, 59);
+            this.groupBox4.TabIndex = 30;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Фото";
+            // 
+            // photoTextBox
+            // 
+            this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "photo", true));
+            this.photoTextBox.Location = new System.Drawing.Point(66, 19);
+            this.photoTextBox.Name = "photoTextBox";
+            this.photoTextBox.Size = new System.Drawing.Size(179, 20);
+            this.photoTextBox.TabIndex = 4;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.jobnameTextBox);
+            this.groupBox3.Controls.Add(this.companyTextBox);
+            this.groupBox3.Controls.Add(companyLabel);
+            this.groupBox3.Controls.Add(jobnameLabel);
+            this.groupBox3.Location = new System.Drawing.Point(10, 374);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(251, 73);
+            this.groupBox3.TabIndex = 29;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Сведения о работе";
+            // 
+            // jobnameTextBox
+            // 
+            this.jobnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "jobname", true));
+            this.jobnameTextBox.Location = new System.Drawing.Point(66, 45);
+            this.jobnameTextBox.Name = "jobnameTextBox";
+            this.jobnameTextBox.Size = new System.Drawing.Size(179, 20);
+            this.jobnameTextBox.TabIndex = 22;
+            // 
+            // companyTextBox
+            // 
+            this.companyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "company", true));
+            this.companyTextBox.Location = new System.Drawing.Point(66, 19);
+            this.companyTextBox.Name = "companyTextBox";
+            this.companyTextBox.Size = new System.Drawing.Size(179, 20);
+            this.companyTextBox.TabIndex = 20;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.driverPhoto);
+            this.groupBox1.Controls.Add(emailLabel);
+            this.groupBox1.Controls.Add(this.firstnameTextBox);
+            this.groupBox1.Controls.Add(this.emailTextBox);
+            this.groupBox1.Controls.Add(phoneLabel);
+            this.groupBox1.Controls.Add(firstnameLabel);
+            this.groupBox1.Controls.Add(this.phoneTextBox);
+            this.groupBox1.Controls.Add(this.middlenameTextBox);
+            this.groupBox1.Controls.Add(middlenameLabel);
+            this.groupBox1.Controls.Add(this.lastnameTextBox);
+            this.groupBox1.Controls.Add(lastnameLabel);
+            this.groupBox1.Controls.Add(postcodeLabel);
+            this.groupBox1.Controls.Add(this.postcodeTextBox);
+            this.groupBox1.Controls.Add(address_lifeLabel);
+            this.groupBox1.Controls.Add(this.addressTextBox);
+            this.groupBox1.Controls.Add(this.address_lifeTextBox);
+            this.groupBox1.Controls.Add(addressLabel);
+            this.groupBox1.Location = new System.Drawing.Point(10, 8);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(251, 277);
+            this.groupBox1.TabIndex = 4;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Основная информация";
+            // 
+            // driverPhoto
+            // 
+            this.driverPhoto.Image = global::WindowsApp.Properties.Resources.emptyPhoto;
+            this.driverPhoto.Location = new System.Drawing.Point(6, 41);
+            this.driverPhoto.Name = "driverPhoto";
+            this.driverPhoto.Size = new System.Drawing.Size(75, 74);
+            this.driverPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.driverPhoto.TabIndex = 10;
+            this.driverPhoto.TabStop = false;
+            // 
+            // firstnameTextBox
+            // 
+            this.firstnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "firstname", true));
+            this.firstnameTextBox.Location = new System.Drawing.Point(87, 32);
+            this.firstnameTextBox.Name = "firstnameTextBox";
+            this.firstnameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.firstnameTextBox.TabIndex = 1;
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(66, 240);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(179, 20);
+            this.emailTextBox.TabIndex = 26;
+            // 
+            // phoneTextBox
+            // 
+            this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "phone", true));
+            this.phoneTextBox.Location = new System.Drawing.Point(66, 214);
+            this.phoneTextBox.Name = "phoneTextBox";
+            this.phoneTextBox.Size = new System.Drawing.Size(179, 20);
+            this.phoneTextBox.TabIndex = 24;
+            // 
+            // middlenameTextBox
+            // 
+            this.middlenameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "middlename", true));
+            this.middlenameTextBox.Location = new System.Drawing.Point(87, 71);
+            this.middlenameTextBox.Name = "middlenameTextBox";
+            this.middlenameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.middlenameTextBox.TabIndex = 5;
+            // 
+            // lastnameTextBox
+            // 
+            this.lastnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "lastname", true));
+            this.lastnameTextBox.Location = new System.Drawing.Point(87, 110);
+            this.lastnameTextBox.Name = "lastnameTextBox";
+            this.lastnameTextBox.Size = new System.Drawing.Size(158, 20);
+            this.lastnameTextBox.TabIndex = 7;
+            // 
+            // postcodeTextBox
+            // 
+            this.postcodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "postcode", true));
+            this.postcodeTextBox.Location = new System.Drawing.Point(66, 136);
+            this.postcodeTextBox.Name = "postcodeTextBox";
+            this.postcodeTextBox.Size = new System.Drawing.Size(179, 20);
+            this.postcodeTextBox.TabIndex = 14;
+            // 
+            // addressTextBox
+            // 
+            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address", true));
+            this.addressTextBox.Location = new System.Drawing.Point(66, 162);
+            this.addressTextBox.Name = "addressTextBox";
+            this.addressTextBox.Size = new System.Drawing.Size(179, 20);
+            this.addressTextBox.TabIndex = 16;
+            // 
+            // address_lifeTextBox
+            // 
+            this.address_lifeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address_life", true));
+            this.address_lifeTextBox.Location = new System.Drawing.Point(66, 188);
+            this.address_lifeTextBox.Name = "address_lifeTextBox";
+            this.address_lifeTextBox.Size = new System.Drawing.Size(179, 20);
+            this.address_lifeTextBox.TabIndex = 18;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(passport_serialLabel1);
+            this.groupBox2.Controls.Add(this.passport_numberTextBox);
+            this.groupBox2.Controls.Add(this.passport_serialTextBox1);
+            this.groupBox2.Controls.Add(passport_numberLabel);
+            this.groupBox2.Location = new System.Drawing.Point(10, 291);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(251, 77);
+            this.groupBox2.TabIndex = 28;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Паспортные данные";
+            // 
+            // passport_numberTextBox
+            // 
+            this.passport_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_number", true));
+            this.passport_numberTextBox.Location = new System.Drawing.Point(66, 48);
+            this.passport_numberTextBox.Name = "passport_numberTextBox";
+            this.passport_numberTextBox.Size = new System.Drawing.Size(179, 20);
+            this.passport_numberTextBox.TabIndex = 12;
+            // 
+            // passport_serialTextBox1
+            // 
+            this.passport_serialTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_serial", true));
+            this.passport_serialTextBox1.Location = new System.Drawing.Point(66, 22);
+            this.passport_serialTextBox1.Name = "passport_serialTextBox1";
+            this.passport_serialTextBox1.Size = new System.Drawing.Size(179, 20);
+            this.passport_serialTextBox1.TabIndex = 27;
+            // 
+            // passport_serialTextBox
+            // 
+            this.passport_serialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_serial", true));
+            this.passport_serialTextBox.Location = new System.Drawing.Point(90, 123);
+            this.passport_serialTextBox.Name = "passport_serialTextBox";
+            this.passport_serialTextBox.Size = new System.Drawing.Size(100, 20);
+            this.passport_serialTextBox.TabIndex = 9;
+            // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataMember = "drivers";
+            this.driversBindingSource.DataSource = this.gibddDataSet;
+            // 
+            // gibddDataSet
+            // 
+            this.gibddDataSet.DataSetName = "gibddDataSet";
+            this.gibddDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -603,120 +851,6 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn14.HeaderText = "Фотография";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
-            // emailTextBox
-            // 
-            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(66, 240);
-            this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(179, 20);
-            this.emailTextBox.TabIndex = 26;
-            // 
-            // phoneTextBox
-            // 
-            this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(66, 214);
-            this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(179, 20);
-            this.phoneTextBox.TabIndex = 24;
-            // 
-            // jobnameTextBox
-            // 
-            this.jobnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "jobname", true));
-            this.jobnameTextBox.Location = new System.Drawing.Point(66, 45);
-            this.jobnameTextBox.Name = "jobnameTextBox";
-            this.jobnameTextBox.Size = new System.Drawing.Size(179, 20);
-            this.jobnameTextBox.TabIndex = 22;
-            // 
-            // companyTextBox
-            // 
-            this.companyTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "company", true));
-            this.companyTextBox.Location = new System.Drawing.Point(66, 19);
-            this.companyTextBox.Name = "companyTextBox";
-            this.companyTextBox.Size = new System.Drawing.Size(179, 20);
-            this.companyTextBox.TabIndex = 20;
-            // 
-            // address_lifeTextBox
-            // 
-            this.address_lifeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address_life", true));
-            this.address_lifeTextBox.Location = new System.Drawing.Point(66, 188);
-            this.address_lifeTextBox.Name = "address_lifeTextBox";
-            this.address_lifeTextBox.Size = new System.Drawing.Size(179, 20);
-            this.address_lifeTextBox.TabIndex = 18;
-            // 
-            // addressTextBox
-            // 
-            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(66, 162);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(179, 20);
-            this.addressTextBox.TabIndex = 16;
-            // 
-            // postcodeTextBox
-            // 
-            this.postcodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "postcode", true));
-            this.postcodeTextBox.Location = new System.Drawing.Point(66, 136);
-            this.postcodeTextBox.Name = "postcodeTextBox";
-            this.postcodeTextBox.Size = new System.Drawing.Size(179, 20);
-            this.postcodeTextBox.TabIndex = 14;
-            // 
-            // passport_numberTextBox
-            // 
-            this.passport_numberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_number", true));
-            this.passport_numberTextBox.Location = new System.Drawing.Point(66, 48);
-            this.passport_numberTextBox.Name = "passport_numberTextBox";
-            this.passport_numberTextBox.Size = new System.Drawing.Size(179, 20);
-            this.passport_numberTextBox.TabIndex = 12;
-            // 
-            // driverPhoto
-            // 
-            this.driverPhoto.Image = global::WindowsApp.Properties.Resources.emptyPhoto;
-            this.driverPhoto.Location = new System.Drawing.Point(6, 41);
-            this.driverPhoto.Name = "driverPhoto";
-            this.driverPhoto.Size = new System.Drawing.Size(75, 74);
-            this.driverPhoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.driverPhoto.TabIndex = 10;
-            this.driverPhoto.TabStop = false;
-            // 
-            // passport_serialTextBox
-            // 
-            this.passport_serialTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_serial", true));
-            this.passport_serialTextBox.Location = new System.Drawing.Point(90, 123);
-            this.passport_serialTextBox.Name = "passport_serialTextBox";
-            this.passport_serialTextBox.Size = new System.Drawing.Size(100, 20);
-            this.passport_serialTextBox.TabIndex = 9;
-            // 
-            // lastnameTextBox
-            // 
-            this.lastnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "lastname", true));
-            this.lastnameTextBox.Location = new System.Drawing.Point(87, 110);
-            this.lastnameTextBox.Name = "lastnameTextBox";
-            this.lastnameTextBox.Size = new System.Drawing.Size(158, 20);
-            this.lastnameTextBox.TabIndex = 7;
-            // 
-            // middlenameTextBox
-            // 
-            this.middlenameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "middlename", true));
-            this.middlenameTextBox.Location = new System.Drawing.Point(87, 71);
-            this.middlenameTextBox.Name = "middlenameTextBox";
-            this.middlenameTextBox.Size = new System.Drawing.Size(158, 20);
-            this.middlenameTextBox.TabIndex = 5;
-            // 
-            // photoTextBox
-            // 
-            this.photoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "photo", true));
-            this.photoTextBox.Location = new System.Drawing.Point(66, 19);
-            this.photoTextBox.Name = "photoTextBox";
-            this.photoTextBox.Size = new System.Drawing.Size(179, 20);
-            this.photoTextBox.TabIndex = 4;
-            // 
-            // firstnameTextBox
-            // 
-            this.firstnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "firstname", true));
-            this.firstnameTextBox.Location = new System.Drawing.Point(87, 32);
-            this.firstnameTextBox.Name = "firstnameTextBox";
-            this.firstnameTextBox.Size = new System.Drawing.Size(158, 20);
-            this.firstnameTextBox.TabIndex = 1;
-            // 
             // driversTableAdapter
             // 
             this.driversTableAdapter.ClearBeforeFill = true;
@@ -724,140 +858,28 @@ namespace WindowsApp.Forms
             // tableAdapterManager
             // 
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.driverPhotoTableAdapter = null;
             this.tableAdapterManager.driversTableAdapter = this.driversTableAdapter;
             this.tableAdapterManager.regionCodesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
-            // groupBox1
+            // idLabel
             // 
-            this.groupBox1.Controls.Add(this.driverPhoto);
-            this.groupBox1.Controls.Add(emailLabel);
-            this.groupBox1.Controls.Add(this.firstnameTextBox);
-            this.groupBox1.Controls.Add(this.emailTextBox);
-            this.groupBox1.Controls.Add(phoneLabel);
-            this.groupBox1.Controls.Add(firstnameLabel);
-            this.groupBox1.Controls.Add(this.phoneTextBox);
-            this.groupBox1.Controls.Add(this.middlenameTextBox);
-            this.groupBox1.Controls.Add(middlenameLabel);
-            this.groupBox1.Controls.Add(this.lastnameTextBox);
-            this.groupBox1.Controls.Add(lastnameLabel);
-            this.groupBox1.Controls.Add(postcodeLabel);
-            this.groupBox1.Controls.Add(this.postcodeTextBox);
-            this.groupBox1.Controls.Add(address_lifeLabel);
-            this.groupBox1.Controls.Add(this.addressTextBox);
-            this.groupBox1.Controls.Add(this.address_lifeTextBox);
-            this.groupBox1.Controls.Add(addressLabel);
-            this.groupBox1.Location = new System.Drawing.Point(10, 8);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(251, 277);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Основная информация";
+            idLabel.AutoSize = true;
+            idLabel.Location = new System.Drawing.Point(116, 693);
+            idLabel.Name = "idLabel";
+            idLabel.Size = new System.Drawing.Size(18, 13);
+            idLabel.TabIndex = 35;
+            idLabel.Text = "id:";
             // 
-            // passport_serialLabel1
+            // idTextBox
             // 
-            passport_serialLabel1.AutoSize = true;
-            passport_serialLabel1.Location = new System.Drawing.Point(7, 25);
-            passport_serialLabel1.Name = "passport_serialLabel1";
-            passport_serialLabel1.Size = new System.Drawing.Size(38, 13);
-            passport_serialLabel1.TabIndex = 26;
-            passport_serialLabel1.Text = "Серия";
-            // 
-            // passport_serialTextBox1
-            // 
-            this.passport_serialTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "passport_serial", true));
-            this.passport_serialTextBox1.Location = new System.Drawing.Point(66, 22);
-            this.passport_serialTextBox1.Name = "passport_serialTextBox1";
-            this.passport_serialTextBox1.Size = new System.Drawing.Size(179, 20);
-            this.passport_serialTextBox1.TabIndex = 27;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(passport_serialLabel1);
-            this.groupBox2.Controls.Add(this.passport_numberTextBox);
-            this.groupBox2.Controls.Add(this.passport_serialTextBox1);
-            this.groupBox2.Controls.Add(passport_numberLabel);
-            this.groupBox2.Location = new System.Drawing.Point(10, 291);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(251, 77);
-            this.groupBox2.TabIndex = 28;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Паспортные данные";
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.jobnameTextBox);
-            this.groupBox3.Controls.Add(this.companyTextBox);
-            this.groupBox3.Controls.Add(companyLabel);
-            this.groupBox3.Controls.Add(jobnameLabel);
-            this.groupBox3.Location = new System.Drawing.Point(10, 374);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(251, 73);
-            this.groupBox3.TabIndex = 29;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Сведения о работе";
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.photoTextBox);
-            this.groupBox4.Controls.Add(photoLabel);
-            this.groupBox4.Location = new System.Drawing.Point(10, 454);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(251, 59);
-            this.groupBox4.TabIndex = 30;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Фото";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(10, 519);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(142, 519);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(10, 548);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 23);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Новая запись";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(142, 548);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(113, 23);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Сохранить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(10, 577);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(245, 23);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "Удалить";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "id", true));
+            this.idTextBox.Location = new System.Drawing.Point(140, 690);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox.TabIndex = 36;
             // 
             // MainForm
             // 
@@ -885,18 +907,18 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingNavigator)).EndInit();
             this.driversBindingNavigator.ResumeLayout(false);
             this.driversBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -964,5 +986,6 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.TextBox idTextBox;
     }
 }

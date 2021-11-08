@@ -24,6 +24,8 @@ namespace WindowsApp.Database {
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
     public partial class gibddDataSet : global::System.Data.DataSet {
         
+        private driverPhotoDataTable tabledriverPhoto;
+        
         private driversDataTable tabledrivers;
         
         private regionCodesDataTable tableregionCodes;
@@ -58,6 +60,9 @@ namespace WindowsApp.Database {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                if ((ds.Tables["driverPhoto"] != null)) {
+                    base.Tables.Add(new driverPhotoDataTable(ds.Tables["driverPhoto"]));
+                }
                 if ((ds.Tables["drivers"] != null)) {
                     base.Tables.Add(new driversDataTable(ds.Tables["drivers"]));
                 }
@@ -83,6 +88,16 @@ namespace WindowsApp.Database {
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             this.Relations.CollectionChanged += schemaChangedHandler;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public driverPhotoDataTable driverPhoto {
+            get {
+                return this.tabledriverPhoto;
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -182,6 +197,9 @@ namespace WindowsApp.Database {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
+                if ((ds.Tables["driverPhoto"] != null)) {
+                    base.Tables.Add(new driverPhotoDataTable(ds.Tables["driverPhoto"]));
+                }
                 if ((ds.Tables["drivers"] != null)) {
                     base.Tables.Add(new driversDataTable(ds.Tables["drivers"]));
                 }
@@ -224,6 +242,12 @@ namespace WindowsApp.Database {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
+            this.tabledriverPhoto = ((driverPhotoDataTable)(base.Tables["driverPhoto"]));
+            if ((initTable == true)) {
+                if ((this.tabledriverPhoto != null)) {
+                    this.tabledriverPhoto.InitVars();
+                }
+            }
             this.tabledrivers = ((driversDataTable)(base.Tables["drivers"]));
             if ((initTable == true)) {
                 if ((this.tabledrivers != null)) {
@@ -252,12 +276,20 @@ namespace WindowsApp.Database {
             this.Namespace = "http://tempuri.org/gibddDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
+            this.tabledriverPhoto = new driverPhotoDataTable();
+            base.Tables.Add(this.tabledriverPhoto);
             this.tabledrivers = new driversDataTable();
             base.Tables.Add(this.tabledrivers);
             this.tableregionCodes = new regionCodesDataTable();
             base.Tables.Add(this.tableregionCodes);
             this.tableuser = new userDataTable();
             base.Tables.Add(this.tableuser);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializedriverPhoto() {
+            return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -334,6 +366,9 @@ namespace WindowsApp.Database {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void driverPhotoRowChangeEventHandler(object sender, driverPhotoRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void driversRowChangeEventHandler(object sender, driversRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -341,6 +376,297 @@ namespace WindowsApp.Database {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void userRowChangeEventHandler(object sender, userRowChangeEvent e);
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class driverPhotoDataTable : global::System.Data.TypedTableBase<driverPhotoRow> {
+            
+            private global::System.Data.DataColumn columnpid;
+            
+            private global::System.Data.DataColumn columnfilename;
+            
+            private global::System.Data.DataColumn columnimage_data;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoDataTable() {
+                this.TableName = "driverPhoto";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal driverPhotoDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected driverPhotoDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn pidColumn {
+                get {
+                    return this.columnpid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn filenameColumn {
+                get {
+                    return this.columnfilename;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn image_dataColumn {
+                get {
+                    return this.columnimage_data;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRow this[int index] {
+                get {
+                    return ((driverPhotoRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event driverPhotoRowChangeEventHandler driverPhotoRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event driverPhotoRowChangeEventHandler driverPhotoRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event driverPhotoRowChangeEventHandler driverPhotoRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event driverPhotoRowChangeEventHandler driverPhotoRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AdddriverPhotoRow(driverPhotoRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRow AdddriverPhotoRow(string filename, byte[] image_data) {
+                driverPhotoRow rowdriverPhotoRow = ((driverPhotoRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        filename,
+                        image_data};
+                rowdriverPhotoRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdriverPhotoRow);
+                return rowdriverPhotoRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRow FindBypid(int pid) {
+                return ((driverPhotoRow)(this.Rows.Find(new object[] {
+                            pid})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                driverPhotoDataTable cln = ((driverPhotoDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new driverPhotoDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnpid = base.Columns["pid"];
+                this.columnfilename = base.Columns["filename"];
+                this.columnimage_data = base.Columns["image_data"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnpid = new global::System.Data.DataColumn("pid", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpid);
+                this.columnfilename = new global::System.Data.DataColumn("filename", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnfilename);
+                this.columnimage_data = new global::System.Data.DataColumn("image_data", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimage_data);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnpid}, true));
+                this.columnpid.AutoIncrement = true;
+                this.columnpid.AutoIncrementSeed = -1;
+                this.columnpid.AutoIncrementStep = -1;
+                this.columnpid.AllowDBNull = false;
+                this.columnpid.ReadOnly = true;
+                this.columnpid.Unique = true;
+                this.columnfilename.MaxLength = 30;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRow NewdriverPhotoRow() {
+                return ((driverPhotoRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new driverPhotoRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(driverPhotoRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.driverPhotoRowChanged != null)) {
+                    this.driverPhotoRowChanged(this, new driverPhotoRowChangeEvent(((driverPhotoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.driverPhotoRowChanging != null)) {
+                    this.driverPhotoRowChanging(this, new driverPhotoRowChangeEvent(((driverPhotoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.driverPhotoRowDeleted != null)) {
+                    this.driverPhotoRowDeleted(this, new driverPhotoRowChangeEvent(((driverPhotoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.driverPhotoRowDeleting != null)) {
+                    this.driverPhotoRowDeleting(this, new driverPhotoRowChangeEvent(((driverPhotoRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemovedriverPhotoRow(driverPhotoRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                gibddDataSet ds = new gibddDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "driverPhotoDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -559,10 +885,10 @@ namespace WindowsApp.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public driversRow AdddriversRow(int id, string firstname, string lastname, string middlename, int passport_serial, int passport_number, int postcode, string address, string address_life, string company, string jobname, string phone, string email, string photo) {
+            public driversRow AdddriversRow(string firstname, string lastname, string middlename, int passport_serial, int passport_number, int postcode, string address, string address_life, string company, string jobname, string phone, string email, string photo) {
                 driversRow rowdriversRow = ((driversRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
+                        null,
                         firstname,
                         lastname,
                         middlename,
@@ -654,7 +980,11 @@ namespace WindowsApp.Database {
                 base.Columns.Add(this.columnphoto);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
                 this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
                 this.columnfirstname.AllowDBNull = false;
                 this.columnfirstname.MaxLength = 50;
@@ -1424,6 +1754,88 @@ namespace WindowsApp.Database {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
+        public partial class driverPhotoRow : global::System.Data.DataRow {
+            
+            private driverPhotoDataTable tabledriverPhoto;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal driverPhotoRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tabledriverPhoto = ((driverPhotoDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int pid {
+                get {
+                    return ((int)(this[this.tabledriverPhoto.pidColumn]));
+                }
+                set {
+                    this[this.tabledriverPhoto.pidColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string filename {
+                get {
+                    try {
+                        return ((string)(this[this.tabledriverPhoto.filenameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'filename\' в таблице \'driverPhoto\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledriverPhoto.filenameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public byte[] image_data {
+                get {
+                    try {
+                        return ((byte[])(this[this.tabledriverPhoto.image_dataColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'image_data\' в таблице \'driverPhoto\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledriverPhoto.image_dataColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsfilenameNull() {
+                return this.IsNull(this.tabledriverPhoto.filenameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetfilenameNull() {
+                this[this.tabledriverPhoto.filenameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isimage_dataNull() {
+                return this.IsNull(this.tabledriverPhoto.image_dataColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setimage_dataNull() {
+                this[this.tabledriverPhoto.image_dataColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
         public partial class driversRow : global::System.Data.DataRow {
             
             private driversDataTable tabledrivers;
@@ -1842,6 +2254,40 @@ namespace WindowsApp.Database {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class driverPhotoRowChangeEvent : global::System.EventArgs {
+            
+            private driverPhotoRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRowChangeEvent(driverPhotoRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public driverPhotoRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class driversRowChangeEvent : global::System.EventArgs {
             
             private driversRow eventRow;
@@ -1943,6 +2389,345 @@ namespace WindowsApp.Database {
 }
 namespace WindowsApp.Database.gibddDataSetTableAdapters {
     
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class driverPhotoTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public driverPhotoTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "driverPhoto";
+            tableMapping.ColumnMappings.Add("pid", "pid");
+            tableMapping.ColumnMappings.Add("filename", "filename");
+            tableMapping.ColumnMappings.Add("image_data", "image_data");
+            this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[driverPhoto] WHERE (([pid] = @Original_pid) AND ((@IsNull_file" +
+                "name = 1 AND [filename] IS NULL) OR ([filename] = @Original_filename)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_filename", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[driverPhoto] ([filename], [image_data]) VALUES (@filename, @im" +
+                "age_data);\r\nSELECT pid, filename, image_data FROM driverPhoto WHERE (pid = SCOPE" +
+                "_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_data", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[driverPhoto] SET [filename] = @filename, [image_data] = @image_data WHERE (([pid] = @Original_pid) AND ((@IsNull_filename = 1 AND [filename] IS NULL) OR ([filename] = @Original_filename)));
+SELECT pid, filename, image_data FROM driverPhoto WHERE (pid = @pid)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_data", global::System.Data.SqlDbType.VarBinary, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_data", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_pid", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "pid", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_filename", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_filename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@pid", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "pid", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::WindowsApp.Properties.Settings.Default.gibddDataSetConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "SELECT pid, filename, image_data FROM dbo.driverPhoto";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(gibddDataSet.driverPhotoDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual gibddDataSet.driverPhotoDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            gibddDataSet.driverPhotoDataTable dataTable = new gibddDataSet.driverPhotoDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(gibddDataSet.driverPhotoDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(gibddDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "driverPhoto");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_pid, string Original_filename) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_pid));
+            if ((Original_filename == null)) {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_filename));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string filename, byte[] image_data) {
+            if ((filename == null)) {
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(filename));
+            }
+            if ((image_data == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((byte[])(image_data));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string filename, byte[] image_data, int Original_pid, string Original_filename, int pid) {
+            if ((filename == null)) {
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(filename));
+            }
+            if ((image_data == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((byte[])(image_data));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_pid));
+            if ((Original_filename == null)) {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_filename));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(pid));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(string filename, byte[] image_data, int Original_pid, string Original_filename) {
+            return this.Update(filename, image_data, Original_pid, Original_filename, Original_pid);
+        }
+    }
     
     /// <summary>
     ///Represents the connection and commands used to retrieve and save data.
@@ -2104,10 +2889,9 @@ namespace WindowsApp.Database.gibddDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_photo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "photo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[drivers] ([id], [firstname], [lastname], [middlename], [passport_serial], [passport_number], [postcode], [address], [address_life], [company], [jobname], [phone], [email], [photo]) VALUES (@id, @firstname, @lastname, @middlename, @passport_serial, @passport_number, @postcode, @address, @address_life, @company, @jobname, @phone, @email, @photo);
-SELECT id, firstname, lastname, middlename, passport_serial, passport_number, postcode, address, address_life, company, jobname, phone, email, photo FROM drivers WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[drivers] ([firstname], [lastname], [middlename], [passport_serial], [passport_number], [postcode], [address], [address_life], [company], [jobname], [phone], [email], [photo]) VALUES (@firstname, @lastname, @middlename, @passport_serial, @passport_number, @postcode, @address, @address_life, @company, @jobname, @phone, @email, @photo);
+SELECT id, firstname, lastname, middlename, passport_serial, passport_number, postcode, address, address_life, company, jobname, phone, email, photo FROM drivers WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@middlename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "middlename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2123,10 +2907,9 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@photo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "photo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[drivers] SET [id] = @id, [firstname] = @firstname, [lastname] = @lastname, [middlename] = @middlename, [passport_serial] = @passport_serial, [passport_number] = @passport_number, [postcode] = @postcode, [address] = @address, [address_life] = @address_life, [company] = @company, [jobname] = @jobname, [phone] = @phone, [email] = @email, [photo] = @photo WHERE (([id] = @Original_id) AND ([firstname] = @Original_firstname) AND ([lastname] = @Original_lastname) AND ([middlename] = @Original_middlename) AND ([passport_serial] = @Original_passport_serial) AND ([passport_number] = @Original_passport_number) AND ([postcode] = @Original_postcode) AND ([address] = @Original_address) AND ((@IsNull_address_life = 1 AND [address_life] IS NULL) OR ([address_life] = @Original_address_life)) AND ((@IsNull_company = 1 AND [company] IS NULL) OR ([company] = @Original_company)) AND ((@IsNull_jobname = 1 AND [jobname] IS NULL) OR ([jobname] = @Original_jobname)) AND ([phone] = @Original_phone) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([photo] = @Original_photo));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[drivers] SET [firstname] = @firstname, [lastname] = @lastname, [middlename] = @middlename, [passport_serial] = @passport_serial, [passport_number] = @passport_number, [postcode] = @postcode, [address] = @address, [address_life] = @address_life, [company] = @company, [jobname] = @jobname, [phone] = @phone, [email] = @email, [photo] = @photo WHERE (([id] = @Original_id) AND ([firstname] = @Original_firstname) AND ([lastname] = @Original_lastname) AND ([middlename] = @Original_middlename) AND ([passport_serial] = @Original_passport_serial) AND ([passport_number] = @Original_passport_number) AND ([postcode] = @Original_postcode) AND ([address] = @Original_address) AND ((@IsNull_address_life = 1 AND [address_life] IS NULL) OR ([address_life] = @Original_address_life)) AND ((@IsNull_company = 1 AND [company] IS NULL) OR ([company] = @Original_company)) AND ((@IsNull_jobname = 1 AND [jobname] IS NULL) OR ([jobname] = @Original_jobname)) AND ([phone] = @Original_phone) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ([photo] = @Original_photo));
 SELECT id, firstname, lastname, middlename, passport_serial, passport_number, postcode, address, address_life, company, jobname, phone, email, photo FROM drivers WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@firstname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "firstname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lastname", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "lastname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@middlename", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "middlename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2158,6 +2941,7 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_email", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_photo", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "photo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2329,70 +3113,69 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, string firstname, string lastname, string middlename, int passport_serial, int passport_number, int postcode, string address, string address_life, string company, string jobname, string phone, string email, string photo) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
+        public virtual int Insert(string firstname, string lastname, string middlename, int passport_serial, int passport_number, int postcode, string address, string address_life, string company, string jobname, string phone, string email, string photo) {
             if ((firstname == null)) {
                 throw new global::System.ArgumentNullException("firstname");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(firstname));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(firstname));
             }
             if ((lastname == null)) {
                 throw new global::System.ArgumentNullException("lastname");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(lastname));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(lastname));
             }
             if ((middlename == null)) {
                 throw new global::System.ArgumentNullException("middlename");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(middlename));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(middlename));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(passport_serial));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(passport_number));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(postcode));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(passport_serial));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(passport_number));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(postcode));
             if ((address == null)) {
                 throw new global::System.ArgumentNullException("address");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(address));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(address));
             }
             if ((address_life == null)) {
+                this.Adapter.InsertCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(address_life));
+            }
+            if ((company == null)) {
                 this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(address_life));
+                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(company));
             }
-            if ((company == null)) {
+            if ((jobname == null)) {
                 this.Adapter.InsertCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(company));
-            }
-            if ((jobname == null)) {
-                this.Adapter.InsertCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(jobname));
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(jobname));
             }
             if ((phone == null)) {
                 throw new global::System.ArgumentNullException("phone");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(phone));
+                this.Adapter.InsertCommand.Parameters[10].Value = ((string)(phone));
             }
             if ((email == null)) {
-                this.Adapter.InsertCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(email));
+                this.Adapter.InsertCommand.Parameters[11].Value = ((string)(email));
             }
             if ((photo == null)) {
                 throw new global::System.ArgumentNullException("photo");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[13].Value = ((string)(photo));
+                this.Adapter.InsertCommand.Parameters[12].Value = ((string)(photo));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -2415,7 +3198,6 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int id, 
                     string firstname, 
                     string lastname, 
                     string middlename, 
@@ -2442,143 +3224,144 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
                     string Original_jobname, 
                     string Original_phone, 
                     string Original_email, 
-                    string Original_photo) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
+                    string Original_photo, 
+                    int id) {
             if ((firstname == null)) {
                 throw new global::System.ArgumentNullException("firstname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(firstname));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(firstname));
             }
             if ((lastname == null)) {
                 throw new global::System.ArgumentNullException("lastname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(lastname));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(lastname));
             }
             if ((middlename == null)) {
                 throw new global::System.ArgumentNullException("middlename");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(middlename));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(middlename));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(passport_serial));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(passport_number));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(postcode));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(passport_serial));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(passport_number));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(postcode));
             if ((address == null)) {
                 throw new global::System.ArgumentNullException("address");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(address));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(address));
             }
             if ((address_life == null)) {
+                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(address_life));
+            }
+            if ((company == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(address_life));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(company));
             }
-            if ((company == null)) {
+            if ((jobname == null)) {
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(company));
-            }
-            if ((jobname == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(jobname));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(jobname));
             }
             if ((phone == null)) {
                 throw new global::System.ArgumentNullException("phone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(phone));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(phone));
             }
             if ((email == null)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(email));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(email));
             }
             if ((photo == null)) {
                 throw new global::System.ArgumentNullException("photo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(photo));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(photo));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_id));
             if ((Original_firstname == null)) {
                 throw new global::System.ArgumentNullException("Original_firstname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_firstname));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((string)(Original_firstname));
             }
             if ((Original_lastname == null)) {
                 throw new global::System.ArgumentNullException("Original_lastname");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_lastname));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((string)(Original_lastname));
             }
             if ((Original_middlename == null)) {
                 throw new global::System.ArgumentNullException("Original_middlename");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_middlename));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_middlename));
             }
-            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_passport_serial));
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_passport_number));
-            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(Original_postcode));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_passport_serial));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(Original_passport_number));
+            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_postcode));
             if ((Original_address == null)) {
                 throw new global::System.ArgumentNullException("Original_address");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(Original_address));
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(Original_address));
             }
             if ((Original_address_life == null)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(Original_address_life));
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((string)(Original_address_life));
             }
             if ((Original_company == null)) {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((string)(Original_company));
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(Original_company));
             }
             if ((Original_jobname == null)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_jobname));
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(Original_jobname));
             }
             if ((Original_phone == null)) {
                 throw new global::System.ArgumentNullException("Original_phone");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[28].Value = ((string)(Original_phone));
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(Original_phone));
             }
             if ((Original_email == null)) {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[30].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[29].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_email));
+                this.Adapter.UpdateCommand.Parameters[28].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[29].Value = ((string)(Original_email));
             }
             if ((Original_photo == null)) {
                 throw new global::System.ArgumentNullException("Original_photo");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[31].Value = ((string)(Original_photo));
+                this.Adapter.UpdateCommand.Parameters[30].Value = ((string)(Original_photo));
             }
+            this.Adapter.UpdateCommand.Parameters[31].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -2627,7 +3410,7 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
                     string Original_phone, 
                     string Original_email, 
                     string Original_photo) {
-            return this.Update(Original_id, firstname, lastname, middlename, passport_serial, passport_number, postcode, address, address_life, company, jobname, phone, email, photo, Original_id, Original_firstname, Original_lastname, Original_middlename, Original_passport_serial, Original_passport_number, Original_postcode, Original_address, Original_address_life, Original_company, Original_jobname, Original_phone, Original_email, Original_photo);
+            return this.Update(firstname, lastname, middlename, passport_serial, passport_number, postcode, address, address_life, company, jobname, phone, email, photo, Original_id, Original_firstname, Original_lastname, Original_middlename, Original_passport_serial, Original_passport_number, Original_postcode, Original_address, Original_address_life, Original_company, Original_jobname, Original_phone, Original_email, Original_photo, Original_id);
         }
     }
     
@@ -3261,6 +4044,8 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         
         private UpdateOrderOption _updateOrder;
         
+        private driverPhotoTableAdapter _driverPhotoTableAdapter;
+        
         private driversTableAdapter _driversTableAdapter;
         
         private regionCodesTableAdapter _regionCodesTableAdapter;
@@ -3279,6 +4064,20 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             }
             set {
                 this._updateOrder = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public driverPhotoTableAdapter driverPhotoTableAdapter {
+            get {
+                return this._driverPhotoTableAdapter;
+            }
+            set {
+                this._driverPhotoTableAdapter = value;
             }
         }
         
@@ -3343,6 +4142,10 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
                 if ((this._connection != null)) {
                     return this._connection;
                 }
+                if (((this._driverPhotoTableAdapter != null) 
+                            && (this._driverPhotoTableAdapter.Connection != null))) {
+                    return this._driverPhotoTableAdapter.Connection;
+                }
                 if (((this._driversTableAdapter != null) 
                             && (this._driversTableAdapter.Connection != null))) {
                     return this._driversTableAdapter.Connection;
@@ -3368,6 +4171,9 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
+                if ((this._driverPhotoTableAdapter != null)) {
+                    count = (count + 1);
+                }
                 if ((this._driversTableAdapter != null)) {
                     count = (count + 1);
                 }
@@ -3388,6 +4194,15 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(gibddDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._driverPhotoTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.driverPhoto.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._driverPhotoTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._driversTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.drivers.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
@@ -3425,6 +4240,14 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(gibddDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
+            if ((this._driverPhotoTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.driverPhoto.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._driverPhotoTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._driversTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.drivers.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -3483,6 +4306,14 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._driverPhotoTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.driverPhoto.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._driverPhotoTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             return result;
         }
         
@@ -3521,6 +4352,11 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
+            }
+            if (((this._driverPhotoTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._driverPhotoTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
             }
             if (((this._driversTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._driversTableAdapter.Connection) == false))) {
@@ -3569,6 +4405,15 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             try {
                 // ---- Prepare for update -----------
                 //
+                if ((this._driverPhotoTableAdapter != null)) {
+                    revertConnections.Add(this._driverPhotoTableAdapter, this._driverPhotoTableAdapter.Connection);
+                    this._driverPhotoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._driverPhotoTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._driverPhotoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._driverPhotoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._driverPhotoTableAdapter.Adapter);
+                    }
+                }
                 if ((this._driversTableAdapter != null)) {
                     revertConnections.Add(this._driversTableAdapter, this._driversTableAdapter.Connection);
                     this._driversTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -3653,6 +4498,10 @@ SELECT id, firstname, lastname, middlename, passport_serial, passport_number, po
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
+                }
+                if ((this._driverPhotoTableAdapter != null)) {
+                    this._driverPhotoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._driverPhotoTableAdapter]));
+                    this._driverPhotoTableAdapter.Transaction = null;
                 }
                 if ((this._driversTableAdapter != null)) {
                     this._driversTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._driversTableAdapter]));

@@ -7,8 +7,10 @@ using WindowsApp.Forms;
 
 namespace WindowsApp.Modules
 {
+
     class OpenForms
     {
+
         public void MainForm() 
         {
             MainForm mf = new MainForm();

@@ -3,11 +3,13 @@ using System.Drawing;
 using System.IO;
 using System.Net;
 using System.Windows.Forms;
+using WindowsApp.Database;
 
 namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
+
 
         public MainForm()
         {
@@ -18,6 +20,7 @@ namespace WindowsApp.Forms
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
             this.driversTableAdapter.Fill(this.gibddDataSet.drivers);
+            
         }
 
         private void driversBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -28,10 +31,8 @@ namespace WindowsApp.Forms
 
         }
 
-        private void driversDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
-        }
+        
+ //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
 
         private void button2_Click(object sender, EventArgs e)
         {

@@ -32,13 +32,13 @@ namespace WindowsApp
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.showPassBtn = new System.Windows.Forms.Button();
             this.warnLabel = new System.Windows.Forms.Label();
             this.passLabel = new System.Windows.Forms.Label();
             this.loginLabel = new System.Windows.Forms.Label();
             this.passText = new System.Windows.Forms.TextBox();
             this.loginText = new System.Windows.Forms.TextBox();
             this.authButton = new System.Windows.Forms.Button();
-            this.showPassBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,6 +94,19 @@ namespace WindowsApp
             this.label1.Text = "Госавтоинспекция\r\nМВД России";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // showPassBtn
+            // 
+            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.showPassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.showPassBtn.Location = new System.Drawing.Point(390, 53);
+            this.showPassBtn.Name = "showPassBtn";
+            this.showPassBtn.Size = new System.Drawing.Size(94, 27);
+            this.showPassBtn.TabIndex = 11;
+            this.showPassBtn.Text = "Показать";
+            this.showPassBtn.UseVisualStyleBackColor = true;
+            this.showPassBtn.MouseLeave += new System.EventHandler(this.showPassBtn_MouseLeave);
+            this.showPassBtn.MouseHover += new System.EventHandler(this.showPassBtn_MouseHover);
+            // 
             // warnLabel
             // 
             this.warnLabel.AutoSize = true;
@@ -132,6 +145,7 @@ namespace WindowsApp
             this.passText.PasswordChar = '*';
             this.passText.Size = new System.Drawing.Size(295, 26);
             this.passText.TabIndex = 7;
+            this.passText.Text = "inspector";
             // 
             // loginText
             // 
@@ -141,6 +155,7 @@ namespace WindowsApp
             this.loginText.Name = "loginText";
             this.loginText.Size = new System.Drawing.Size(395, 26);
             this.loginText.TabIndex = 6;
+            this.loginText.Text = "inspector";
             // 
             // authButton
             // 
@@ -152,19 +167,6 @@ namespace WindowsApp
             this.authButton.Text = "Войти";
             this.authButton.UseVisualStyleBackColor = true;
             this.authButton.Click += new System.EventHandler(this.authButton_Click);
-            // 
-            // showPassBtn
-            // 
-            this.showPassBtn.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.showPassBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.showPassBtn.Location = new System.Drawing.Point(390, 53);
-            this.showPassBtn.Name = "showPassBtn";
-            this.showPassBtn.Size = new System.Drawing.Size(94, 27);
-            this.showPassBtn.TabIndex = 11;
-            this.showPassBtn.Text = "Показать";
-            this.showPassBtn.UseVisualStyleBackColor = true;
-            this.showPassBtn.MouseLeave += new System.EventHandler(this.showPassBtn_MouseLeave);
-            this.showPassBtn.MouseHover += new System.EventHandler(this.showPassBtn_MouseHover);
             // 
             // Auth
             // 
