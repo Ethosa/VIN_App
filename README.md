@@ -33,11 +33,11 @@
   - [x] Upload data from drivers.zip to database
 
   #### Driver Create form
-  - [ ] Form created
+  - [x] Form created
   - [ ] Driver picture upload
   - [ ] Separate address fields on form
-  - [ ] Suggestions on City field
-  - [ ] Is E-Mail valid check
+  - [x] Suggestions on City field
+  - [x] Is E-Mail valid check
   #### Driver profile form
   - [ ] Form created<br>
 It is necessary to implement an interface in which the user can change information about the driver, as well as additional    information that will be implemented in the next sessions.
