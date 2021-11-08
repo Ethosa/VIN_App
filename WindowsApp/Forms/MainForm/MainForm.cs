@@ -12,6 +12,9 @@ namespace WindowsApp.Forms
     {
         private Regex emailRule = new Regex(
             @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private Regex phoneRule = new Regex(
+            @"(?<phone>^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$)",
+            RegexOptions.IgnoreCase | RegexOptions.Compiled)
 
 
         public MainForm()
