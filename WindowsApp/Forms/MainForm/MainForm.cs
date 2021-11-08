@@ -14,7 +14,7 @@ namespace WindowsApp.Forms
             @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private Regex phoneRule = new Regex(
             @"(?<phone>^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$)",
-            RegexOptions.IgnoreCase | RegexOptions.Compiled)
+            RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 
         public MainForm()
@@ -57,10 +57,12 @@ namespace WindowsApp.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (emailRule.Match(emailTextBox.Text).Success)
-                driversBindingNavigatorSaveItem.PerformClick();
+            if (!emailRule.Match(emailTextBox.Text).Success)
+                MessageBox.Show("E-mail is wrong!");
+            if (!phoneRule.Match(phoneTextBox.Text).Success)
+                MessageBox.Show("Phone number is wrong!");
             else
-                MessageBox.Show("Не-а");
+                driversBindingNavigatorSaveItem.PerformClick();
         }
 
         private void button5_Click(object sender, EventArgs e)
