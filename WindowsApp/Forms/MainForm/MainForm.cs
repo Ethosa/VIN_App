@@ -8,7 +8,7 @@ namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
-       
+
         public MainForm()
         {
             InitializeComponent();
@@ -30,10 +30,32 @@ namespace WindowsApp.Forms
 
         private void driversDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
+        }
 
-            driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorMoveNextItem.PerformClick();
+        }
 
-            
+        private void button1_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorMovePreviousItem.PerformClick();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorAddNewItem.PerformClick();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            driversBindingNavigatorSaveItem.PerformClick();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            bindingNavigatorDeleteItem.PerformClick();
         }
     }
-    }
+}
