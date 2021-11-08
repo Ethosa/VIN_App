@@ -93,6 +93,8 @@ namespace WindowsApp.Forms
             this.jobnameTextBox = new System.Windows.Forms.TextBox();
             this.companyTextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.realAddress = new System.Windows.Forms.TextBox();
+            this.regAddress = new System.Windows.Forms.TextBox();
             this.driverPhoto = new System.Windows.Forms.PictureBox();
             this.firstnameTextBox = new System.Windows.Forms.TextBox();
             this.emailTextBox = new System.Windows.Forms.TextBox();
@@ -106,10 +108,19 @@ namespace WindowsApp.Forms
             this.passport_numberTextBox = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox = new System.Windows.Forms.TextBox();
+            this.finesPage = new System.Windows.Forms.TabPage();
+            this.doGET_button = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.partBox = new System.Windows.Forms.TextBox();
+            this.modifedDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.respOut = new System.Windows.Forms.TextBox();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
-            this.regAddress = new System.Windows.Forms.TextBox();
-            this.realAddress = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.getUrl = new System.Windows.Forms.TextBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -146,6 +157,7 @@ namespace WindowsApp.Forms
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
+            this.finesPage.SuspendLayout();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -229,7 +241,6 @@ namespace WindowsApp.Forms
             address_lifeLabel.Size = new System.Drawing.Size(103, 13);
             address_lifeLabel.TabIndex = 17;
             address_lifeLabel.Text = "Адрес проживания";
-            address_lifeLabel.Click += new System.EventHandler(this.address_lifeLabel_Click);
             // 
             // companyLabel
             // 
@@ -239,7 +250,6 @@ namespace WindowsApp.Forms
             companyLabel.Size = new System.Drawing.Size(58, 13);
             companyLabel.TabIndex = 19;
             companyLabel.Text = "Компания";
-            companyLabel.Click += new System.EventHandler(this.companyLabel_Click);
             // 
             // jobnameLabel
             // 
@@ -332,6 +342,7 @@ namespace WindowsApp.Forms
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.driversPage);
+            this.tabControl1.Controls.Add(this.finesPage);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Multiline = true;
@@ -392,6 +403,7 @@ namespace WindowsApp.Forms
             // 
             this.driversDataGridView.AutoGenerateColumns = false;
             this.driversDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.driversDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.driversDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.driversDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn3,
@@ -636,7 +648,6 @@ namespace WindowsApp.Forms
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 36;
-            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
             // 
             // button5
             // 
@@ -764,6 +775,20 @@ namespace WindowsApp.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Основная информация";
             // 
+            // realAddress
+            // 
+            this.realAddress.Location = new System.Drawing.Point(107, 219);
+            this.realAddress.Name = "realAddress";
+            this.realAddress.Size = new System.Drawing.Size(138, 20);
+            this.realAddress.TabIndex = 28;
+            // 
+            // regAddress
+            // 
+            this.regAddress.Location = new System.Drawing.Point(107, 180);
+            this.regAddress.Name = "regAddress";
+            this.regAddress.Size = new System.Drawing.Size(138, 20);
+            this.regAddress.TabIndex = 27;
+            // 
             // driverPhoto
             // 
             this.driverPhoto.Image = global::WindowsApp.Properties.Resources.emptyPhoto;
@@ -822,7 +847,6 @@ namespace WindowsApp.Forms
             this.postcodeTextBox.Name = "postcodeTextBox";
             this.postcodeTextBox.Size = new System.Drawing.Size(192, 20);
             this.postcodeTextBox.TabIndex = 14;
-            this.postcodeTextBox.TextChanged += new System.EventHandler(this.postcodeTextBox_TextChanged);
             // 
             // regCity
             // 
@@ -921,6 +945,97 @@ namespace WindowsApp.Forms
             this.passport_serialTextBox.Size = new System.Drawing.Size(100, 20);
             this.passport_serialTextBox.TabIndex = 9;
             // 
+            // finesPage
+            // 
+            this.finesPage.Controls.Add(this.getUrl);
+            this.finesPage.Controls.Add(this.label6);
+            this.finesPage.Controls.Add(this.doGET_button);
+            this.finesPage.Controls.Add(this.label5);
+            this.finesPage.Controls.Add(this.partBox);
+            this.finesPage.Controls.Add(this.modifedDate);
+            this.finesPage.Controls.Add(this.label4);
+            this.finesPage.Controls.Add(this.label3);
+            this.finesPage.Controls.Add(this.label2);
+            this.finesPage.Controls.Add(this.respOut);
+            this.finesPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.finesPage.Location = new System.Drawing.Point(4, 22);
+            this.finesPage.Name = "finesPage";
+            this.finesPage.Padding = new System.Windows.Forms.Padding(3);
+            this.finesPage.Size = new System.Drawing.Size(1301, 741);
+            this.finesPage.TabIndex = 2;
+            this.finesPage.Text = "Штрафы";
+            this.finesPage.UseVisualStyleBackColor = true;
+            // 
+            // doGET_button
+            // 
+            this.doGET_button.Location = new System.Drawing.Point(288, 61);
+            this.doGET_button.Name = "doGET_button";
+            this.doGET_button.Size = new System.Drawing.Size(75, 23);
+            this.doGET_button.TabIndex = 7;
+            this.doGET_button.Text = "GET";
+            this.doGET_button.UseVisualStyleBackColor = true;
+            this.doGET_button.Click += new System.EventHandler(this.doGET_button_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label5.Location = new System.Drawing.Point(10, 152);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(96, 24);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Response";
+            // 
+            // partBox
+            // 
+            this.partBox.Location = new System.Drawing.Point(72, 42);
+            this.partBox.Name = "partBox";
+            this.partBox.Size = new System.Drawing.Size(191, 20);
+            this.partBox.TabIndex = 5;
+            // 
+            // modifedDate
+            // 
+            this.modifedDate.Location = new System.Drawing.Point(72, 64);
+            this.modifedDate.Name = "modifedDate";
+            this.modifedDate.Size = new System.Drawing.Size(191, 20);
+            this.modifedDate.TabIndex = 4;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 71);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "modified";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(10, 45);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "participant";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(9, 7);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "getFines";
+            // 
+            // respOut
+            // 
+            this.respOut.Location = new System.Drawing.Point(14, 179);
+            this.respOut.Multiline = true;
+            this.respOut.Name = "respOut";
+            this.respOut.Size = new System.Drawing.Size(527, 290);
+            this.respOut.TabIndex = 0;
+            // 
             // driversTableAdapter
             // 
             this.driversTableAdapter.ClearBeforeFill = true;
@@ -934,19 +1049,22 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
-            // regAddress
+            // label6
             // 
-            this.regAddress.Location = new System.Drawing.Point(107, 180);
-            this.regAddress.Name = "regAddress";
-            this.regAddress.Size = new System.Drawing.Size(138, 20);
-            this.regAddress.TabIndex = 27;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(11, 93);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(18, 13);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "url";
             // 
-            // realAddress
+            // getUrl
             // 
-            this.realAddress.Location = new System.Drawing.Point(107, 219);
-            this.realAddress.Name = "realAddress";
-            this.realAddress.Size = new System.Drawing.Size(138, 20);
-            this.realAddress.TabIndex = 28;
+            this.getUrl.Location = new System.Drawing.Point(72, 93);
+            this.getUrl.Name = "getUrl";
+            this.getUrl.Size = new System.Drawing.Size(191, 20);
+            this.getUrl.TabIndex = 9;
+           
             // 
             // MainForm
             // 
@@ -987,6 +1105,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.finesPage.ResumeLayout(false);
+            this.finesPage.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1057,5 +1177,16 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox realAddress;
         private System.Windows.Forms.TextBox regAddress;
+        private System.Windows.Forms.TabPage finesPage;
+        private System.Windows.Forms.TextBox partBox;
+        private System.Windows.Forms.DateTimePicker modifedDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox respOut;
+        private System.Windows.Forms.Button doGET_button;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox getUrl;
+        private System.Windows.Forms.Label label6;
     }
 }

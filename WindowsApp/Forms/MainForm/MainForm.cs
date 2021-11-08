@@ -5,14 +5,15 @@ using System.Net;
 using System.Windows.Forms;
 using WindowsApp.Database;
 using System.Text.RegularExpressions;
+using Newtonsoft.Json;
 
 namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
-        private Regex emailRule = new Regex(
+        private readonly Regex emailRule = new Regex(
             @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
-        private Regex phoneRule = new Regex(
+        private readonly Regex phoneRule = new Regex(
             @"(?<phone>^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$)",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -38,7 +39,7 @@ namespace WindowsApp.Forms
         }
 
         
- //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
+        //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -70,24 +71,27 @@ namespace WindowsApp.Forms
             bindingNavigatorDeleteItem.PerformClick();
         }
 
-        private void address_lifeLabel_Click(object sender, EventArgs e)
+        private void doGET_button_Click(object sender, EventArgs e)
         {
+            string url = $"http://solutions2019.hakta.pro/api/getFines?participant={partBox.Text}&modified={modifedDate.Value.ToString()}";
+            getUrl.Text = url;
+            dynamic stuff = JsonConvert.DeserializeObject(HttpGet(url));
+            respOut.Text = stuff.data.ToString();
 
         }
-
-        private void companyLabel_Click(object sender, EventArgs e)
+        public string HttpGet(string url)
         {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            Stream stream = resp.GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+            string resp_out = sr.ReadToEnd(); 
+            sr.Close();
 
+            return resp_out;
+           
         }
 
-        private void postcodeTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void idTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }
