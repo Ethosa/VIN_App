@@ -74,5 +74,20 @@ namespace WindowsApp.Forms
         {
 
         }
+
+        private void companyLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postcodeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void idTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

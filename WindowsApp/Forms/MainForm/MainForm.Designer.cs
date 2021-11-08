@@ -100,14 +100,16 @@ namespace WindowsApp.Forms
             this.middlenameTextBox = new System.Windows.Forms.TextBox();
             this.lastnameTextBox = new System.Windows.Forms.TextBox();
             this.postcodeTextBox = new System.Windows.Forms.TextBox();
-            this.addressTextBox = new System.Windows.Forms.TextBox();
-            this.address_lifeTextBox = new System.Windows.Forms.TextBox();
+            this.regCity = new System.Windows.Forms.TextBox();
+            this.realCity = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.passport_numberTextBox = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox = new System.Windows.Forms.TextBox();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
+            this.regAddress = new System.Windows.Forms.TextBox();
+            this.realAddress = new System.Windows.Forms.TextBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -158,7 +160,7 @@ namespace WindowsApp.Forms
             // photoLabel
             // 
             photoLabel.AutoSize = true;
-            photoLabel.Location = new System.Drawing.Point(7, 22);
+            photoLabel.Location = new System.Drawing.Point(2, 22);
             photoLabel.Name = "photoLabel";
             photoLabel.Size = new System.Drawing.Size(36, 13);
             photoLabel.TabIndex = 3;
@@ -194,7 +196,7 @@ namespace WindowsApp.Forms
             // passport_numberLabel
             // 
             passport_numberLabel.AutoSize = true;
-            passport_numberLabel.Location = new System.Drawing.Point(7, 51);
+            passport_numberLabel.Location = new System.Drawing.Point(2, 51);
             passport_numberLabel.Name = "passport_numberLabel";
             passport_numberLabel.Size = new System.Drawing.Size(41, 13);
             passport_numberLabel.TabIndex = 11;
@@ -203,7 +205,7 @@ namespace WindowsApp.Forms
             // postcodeLabel
             // 
             postcodeLabel.AutoSize = true;
-            postcodeLabel.Location = new System.Drawing.Point(7, 139);
+            postcodeLabel.Location = new System.Drawing.Point(2, 144);
             postcodeLabel.Name = "postcodeLabel";
             postcodeLabel.Size = new System.Drawing.Size(45, 13);
             postcodeLabel.TabIndex = 13;
@@ -212,36 +214,37 @@ namespace WindowsApp.Forms
             // addressLabel
             // 
             addressLabel.AutoSize = true;
-            addressLabel.Location = new System.Drawing.Point(7, 165);
+            addressLabel.Location = new System.Drawing.Point(3, 164);
             addressLabel.Name = "addressLabel";
-            addressLabel.Size = new System.Drawing.Size(38, 13);
+            addressLabel.Size = new System.Drawing.Size(105, 13);
             addressLabel.TabIndex = 15;
-            addressLabel.Text = "Адрес";
+            addressLabel.Text = "Адрес регистрации";
             // 
             // address_lifeLabel
             // 
             address_lifeLabel.AutoSize = true;
             address_lifeLabel.BackColor = System.Drawing.Color.Transparent;
-            address_lifeLabel.Location = new System.Drawing.Point(7, 191);
+            address_lifeLabel.Location = new System.Drawing.Point(2, 203);
             address_lifeLabel.Name = "address_lifeLabel";
-            address_lifeLabel.Size = new System.Drawing.Size(67, 13);
+            address_lifeLabel.Size = new System.Drawing.Size(103, 13);
             address_lifeLabel.TabIndex = 17;
-            address_lifeLabel.Text = "Адрес.прож";
+            address_lifeLabel.Text = "Адрес проживания";
             address_lifeLabel.Click += new System.EventHandler(this.address_lifeLabel_Click);
             // 
             // companyLabel
             // 
             companyLabel.AutoSize = true;
-            companyLabel.Location = new System.Drawing.Point(7, 22);
+            companyLabel.Location = new System.Drawing.Point(2, 22);
             companyLabel.Name = "companyLabel";
             companyLabel.Size = new System.Drawing.Size(58, 13);
             companyLabel.TabIndex = 19;
             companyLabel.Text = "Компания";
+            companyLabel.Click += new System.EventHandler(this.companyLabel_Click);
             // 
             // jobnameLabel
             // 
             jobnameLabel.AutoSize = true;
-            jobnameLabel.Location = new System.Drawing.Point(7, 48);
+            jobnameLabel.Location = new System.Drawing.Point(2, 48);
             jobnameLabel.Name = "jobnameLabel";
             jobnameLabel.Size = new System.Drawing.Size(65, 13);
             jobnameLabel.TabIndex = 21;
@@ -250,7 +253,7 @@ namespace WindowsApp.Forms
             // phoneLabel
             // 
             phoneLabel.AutoSize = true;
-            phoneLabel.Location = new System.Drawing.Point(7, 217);
+            phoneLabel.Location = new System.Drawing.Point(2, 242);
             phoneLabel.Name = "phoneLabel";
             phoneLabel.Size = new System.Drawing.Size(52, 13);
             phoneLabel.TabIndex = 23;
@@ -259,7 +262,7 @@ namespace WindowsApp.Forms
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(7, 243);
+            emailLabel.Location = new System.Drawing.Point(3, 281);
             emailLabel.Name = "emailLabel";
             emailLabel.Size = new System.Drawing.Size(36, 13);
             emailLabel.TabIndex = 25;
@@ -268,7 +271,7 @@ namespace WindowsApp.Forms
             // passport_serialLabel1
             // 
             passport_serialLabel1.AutoSize = true;
-            passport_serialLabel1.Location = new System.Drawing.Point(7, 25);
+            passport_serialLabel1.Location = new System.Drawing.Point(3, 25);
             passport_serialLabel1.Name = "passport_serialLabel1";
             passport_serialLabel1.Size = new System.Drawing.Size(38, 13);
             passport_serialLabel1.TabIndex = 26;
@@ -277,7 +280,7 @@ namespace WindowsApp.Forms
             // idLabel
             // 
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(116, 693);
+            idLabel.Location = new System.Drawing.Point(130, 713);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(18, 13);
             idLabel.TabIndex = 35;
@@ -301,7 +304,7 @@ namespace WindowsApp.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1264, 681);
+            this.splitContainer1.Size = new System.Drawing.Size(1309, 856);
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -335,7 +338,7 @@ namespace WindowsApp.Forms
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1264, 592);
+            this.tabControl1.Size = new System.Drawing.Size(1309, 767);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -345,7 +348,7 @@ namespace WindowsApp.Forms
             this.driversPage.Location = new System.Drawing.Point(4, 22);
             this.driversPage.Name = "driversPage";
             this.driversPage.Padding = new System.Windows.Forms.Padding(3);
-            this.driversPage.Size = new System.Drawing.Size(1256, 566);
+            this.driversPage.Size = new System.Drawing.Size(1301, 741);
             this.driversPage.TabIndex = 1;
             this.driversPage.Text = "Водители";
             this.driversPage.UseVisualStyleBackColor = true;
@@ -381,8 +384,8 @@ namespace WindowsApp.Forms
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Panel2.Controls.Add(passport_serialLabel);
             this.splitContainer2.Panel2.Controls.Add(this.passport_serialTextBox);
-            this.splitContainer2.Size = new System.Drawing.Size(1250, 560);
-            this.splitContainer2.SplitterDistance = 980;
+            this.splitContainer2.Size = new System.Drawing.Size(1295, 735);
+            this.splitContainer2.SplitterDistance = 1025;
             this.splitContainer2.TabIndex = 0;
             // 
             // driversDataGridView
@@ -409,7 +412,7 @@ namespace WindowsApp.Forms
             this.driversDataGridView.Location = new System.Drawing.Point(0, 0);
             this.driversDataGridView.Name = "driversDataGridView";
             this.driversDataGridView.RowHeadersVisible = false;
-            this.driversDataGridView.Size = new System.Drawing.Size(980, 535);
+            this.driversDataGridView.Size = new System.Drawing.Size(1025, 710);
             this.driversDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
@@ -520,14 +523,14 @@ namespace WindowsApp.Forms
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.driversBindingNavigatorSaveItem});
-            this.driversBindingNavigator.Location = new System.Drawing.Point(0, 535);
+            this.driversBindingNavigator.Location = new System.Drawing.Point(0, 710);
             this.driversBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.driversBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.driversBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.driversBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.driversBindingNavigator.Name = "driversBindingNavigator";
             this.driversBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.driversBindingNavigator.Size = new System.Drawing.Size(980, 25);
+            this.driversBindingNavigator.Size = new System.Drawing.Size(1025, 25);
             this.driversBindingNavigator.TabIndex = 1;
             this.driversBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -583,6 +586,7 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -628,14 +632,15 @@ namespace WindowsApp.Forms
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "id", true));
-            this.idTextBox.Location = new System.Drawing.Point(140, 690);
+            this.idTextBox.Location = new System.Drawing.Point(155, 710);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 36;
+            this.idTextBox.TextChanged += new System.EventHandler(this.idTextBox_TextChanged);
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(10, 577);
+            this.button5.Location = new System.Drawing.Point(10, 681);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(245, 23);
             this.button5.TabIndex = 35;
@@ -645,7 +650,7 @@ namespace WindowsApp.Forms
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(142, 548);
+            this.button4.Location = new System.Drawing.Point(142, 652);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(113, 23);
             this.button4.TabIndex = 34;
@@ -655,7 +660,7 @@ namespace WindowsApp.Forms
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(10, 548);
+            this.button3.Location = new System.Drawing.Point(10, 652);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(113, 23);
             this.button3.TabIndex = 33;
@@ -665,7 +670,7 @@ namespace WindowsApp.Forms
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(142, 519);
+            this.button2.Location = new System.Drawing.Point(142, 623);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(113, 23);
             this.button2.TabIndex = 32;
@@ -675,7 +680,7 @@ namespace WindowsApp.Forms
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 519);
+            this.button1.Location = new System.Drawing.Point(10, 623);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 31;
@@ -687,9 +692,9 @@ namespace WindowsApp.Forms
             // 
             this.groupBox4.Controls.Add(this.photoTextBox);
             this.groupBox4.Controls.Add(photoLabel);
-            this.groupBox4.Location = new System.Drawing.Point(10, 454);
+            this.groupBox4.Location = new System.Drawing.Point(10, 500);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(251, 59);
+            this.groupBox4.Size = new System.Drawing.Size(251, 53);
             this.groupBox4.TabIndex = 30;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Фото";
@@ -708,7 +713,7 @@ namespace WindowsApp.Forms
             this.groupBox3.Controls.Add(this.companyTextBox);
             this.groupBox3.Controls.Add(companyLabel);
             this.groupBox3.Controls.Add(jobnameLabel);
-            this.groupBox3.Location = new System.Drawing.Point(10, 374);
+            this.groupBox3.Location = new System.Drawing.Point(10, 421);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(251, 73);
             this.groupBox3.TabIndex = 29;
@@ -733,6 +738,8 @@ namespace WindowsApp.Forms
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.realAddress);
+            this.groupBox1.Controls.Add(this.regAddress);
             this.groupBox1.Controls.Add(this.driverPhoto);
             this.groupBox1.Controls.Add(emailLabel);
             this.groupBox1.Controls.Add(this.firstnameTextBox);
@@ -747,12 +754,12 @@ namespace WindowsApp.Forms
             this.groupBox1.Controls.Add(postcodeLabel);
             this.groupBox1.Controls.Add(this.postcodeTextBox);
             this.groupBox1.Controls.Add(address_lifeLabel);
-            this.groupBox1.Controls.Add(this.addressTextBox);
-            this.groupBox1.Controls.Add(this.address_lifeTextBox);
+            this.groupBox1.Controls.Add(this.regCity);
+            this.groupBox1.Controls.Add(this.realCity);
             this.groupBox1.Controls.Add(addressLabel);
             this.groupBox1.Location = new System.Drawing.Point(10, 8);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(251, 277);
+            this.groupBox1.Size = new System.Drawing.Size(251, 324);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Основная информация";
@@ -778,17 +785,17 @@ namespace WindowsApp.Forms
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(66, 240);
+            this.emailTextBox.Location = new System.Drawing.Point(6, 297);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(179, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(239, 20);
             this.emailTextBox.TabIndex = 26;
             // 
             // phoneTextBox
             // 
             this.phoneTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "phone", true));
-            this.phoneTextBox.Location = new System.Drawing.Point(66, 214);
+            this.phoneTextBox.Location = new System.Drawing.Point(6, 258);
             this.phoneTextBox.Name = "phoneTextBox";
-            this.phoneTextBox.Size = new System.Drawing.Size(179, 20);
+            this.phoneTextBox.Size = new System.Drawing.Size(239, 20);
             this.phoneTextBox.TabIndex = 24;
             // 
             // middlenameTextBox
@@ -810,36 +817,70 @@ namespace WindowsApp.Forms
             // postcodeTextBox
             // 
             this.postcodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "postcode", true));
-            this.postcodeTextBox.Location = new System.Drawing.Point(66, 136);
+            this.postcodeTextBox.Location = new System.Drawing.Point(53, 141);
             this.postcodeTextBox.MaxLength = 6;
             this.postcodeTextBox.Name = "postcodeTextBox";
-            this.postcodeTextBox.Size = new System.Drawing.Size(179, 20);
+            this.postcodeTextBox.Size = new System.Drawing.Size(192, 20);
             this.postcodeTextBox.TabIndex = 14;
+            this.postcodeTextBox.TextChanged += new System.EventHandler(this.postcodeTextBox_TextChanged);
             // 
-            // addressTextBox
+            // regCity
             // 
-            this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address", true));
-            this.addressTextBox.Location = new System.Drawing.Point(66, 162);
-            this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(58, 20);
-            this.addressTextBox.TabIndex = 16;
-            // 
-            // address_lifeTextBox
-            // 
-            this.address_lifeTextBox.AutoCompleteCustomSource.AddRange(new string[] {
+            this.regCity.AutoCompleteCustomSource.AddRange(new string[] {
             "Cumск",
             "Красноярск",
             "Москва",
             "Санкт-Петербург",
             "Краснодар",
-            "Владивосток"});
-            this.address_lifeTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.address_lifeTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
-            this.address_lifeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address_life", true));
-            this.address_lifeTextBox.Location = new System.Drawing.Point(66, 188);
-            this.address_lifeTextBox.Name = "address_lifeTextBox";
-            this.address_lifeTextBox.Size = new System.Drawing.Size(179, 20);
-            this.address_lifeTextBox.TabIndex = 18;
+            "Владивосток",
+            "Омск",
+            "Сорск",
+            "Железногорск",
+            "Вологда",
+            "Волгоград",
+            "Минусинск",
+            "Абакан",
+            "Норильск",
+            "Кемерово",
+            "Тюмень",
+            "Екатеринбург",
+            "Пермь"});
+            this.regCity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.regCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.regCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address", true));
+            this.regCity.Location = new System.Drawing.Point(6, 180);
+            this.regCity.Name = "regCity";
+            this.regCity.Size = new System.Drawing.Size(95, 20);
+            this.regCity.TabIndex = 16;
+            // 
+            // realCity
+            // 
+            this.realCity.AutoCompleteCustomSource.AddRange(new string[] {
+            "Cumск",
+            "Красноярск",
+            "Москва",
+            "Санкт-Петербург",
+            "Краснодар",
+            "Владивосток",
+            "Омск",
+            "Сорск",
+            "Железногорск",
+            "Вологда",
+            "Волгоград",
+            "Минусинск",
+            "Абакан",
+            "Норильск",
+            "Кемерово",
+            "Тюмень",
+            "Екатеринбург",
+            "Пермь"});
+            this.realCity.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.realCity.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.realCity.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address_life", true));
+            this.realCity.Location = new System.Drawing.Point(5, 219);
+            this.realCity.Name = "realCity";
+            this.realCity.Size = new System.Drawing.Size(96, 20);
+            this.realCity.TabIndex = 18;
             // 
             // groupBox2
             // 
@@ -847,7 +888,7 @@ namespace WindowsApp.Forms
             this.groupBox2.Controls.Add(this.passport_numberTextBox);
             this.groupBox2.Controls.Add(this.passport_serialTextBox1);
             this.groupBox2.Controls.Add(passport_numberLabel);
-            this.groupBox2.Location = new System.Drawing.Point(10, 291);
+            this.groupBox2.Location = new System.Drawing.Point(10, 338);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(251, 77);
             this.groupBox2.TabIndex = 28;
@@ -893,12 +934,26 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
+            // regAddress
+            // 
+            this.regAddress.Location = new System.Drawing.Point(107, 180);
+            this.regAddress.Name = "regAddress";
+            this.regAddress.Size = new System.Drawing.Size(138, 20);
+            this.regAddress.TabIndex = 27;
+            // 
+            // realAddress
+            // 
+            this.realAddress.Location = new System.Drawing.Point(107, 219);
+            this.realAddress.Name = "realAddress";
+            this.realAddress.Size = new System.Drawing.Size(138, 20);
+            this.realAddress.TabIndex = 28;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.ClientSize = new System.Drawing.Size(1309, 856);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainForm";
             this.Text = "Госавтоинспекция МВД России";
@@ -985,8 +1040,8 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.TextBox jobnameTextBox;
         private System.Windows.Forms.TextBox companyTextBox;
-        private System.Windows.Forms.TextBox address_lifeTextBox;
-        private System.Windows.Forms.TextBox addressTextBox;
+        private System.Windows.Forms.TextBox realCity;
+        private System.Windows.Forms.TextBox regCity;
         private System.Windows.Forms.TextBox postcodeTextBox;
         private System.Windows.Forms.TextBox passport_numberTextBox;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -1000,5 +1055,7 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox idTextBox;
+        private System.Windows.Forms.TextBox realAddress;
+        private System.Windows.Forms.TextBox regAddress;
     }
 }
