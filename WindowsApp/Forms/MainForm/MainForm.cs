@@ -4,11 +4,14 @@ using System.IO;
 using System.Net;
 using System.Windows.Forms;
 using WindowsApp.Database;
+using System.Text.RegularExpressions;
 
 namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
+        private Regex emailRule = new Regex(
+            @"[\w\.]+?@\w+\.\w+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 
         public MainForm()
@@ -51,7 +54,10 @@ namespace WindowsApp.Forms
 
         private void button4_Click(object sender, EventArgs e)
         {
-            driversBindingNavigatorSaveItem.PerformClick();
+            if (emailRule.Match(emailTextBox.Text).Success)
+                driversBindingNavigatorSaveItem.PerformClick();
+            else
+                MessageBox.Show("Не-а");
         }
 
         private void button5_Click(object sender, EventArgs e)
