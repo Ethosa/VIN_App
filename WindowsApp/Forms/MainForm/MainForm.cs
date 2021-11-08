@@ -69,5 +69,10 @@ namespace WindowsApp.Forms
         {
             bindingNavigatorDeleteItem.PerformClick();
         }
+
+        private void address_lifeLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -227,6 +227,7 @@ namespace WindowsApp.Forms
             address_lifeLabel.Size = new System.Drawing.Size(67, 13);
             address_lifeLabel.TabIndex = 17;
             address_lifeLabel.Text = "Адрес.прож";
+            address_lifeLabel.Click += new System.EventHandler(this.address_lifeLabel_Click);
             // 
             // companyLabel
             // 
@@ -300,7 +301,7 @@ namespace WindowsApp.Forms
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.tabControl1);
-            this.splitContainer1.Size = new System.Drawing.Size(1184, 861);
+            this.splitContainer1.Size = new System.Drawing.Size(1264, 681);
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -334,7 +335,7 @@ namespace WindowsApp.Forms
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeftLayout = true;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1184, 772);
+            this.tabControl1.Size = new System.Drawing.Size(1264, 592);
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl1.TabIndex = 0;
             // 
@@ -344,7 +345,7 @@ namespace WindowsApp.Forms
             this.driversPage.Location = new System.Drawing.Point(4, 22);
             this.driversPage.Name = "driversPage";
             this.driversPage.Padding = new System.Windows.Forms.Padding(3);
-            this.driversPage.Size = new System.Drawing.Size(1176, 746);
+            this.driversPage.Size = new System.Drawing.Size(1256, 566);
             this.driversPage.TabIndex = 1;
             this.driversPage.Text = "Водители";
             this.driversPage.UseVisualStyleBackColor = true;
@@ -380,8 +381,8 @@ namespace WindowsApp.Forms
             this.splitContainer2.Panel2.Controls.Add(this.groupBox2);
             this.splitContainer2.Panel2.Controls.Add(passport_serialLabel);
             this.splitContainer2.Panel2.Controls.Add(this.passport_serialTextBox);
-            this.splitContainer2.Size = new System.Drawing.Size(1170, 740);
-            this.splitContainer2.SplitterDistance = 900;
+            this.splitContainer2.Size = new System.Drawing.Size(1250, 560);
+            this.splitContainer2.SplitterDistance = 980;
             this.splitContainer2.TabIndex = 0;
             // 
             // driversDataGridView
@@ -408,7 +409,7 @@ namespace WindowsApp.Forms
             this.driversDataGridView.Location = new System.Drawing.Point(0, 0);
             this.driversDataGridView.Name = "driversDataGridView";
             this.driversDataGridView.RowHeadersVisible = false;
-            this.driversDataGridView.Size = new System.Drawing.Size(900, 715);
+            this.driversDataGridView.Size = new System.Drawing.Size(980, 535);
             this.driversDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn3
@@ -519,14 +520,14 @@ namespace WindowsApp.Forms
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.driversBindingNavigatorSaveItem});
-            this.driversBindingNavigator.Location = new System.Drawing.Point(0, 715);
+            this.driversBindingNavigator.Location = new System.Drawing.Point(0, 535);
             this.driversBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.driversBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.driversBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.driversBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.driversBindingNavigator.Name = "driversBindingNavigator";
             this.driversBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.driversBindingNavigator.Size = new System.Drawing.Size(900, 25);
+            this.driversBindingNavigator.Size = new System.Drawing.Size(980, 25);
             this.driversBindingNavigator.TabIndex = 1;
             this.driversBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -810,6 +811,7 @@ namespace WindowsApp.Forms
             // 
             this.postcodeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "postcode", true));
             this.postcodeTextBox.Location = new System.Drawing.Point(66, 136);
+            this.postcodeTextBox.MaxLength = 6;
             this.postcodeTextBox.Name = "postcodeTextBox";
             this.postcodeTextBox.Size = new System.Drawing.Size(179, 20);
             this.postcodeTextBox.TabIndex = 14;
@@ -819,11 +821,20 @@ namespace WindowsApp.Forms
             this.addressTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address", true));
             this.addressTextBox.Location = new System.Drawing.Point(66, 162);
             this.addressTextBox.Name = "addressTextBox";
-            this.addressTextBox.Size = new System.Drawing.Size(179, 20);
+            this.addressTextBox.Size = new System.Drawing.Size(58, 20);
             this.addressTextBox.TabIndex = 16;
             // 
             // address_lifeTextBox
             // 
+            this.address_lifeTextBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Cumск",
+            "Красноярск",
+            "Москва",
+            "Санкт-Петербург",
+            "Краснодар",
+            "Владивосток"});
+            this.address_lifeTextBox.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.address_lifeTextBox.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.address_lifeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.driversBindingSource, "address_life", true));
             this.address_lifeTextBox.Location = new System.Drawing.Point(66, 188);
             this.address_lifeTextBox.Name = "address_lifeTextBox";
@@ -886,7 +897,8 @@ namespace WindowsApp.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 861);
+            this.AutoSize = true;
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.splitContainer1);
             this.Name = "MainForm";
             this.Text = "Госавтоинспекция МВД России";
