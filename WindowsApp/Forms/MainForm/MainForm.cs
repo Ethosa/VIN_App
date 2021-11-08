@@ -11,7 +11,7 @@ namespace WindowsApp.Forms
     public partial class MainForm : Form
     {
         private Regex emailRule = new Regex(
-            @"[\w\.]+?@\w+\.\w+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 
         public MainForm()
