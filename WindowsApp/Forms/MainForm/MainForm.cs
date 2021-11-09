@@ -29,9 +29,9 @@ namespace WindowsApp.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
-           driversTableAdapter.Fill(this.gibddDataSet.drivers);
+            driversTableAdapter.Fill(this.gibddDataSet.drivers);
             driverPhoto ph = db.driverPhoto.AsNoTracking().FirstOrDefault();
-            string result = ph.image_data.Replace("\x99\x11", "\x00");
+            /*string result = ph.image_data.Replace("\x99\x11", "\x00");
             byte photo = Convert.ToByte(result);
             using (var ms = new MemoryStream(photo))
             {
@@ -39,7 +39,7 @@ namespace WindowsApp.Forms
                 pictureBox2.Image = pic;
             }
             
-          // MessageBox.Show();
+            // MessageBox.Show();*/
       }
 
         private void driversBindingNavigatorSaveItem_Click(object sender, EventArgs e)

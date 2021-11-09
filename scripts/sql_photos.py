@@ -14,10 +14,10 @@ for i, filename in enumerate(os.listdir("../docs/Ресурсы/Сессия 2/d
 	print(i+1, filename)
 	path = f"D:/Ethosa/vinapp/vin_app/docs/Ресурсы/Сессия 2/drivers 2/photo/{filename}"
 	with open(path, 'rb') as f:
-		data = f.read().replace(b'\x00', b'\x99\x11')
-	cursor.execute(
-		"INSERT INTO driverPhoto (filename, image_data) VALUES (?, ?)", (filename,data))
-	cursor.commit()
+		data = f.read()
+	# cursor.execute(
+	# 	"INSERT into driverPhoto (filename, image_data) values (?, ?)", (filename, data))
+	# cursor.commit()
 
 # print(cursor.execute("""SELECT TOP (1000) [pid]
 #       ,[filename]
@@ -27,7 +27,6 @@ for i, filename in enumerate(os.listdir("../docs/Ресурсы/Сессия 2/d
 # translate to png
 # with open('img.png', 'wb') as ff:
 # 	ff.write(data.replace(b'\x99\x11', b'\x00'))
-
 
 cursor.close()
 cnct.close()
