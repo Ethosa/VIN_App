@@ -11,6 +11,7 @@ namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
+        internal gibddEntities db = new gibddEntities();
         private readonly Regex emailRule = new Regex(
             @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private readonly Regex phoneRule = new Regex(
@@ -27,7 +28,8 @@ namespace WindowsApp.Forms
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
            driversTableAdapter.Fill(this.gibddDataSet.drivers);
-            
+            int sqlOut = db.Database.ExecuteSqlCommand("SELECT image_data FROM driverPhoto WHERE pid=345345");
+            MessageBox.Show(sqlOut.ToString());
         }
 
         private void driversBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -92,6 +94,27 @@ namespace WindowsApp.Forms
            
         }
 
-        
+        public string HttpPost(string url)
+        {
+            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
+            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
+            Stream stream = resp.GetResponseStream();
+            StreamReader sr = new StreamReader(stream);
+            string resp_out = sr.ReadToEnd();
+
+            sr.Close();
+
+            return resp_out;
+        }
+
+        private void doPOST_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
