@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using WindowsApp.Database;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
+using System.Data.SqlClient;
+using System.Linq;
 
 namespace WindowsApp.Forms
 {
@@ -28,9 +30,17 @@ namespace WindowsApp.Forms
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
            driversTableAdapter.Fill(this.gibddDataSet.drivers);
-            int sqlOut = db.Database.ExecuteSqlCommand("SELECT image_data FROM driverPhoto WHERE pid=345345");
-            MessageBox.Show(sqlOut.ToString());
-        }
+            driverPhoto ph = db.driverPhoto.AsNoTracking().FirstOrDefault();
+            string result = ph.image_data.Replace("\x99\x11", "\x00");
+            byte photo = Convert.ToByte(result);
+            using (var ms = new MemoryStream(photo))
+            {
+                Image pic = Image.FromStream(ms);
+                pictureBox2.Image = pic;
+            }
+            
+          // MessageBox.Show();
+      }
 
         private void driversBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {

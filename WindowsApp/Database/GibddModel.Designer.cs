@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\Projects\VIN_App\WindowsApp\Database\gibddModel.edmx" включено. 
+﻿// Создание кода T4 для модели "C:\Users\user2\Source\Repos\VIN_App\WindowsApp\Database\gibddModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

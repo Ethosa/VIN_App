@@ -25,6 +25,9 @@ namespace WindowsApp.Database
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<driverPhoto> driverPhoto { get; set; }
+        public virtual DbSet<drivers> drivers { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<regionCodes> regionCodes { get; set; }
     }
 }
