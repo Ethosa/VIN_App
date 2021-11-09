@@ -47,7 +47,7 @@
             else
             {
                 user user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == loginText.Text && u.upass == passText.Text);
-                //Если не нашелся
+                // Если не нашелся
                 if (user == null)
                 {
                     if (wrongAuthCount == 3)
@@ -59,7 +59,7 @@
                 else
                 {
                     of.MainForm();
-                    this.Hide();
+                    Hide();
                 }
             }
         }
@@ -91,12 +91,20 @@
             return sec;
         }
 
+        /// <summary>
+        /// Loads timeout from app config.
+        /// </summary>
+        /// <returns></returns>
         private async Task LoadTimeout()
         {
             int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
             await AttemptsTimer(timeout);
         }
 
+        /// <summary>
+        /// Saves timeout to app config.
+        /// </summary>
+        /// <param name="sec"></param>
         private void SaveTimeout(int sec)
         {
             config.AppSettings.Settings["timeout"].Value = sec.ToString();
