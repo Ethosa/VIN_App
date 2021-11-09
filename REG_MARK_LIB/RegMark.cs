@@ -12,11 +12,30 @@ namespace REG_MARK_LIB
             @"^(?<before>[abekmhopctyx])(?<number>[0-9]{3})(?<after>[abekmhopctyx]{2})(?<region>[0-9]{2,3})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
+        /// <summary>
+        /// Проверяет валидность регистрационного номера.
+        /// </summary>
+        /// <param name="mark">регистрационный номер</param>
+        /// <returns>true, если валиден</returns>
         public Boolean CheckMark(String mark)
         {
             return markRule.Match(mark).Success;
         }
 
+        /// <summary>
+        /// Получает следующий регистрационный номер
+        /// </summary>
+        /// <remarks>
+        /// <example>
+        ///     A999AA124 -> A000AB124
+        ///     <code>
+        ///         RegMark regMark = new RegMark();
+        ///         string mark = GetNextMarkAfter("A999AA124");
+        ///     </code>
+        /// </example>
+        /// </remarks>
+        /// <param name="mark">регистрационный номер</param>
+        /// <returns></returns>
         public String GetNextMarkAfter(String mark)
         {
             Match matched = markRule.Match(mark);
@@ -26,22 +45,15 @@ namespace REG_MARK_LIB
 
             // Разбираем regMark
             string series = GetValue(matched, "before") + GetValue(matched, "after");
-            string number = GetValue(matched, "number");
             int num = int.Parse(GetValue(matched, "number"), NumberStyles.Number);
             int length = seriesChars.Length;
-            string result = "";
+            string result;
 
             if (num < 999)
             {
                 // Если число меньше 999, то просто увеличиваем его.
                 ++num;
-                if (num < 10)
-                    number = "00" + num.ToString();
-                else if (num < 100)
-                    number = "0" + num.ToString();
-                else
-                    number = num.ToString();
-                result = GetValue(matched, "before") + number + GetValue(matched, "after");
+                result = GetValue(matched, "before") + num.ToString("000") + GetValue(matched, "after");
             } else
             {
                 // В противном случае возвращаем число к 000 и разбираем символы, если это возможно.
@@ -59,20 +71,27 @@ namespace REG_MARK_LIB
             return result + GetValue(matched, "region");
         }
 
+        /// <summary>
+        /// Получает следующий регистрационный номер в переданном диапазоне.
+        /// <para>Захватывает <c>rangeStart</c> и <c>rangeEnd</c></para>
+        /// <para>Если prevMark не входит в диапазон, то возвращает <c>"Out of stock"</c></para>
+        /// </summary>
+        /// <param name="prevMark"></param>
+        /// <param name="rangeStart"></param>
+        /// <param name="rangeEnd"></param>
+        /// <returns></returns>
         public String GetNextMarkAfterInRange(String prevMark, String rangeStart, String rangeEnd)
         {
             if (GetCombinationsCountInRange(prevMark, rangeEnd) <= 0)
                 return "out of stock";
-            if (GetCombinationsCountInRange(rangeStart, rangeEnd) <= 0)
+            else if (GetCombinationsCountInRange(rangeStart, rangeEnd) <= 0)
                 return "out of stock";
             return GetNextMarkAfter(prevMark);
         }
 
         public int GetCombinationsCountInRange(String mark1, String mark2)
         {
-            int first = MarkToInt(markRule.Match(mark1));
-            int second = MarkToInt(markRule.Match(mark2));
-            return second - first;
+            return MarkToInt(markRule.Match(mark2)) - MarkToInt(markRule.Match(mark1));
         }
 
         private String GetValue(Match matched, String key)

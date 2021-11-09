@@ -13,12 +13,30 @@ namespace WindowsApp.Forms
 {
     public partial class MainForm : Form
     {
+        /// <summary>
+        /// Экземпляр базы данных.
+        /// </summary>
         internal gibddEntities db = new gibddEntities();
+        /// <summary>
+        /// Правило для проверки E-mail, к примеру:
+        /// <c>something.email@domain.com</c>
+        /// </summary>
         private readonly Regex emailRule = new Regex(
             @"^.+?@(.+\..+)+$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        /// <summary>
+        /// Правило для проверки номера телефона по следующим шаблонам:
+        /// <list type="bullet">
+        ///     <item>8-800-555-35-35</item>
+        ///     <item>8 800 555 35 35</item>
+        ///     <item>88005553535</item>
+        /// </list>
+        /// </summary>
         private readonly Regex phoneRule = new Regex(
             @"^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        /// <summary>
+        /// Правило для проверки почтового индекса.
+        /// </summary>
         private readonly Regex indexRule = new Regex(
             @"^\d{1,6}$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
@@ -28,6 +46,11 @@ namespace WindowsApp.Forms
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Вызывается при открытии формы.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
@@ -41,21 +64,51 @@ namespace WindowsApp.Forms
             tableAdapterManager.UpdateAll(gibddDataSet);
         }
 
-        private void NextClick(object sender, EventArgs e)
-        {
-            bindingNavigatorMoveNextItem.PerformClick();
-        }
-
+        /// <summary>
+        /// Отображает информацию по предыдущему водителю.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BackClick(object sender, EventArgs e)
         {
             bindingNavigatorMovePreviousItem.PerformClick();
         }
 
+        /// <summary>
+        /// Удаляет выбранного водителя
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void DeleteDataClick(object sender, EventArgs e)
+        {
+            bindingNavigatorDeleteItem.PerformClick();
+        }
+
+        /// <summary>
+        /// Создает нового водителя.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NewDataClick(object sender, EventArgs e)
         {
             bindingNavigatorAddNewItem.PerformClick();
         }
 
+        /// <summary>
+        /// Отображает информацию по следующему водителю.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NextClick(object sender, EventArgs e)
+        {
+            bindingNavigatorMoveNextItem.PerformClick();
+        }
+
+        /// <summary>
+        /// Сохраняет текущего водителя.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SaveDataClick(object sender, EventArgs e)
         {
             if (!emailRule.Match(emailTextBox.Text).Success)
@@ -68,13 +121,9 @@ namespace WindowsApp.Forms
                 driversBindingNavigatorSaveItem.PerformClick();
         }
 
-        private void DeleteDataClick(object sender, EventArgs e)
-        {
-            bindingNavigatorDeleteItem.PerformClick();
-        }
-
         /// <summary>
-        /// Срабатывает при нажатии на кнопку "GET". Отправляет GET запросы и стягивает картинки.
+        /// Срабатывает при нажатии на кнопку "GET".
+        /// Отправляет GET запросы и стягивает картинки.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
