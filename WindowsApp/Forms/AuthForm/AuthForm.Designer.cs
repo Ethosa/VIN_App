@@ -168,7 +168,7 @@ namespace WindowsApp
             this.authButton.TabIndex = 5;
             this.authButton.Text = "Войти";
             this.authButton.UseVisualStyleBackColor = true;
-            this.authButton.Click += new System.EventHandler(this.authButton_Click);
+            this.authButton.Click += new System.EventHandler(this.AuthButtonClick);
             // 
             // Auth
             // 

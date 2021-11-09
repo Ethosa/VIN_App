@@ -35,11 +35,21 @@
         }
 
         /// <summary>
+        /// Вызывается при открытии формы.
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/>.</param>
+        /// <param name="e">The e<see cref="EventArgs"/>.</param>
+        private async void Auth_Load(object sender, EventArgs e)
+        {
+            await LoadTimeout();
+        }
+
+        /// <summary>
         /// Вызывается при клике на кнопку.
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private async void authButton_Click(object sender, EventArgs e)
+        private async void AuthButtonClick(object sender, EventArgs e)
         {
             warnLabel.Text = null;
             if (string.IsNullOrEmpty(loginText.Text) || string.IsNullOrEmpty(passText.Text))
@@ -58,8 +68,9 @@
                 }
                 else
                 {
-                    of.MainForm();
                     Hide();
+                    of.MainForm();
+                    Close();
                 }
             }
         }
@@ -112,16 +123,6 @@
         {
             config.AppSettings.Settings["timeout"].Value = sec.ToString();
             config.Save();
-        }
-
-        /// <summary>
-        /// The Auth_Load.
-        /// </summary>
-        /// <param name="sender">The sender<see cref="object"/>.</param>
-        /// <param name="e">The e<see cref="EventArgs"/>.</param>
-        private async void Auth_Load(object sender, EventArgs e)
-        {
-            await LoadTimeout();
         }
 
         private void showPassBtn_MouseHover(object sender, EventArgs e)
