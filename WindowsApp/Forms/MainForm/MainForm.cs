@@ -34,7 +34,7 @@
         ///     <item>8-800-555-35-35</item>
         ///     <item>8 800 555 35 35</item>
         ///     <item>88005553535</item>
-        /// </list>.
+        /// </list>
         /// </summary>
         private readonly Regex phoneRule = new Regex(
             @"^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$",
