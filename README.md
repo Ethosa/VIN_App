@@ -35,20 +35,18 @@
   #### Driver Create form
   - [x] Form created
   - [ ] Driver picture upload
-  - [ ] Separate address fields on form
+  - [x] Separate address fields on form
   - [x] Suggestions on City field
   - [x] Is E-Mail valid check
   #### Driver profile form
-  - [ ] Form created<br>
+  - [ ] Form created
 It is necessary to implement an interface in which the user can change information about the driver, as well as additional    information that will be implemented in the next sessions.
   #### Fines
-  - [ ] Form created<br>
+  - [x] Form created
 
 ## Session 3
   - [ ] Soon
 ## Session 4
   - [ ] Soon
 ## Session 5
-  - [ ] Soon
-## Session 6
   - [ ] Soon
