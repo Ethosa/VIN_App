@@ -119,16 +119,11 @@ namespace WindowsApp.Forms
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.respOut = new System.Windows.Forms.TextBox();
-            this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
-            this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
-            this.label7 = new System.Windows.Forms.Label();
-            this.doPOST = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.getFines = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
+            this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
+            this.carPic = new System.Windows.Forms.PictureBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -168,6 +163,7 @@ namespace WindowsApp.Forms
             this.finesPage.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carPic)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -958,12 +954,7 @@ namespace WindowsApp.Forms
             // 
             // finesPage
             // 
-            this.finesPage.Controls.Add(this.textBox2);
-            this.finesPage.Controls.Add(this.label8);
-            this.finesPage.Controls.Add(this.doPOST);
-            this.finesPage.Controls.Add(this.textBox1);
-            this.finesPage.Controls.Add(this.getFines);
-            this.finesPage.Controls.Add(this.label7);
+            this.finesPage.Controls.Add(this.carPic);
             this.finesPage.Controls.Add(this.getUrl);
             this.finesPage.Controls.Add(this.label6);
             this.finesPage.Controls.Add(this.doGET_button);
@@ -1013,7 +1004,7 @@ namespace WindowsApp.Forms
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(284, 166);
+            this.label5.Location = new System.Drawing.Point(10, 116);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 24);
             this.label5.TabIndex = 6;
@@ -1063,11 +1054,30 @@ namespace WindowsApp.Forms
             // 
             // respOut
             // 
-            this.respOut.Location = new System.Drawing.Point(288, 193);
+            this.respOut.Location = new System.Drawing.Point(14, 143);
             this.respOut.Multiline = true;
             this.respOut.Name = "respOut";
             this.respOut.Size = new System.Drawing.Size(527, 290);
             this.respOut.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.pictureBox2);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1301, 741);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(368, 133);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // driversTableAdapter
             // 
@@ -1082,77 +1092,14 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
             // 
-            // label7
+            // carPic
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(634, 7);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(83, 24);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "postFine";
-            // 
-            // doPOST
-            // 
-            this.doPOST.Location = new System.Drawing.Point(912, 61);
-            this.doPOST.Name = "doPOST";
-            this.doPOST.Size = new System.Drawing.Size(75, 23);
-            this.doPOST.TabIndex = 13;
-            this.doPOST.Text = "POST";
-            this.doPOST.UseVisualStyleBackColor = true;
-            this.doPOST.Click += new System.EventHandler(this.doPOST_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(682, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(164, 20);
-            this.textBox1.TabIndex = 12;
-            // 
-            // getFines
-            // 
-            this.getFines.AutoSize = true;
-            this.getFines.Location = new System.Drawing.Point(634, 45);
-            this.getFines.Name = "getFines";
-            this.getFines.Size = new System.Drawing.Size(15, 13);
-            this.getFines.TabIndex = 11;
-            this.getFines.Text = "id";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(682, 67);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(164, 20);
-            this.textBox2.TabIndex = 15;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(634, 70);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(49, 13);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "message";
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.pictureBox2);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1301, 741);
-            this.tabPage1.TabIndex = 3;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(368, 133);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
-            this.pictureBox2.TabIndex = 0;
-            this.pictureBox2.TabStop = false;
+            this.carPic.Location = new System.Drawing.Point(691, 55);
+            this.carPic.Name = "carPic";
+            this.carPic.Size = new System.Drawing.Size(400, 222);
+            this.carPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.carPic.TabIndex = 10;
+            this.carPic.TabStop = false;
             // 
             // MainForm
             // 
@@ -1197,6 +1144,7 @@ namespace WindowsApp.Forms
             this.finesPage.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.carPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1278,13 +1226,8 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox getUrl;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button doPOST;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label getFines;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox carPic;
     }
 }

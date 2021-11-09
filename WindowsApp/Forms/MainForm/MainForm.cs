@@ -6,8 +6,9 @@ using System.Windows.Forms;
 using WindowsApp.Database;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
-using System.Data.SqlClient;
+using Newtonsoft.Json.Linq;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace WindowsApp.Forms
 {
@@ -83,14 +84,27 @@ namespace WindowsApp.Forms
             bindingNavigatorDeleteItem.PerformClick();
         }
 
-        private void doGET_button_Click(object sender, EventArgs e)
+        private async void doGET_button_Click(object sender, EventArgs e)
         {
             string url = $"http://solutions2019.hakta.pro/api/getFines?participant={partBox.Text}&modified={modifedDate.Value.ToString()}";
             getUrl.Text = url;
             dynamic stuff = JsonConvert.DeserializeObject(HttpGet(url));
             respOut.Text = stuff.data.ToString();
-
+            for (int i = 0; i < ((JArray)stuff.data).Count; i++)
+            {
+                try
+                {
+                    carPic.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData(stuff.data[i].photo.ToString())));
+                } catch
+                {
+                    continue;
+                } finally
+                {
+                    await Task.Delay(2000);
+                }               
+            }
         }
+
         public string HttpGet(string url)
         {
             HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
@@ -104,27 +118,5 @@ namespace WindowsApp.Forms
            
         }
 
-        public string HttpPost(string url)
-        {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            Stream stream = resp.GetResponseStream();
-            StreamReader sr = new StreamReader(stream);
-            string resp_out = sr.ReadToEnd();
-
-            sr.Close();
-
-            return resp_out;
-        }
-
-        private void doPOST_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
