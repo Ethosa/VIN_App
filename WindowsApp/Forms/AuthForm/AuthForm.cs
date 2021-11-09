@@ -1,13 +1,12 @@
 ﻿namespace WindowsApp
 {
     using System;
+    using System.Configuration;
     using System.Linq;
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using WindowsApp.Database;
     using WindowsApp.Modules;
-    using System.Configuration;
-
 
     /// <summary>
     /// Defines the <see cref="Auth" />.
@@ -23,7 +22,15 @@
         /// Defines the of.
         /// </summary>
         internal OpenForms of = new OpenForms();
+
+        /// <summary>
+        /// Defines the db.
+        /// </summary>
         internal gibddEntities db = new gibddEntities();
+
+        /// <summary>
+        /// Defines the config.
+        /// </summary>
         internal Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 
         /// <summary>
@@ -94,8 +101,8 @@
         /// <summary>
         /// Обновляет и сохраняет таймаут в конфиге.
         /// </summary>
-        /// <param name="sec"></param>
-        /// <returns></returns>
+        /// <param name="sec">.</param>
+        /// <returns>.</returns>
         private async Task<int> UpdateTimeout(int sec)
         {
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
@@ -108,7 +115,7 @@
         /// <summary>
         /// Подгружает сохраненный таймаут из конфига.
         /// </summary>
-        /// <returns>таймаут</returns>
+        /// <returns>таймаут.</returns>
         private async Task LoadTimeout()
         {
             int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
@@ -118,18 +125,28 @@
         /// <summary>
         /// Сохраняет таймаут в конфиг.
         /// </summary>
-        /// <param name="sec">таймаут</param>
+        /// <param name="sec">таймаут.</param>
         private void SaveTimeout(int sec)
         {
             config.AppSettings.Settings["timeout"].Value = sec.ToString();
             config.Save();
         }
 
+        /// <summary>
+        /// The showPassBtn_MouseHover.
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/>.</param>
+        /// <param name="e">The e<see cref="EventArgs"/>.</param>
         private void showPassBtn_MouseHover(object sender, EventArgs e)
         {
-            passText.PasswordChar='\0';
+            passText.PasswordChar = '\0';
         }
 
+        /// <summary>
+        /// The showPassBtn_MouseLeave.
+        /// </summary>
+        /// <param name="sender">The sender<see cref="object"/>.</param>
+        /// <param name="e">The e<see cref="EventArgs"/>.</param>
         private void showPassBtn_MouseLeave(object sender, EventArgs e)
         {
             passText.PasswordChar = '*';
