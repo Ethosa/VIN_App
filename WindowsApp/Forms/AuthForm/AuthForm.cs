@@ -35,7 +35,7 @@
         }
 
         /// <summary>
-        /// The authButton_Click.
+        /// Вызывается при клике на кнопку.
         /// </summary>
         /// <param name="sender">The sender<see cref="object"/>.</param>
         /// <param name="e">The e<see cref="EventArgs"/>.</param>
@@ -65,7 +65,7 @@
         }
 
         /// <summary>
-        /// The AttemptsTimer.
+        /// Блокировка входа на определенное время.
         /// </summary>
         /// <param name="sec">Timeout seconds<see cref="int"/>.</param>
         /// <returns>The <see cref="Task"/>.</returns>
@@ -74,14 +74,17 @@
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
             authButton.Enabled = false;
             while (sec > 0)
-            {
                 sec = await UpdateTimeout(sec);
-            }
             warnLabel.Text = null;
             authButton.Enabled = true;
             wrongAuthCount = 0;
         }
 
+        /// <summary>
+        /// Обновляет и сохраняет таймаут в конфиге.
+        /// </summary>
+        /// <param name="sec"></param>
+        /// <returns></returns>
         private async Task<int> UpdateTimeout(int sec)
         {
             warnLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {sec} секунд";
@@ -92,9 +95,9 @@
         }
 
         /// <summary>
-        /// Loads timeout from app config.
+        /// Подгружает сохраненный таймаут из конфига.
         /// </summary>
-        /// <returns></returns>
+        /// <returns>таймаут</returns>
         private async Task LoadTimeout()
         {
             int timeout = Convert.ToInt32(config.AppSettings.Settings["timeout"].Value);
@@ -102,9 +105,9 @@
         }
 
         /// <summary>
-        /// Saves timeout to app config.
+        /// Сохраняет таймаут в конфиг.
         /// </summary>
-        /// <param name="sec"></param>
+        /// <param name="sec">таймаут</param>
         private void SaveTimeout(int sec)
         {
             config.AppSettings.Settings["timeout"].Value = sec.ToString();

@@ -59,6 +59,7 @@ namespace WindowsApp
             this.splitContainer1.Panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(238)))), ((int)(((byte)(252)))));
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
+            this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer1.Panel2
             // 
@@ -69,6 +70,7 @@ namespace WindowsApp
             this.splitContainer1.Panel2.Controls.Add(this.passText);
             this.splitContainer1.Panel2.Controls.Add(this.loginText);
             this.splitContainer1.Panel2.Controls.Add(this.authButton);
+            this.splitContainer1.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer1.Size = new System.Drawing.Size(496, 241);
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 5;
@@ -177,6 +179,7 @@ namespace WindowsApp
             this.MaximumSize = new System.Drawing.Size(512, 280);
             this.MinimumSize = new System.Drawing.Size(512, 280);
             this.Name = "Auth";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.Text = "Авторизация в системе";
             this.Load += new System.EventHandler(this.Auth_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);

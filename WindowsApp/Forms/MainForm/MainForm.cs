@@ -7,7 +7,6 @@ using WindowsApp.Database;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace WindowsApp.Forms
@@ -16,10 +15,12 @@ namespace WindowsApp.Forms
     {
         internal gibddEntities db = new gibddEntities();
         private readonly Regex emailRule = new Regex(
-            @".+?@(.+\..+)+", RegexOptions.IgnoreCase | RegexOptions.Compiled);
+            @"^.+?@(.+\..+)+$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
         private readonly Regex phoneRule = new Regex(
-            @"(?<phone>^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$)",
+            @"^\d[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{3}[\s\-]{0,1}\d{2}[\s\-]{0,1}\d{2}$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
+        private readonly Regex indexRule = new Regex(
+            @"^\d{1,6}$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
 
         public MainForm()
@@ -30,71 +31,65 @@ namespace WindowsApp.Forms
         private void MainForm_Load(object sender, EventArgs e)
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
-            driversTableAdapter.Fill(this.gibddDataSet.drivers);
-            driverPhoto ph = db.driverPhoto.AsNoTracking().FirstOrDefault();
-            /*string result = ph.image_data.Replace("\x99\x11", "\x00");
-            byte photo = Convert.ToByte(result);
-            using (var ms = new MemoryStream(photo))
-            {
-                Image pic = Image.FromStream(ms);
-                pictureBox2.Image = pic;
-            }
-            
-            // MessageBox.Show();*/
+            driversTableAdapter.Fill(gibddDataSet.drivers);
       }
 
-        private void driversBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        private void DriversBindingNavigatorSaveItemClick(object sender, EventArgs e)
         {
             Validate();
             driversBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(this.gibddDataSet);
-
+            tableAdapterManager.UpdateAll(gibddDataSet);
         }
 
-        
-        //driverPhoto.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData("http://localhost:28712/driverPhotos/" + photoTextBox.Text)));    
-
-        private void button2_Click(object sender, EventArgs e)
+        private void NextClick(object sender, EventArgs e)
         {
             bindingNavigatorMoveNextItem.PerformClick();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void BackClick(object sender, EventArgs e)
         {
             bindingNavigatorMovePreviousItem.PerformClick();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void NewDataClick(object sender, EventArgs e)
         {
             bindingNavigatorAddNewItem.PerformClick();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void SaveDataClick(object sender, EventArgs e)
         {
             if (!emailRule.Match(emailTextBox.Text).Success)
                 MessageBox.Show("E-mail is wrong!");
-            if (!phoneRule.Match(phoneTextBox.Text).Success)
+            else if (!phoneRule.Match(phoneTextBox.Text).Success)
                 MessageBox.Show("Phone number is wrong!");
+            else if (!indexRule.Match(postcodeTextBox.Text).Success)
+                MessageBox.Show("Postcode is wrong!");
             else
                 driversBindingNavigatorSaveItem.PerformClick();
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void DeleteDataClick(object sender, EventArgs e)
         {
             bindingNavigatorDeleteItem.PerformClick();
         }
 
-        private async void doGET_button_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Срабатывает при нажатии на кнопку "GET". Отправляет GET запросы и стягивает картинки.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void TryToGetClick(object sender, EventArgs e)
         {
             string url = $"http://solutions2019.hakta.pro/api/getFines?participant={partBox.Text}&modified={modifedDate.Value.ToString()}";
             getUrl.Text = url;
-            dynamic stuff = JsonConvert.DeserializeObject(HttpGet(url));
-            respOut.Text = stuff.data.ToString();
-            for (int i = 0; i < ((JArray)stuff.data).Count; i++)
+            JObject stuff = (JObject)JsonConvert.DeserializeObject(SendGetRequest(url));
+            response.Text = stuff["data"].ToString();
+            for (int i = 0; i < ((JArray)stuff["data"]).Count; i++)
             {
                 try
                 {
-                    carPic.Image = Image.FromStream(new MemoryStream(new WebClient().DownloadData(stuff.data[i].photo.ToString())));
+                    carPic.Image = Image.FromStream(
+                        new MemoryStream(new WebClient().DownloadData(stuff["data"][i]["photo"].ToString())));
                 } catch
                 {
                     continue;
@@ -105,18 +100,25 @@ namespace WindowsApp.Forms
             }
         }
 
-        public string HttpGet(string url)
+        /// <summary>
+        /// Отправляет GET запрос.
+        /// </summary>
+        /// <param name="url">URL, куда следует отправить запрос.</param>
+        /// <returns>Ответ</returns>
+        public string SendGetRequest(string url)
         {
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            Stream stream = resp.GetResponseStream();
-            StreamReader sr = new StreamReader(stream);
-            string resp_out = sr.ReadToEnd(); 
-            sr.Close();
+            Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
 
-            return resp_out;
-           
+            StreamReader streamReader = new StreamReader(stream);
+            string response = streamReader.ReadToEnd();
+            streamReader.Close();
+
+            return response;
         }
 
+        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+        {
+
+        }
     }
 }

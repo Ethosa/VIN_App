@@ -82,11 +82,11 @@ namespace WindowsApp.Forms
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.driversBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.idTextBox = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.deleteData = new System.Windows.Forms.Button();
+            this.saveData = new System.Windows.Forms.Button();
+            this.newData = new System.Windows.Forms.Button();
+            this.next = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.photoTextBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -109,21 +109,21 @@ namespace WindowsApp.Forms
             this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox = new System.Windows.Forms.TextBox();
             this.finesPage = new System.Windows.Forms.TabPage();
+            this.carPic = new System.Windows.Forms.PictureBox();
             this.getUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.doGET_button = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
+            this.responseLabel = new System.Windows.Forms.Label();
             this.partBox = new System.Windows.Forms.TextBox();
             this.modifedDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.respOut = new System.Windows.Forms.TextBox();
+            this.response = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
-            this.carPic = new System.Windows.Forms.PictureBox();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -161,9 +161,9 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.finesPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carPic)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carPic)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -323,6 +323,7 @@ namespace WindowsApp.Forms
             this.splitContainer1.Size = new System.Drawing.Size(1309, 856);
             this.splitContainer1.SplitterDistance = 85;
             this.splitContainer1.TabIndex = 0;
+            this.splitContainer1.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer1_SplitterMoved);
             // 
             // pictureBox1
             // 
@@ -391,11 +392,11 @@ namespace WindowsApp.Forms
             this.splitContainer2.Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.splitContainer2.Panel2.Controls.Add(idLabel);
             this.splitContainer2.Panel2.Controls.Add(this.idTextBox);
-            this.splitContainer2.Panel2.Controls.Add(this.button5);
-            this.splitContainer2.Panel2.Controls.Add(this.button4);
-            this.splitContainer2.Panel2.Controls.Add(this.button3);
-            this.splitContainer2.Panel2.Controls.Add(this.button2);
-            this.splitContainer2.Panel2.Controls.Add(this.button1);
+            this.splitContainer2.Panel2.Controls.Add(this.deleteData);
+            this.splitContainer2.Panel2.Controls.Add(this.saveData);
+            this.splitContainer2.Panel2.Controls.Add(this.newData);
+            this.splitContainer2.Panel2.Controls.Add(this.next);
+            this.splitContainer2.Panel2.Controls.Add(this.back);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox4);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox3);
             this.splitContainer2.Panel2.Controls.Add(this.groupBox1);
@@ -646,7 +647,7 @@ namespace WindowsApp.Forms
             this.driversBindingNavigatorSaveItem.Name = "driversBindingNavigatorSaveItem";
             this.driversBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.driversBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.driversBindingNavigatorSaveItem.Click += new System.EventHandler(this.driversBindingNavigatorSaveItem_Click);
+            this.driversBindingNavigatorSaveItem.Click += new System.EventHandler(this.DriversBindingNavigatorSaveItemClick);
             // 
             // idTextBox
             // 
@@ -656,55 +657,55 @@ namespace WindowsApp.Forms
             this.idTextBox.Size = new System.Drawing.Size(100, 20);
             this.idTextBox.TabIndex = 36;
             // 
-            // button5
+            // deleteData
             // 
-            this.button5.Location = new System.Drawing.Point(10, 681);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(245, 23);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "Удалить";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.deleteData.Location = new System.Drawing.Point(10, 681);
+            this.deleteData.Name = "deleteData";
+            this.deleteData.Size = new System.Drawing.Size(245, 23);
+            this.deleteData.TabIndex = 35;
+            this.deleteData.Text = "Удалить";
+            this.deleteData.UseVisualStyleBackColor = true;
+            this.deleteData.Click += new System.EventHandler(this.DeleteDataClick);
             // 
-            // button4
+            // saveData
             // 
-            this.button4.Location = new System.Drawing.Point(142, 652);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(113, 23);
-            this.button4.TabIndex = 34;
-            this.button4.Text = "Сохранить";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.saveData.Location = new System.Drawing.Point(142, 652);
+            this.saveData.Name = "saveData";
+            this.saveData.Size = new System.Drawing.Size(113, 23);
+            this.saveData.TabIndex = 34;
+            this.saveData.Text = "Сохранить";
+            this.saveData.UseVisualStyleBackColor = true;
+            this.saveData.Click += new System.EventHandler(this.SaveDataClick);
             // 
-            // button3
+            // newData
             // 
-            this.button3.Location = new System.Drawing.Point(10, 652);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(113, 23);
-            this.button3.TabIndex = 33;
-            this.button3.Text = "Новая запись";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.newData.Location = new System.Drawing.Point(10, 652);
+            this.newData.Name = "newData";
+            this.newData.Size = new System.Drawing.Size(113, 23);
+            this.newData.TabIndex = 33;
+            this.newData.Text = "Новая запись";
+            this.newData.UseVisualStyleBackColor = true;
+            this.newData.Click += new System.EventHandler(this.NewDataClick);
             // 
-            // button2
+            // next
             // 
-            this.button2.Location = new System.Drawing.Point(142, 623);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = ">>";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.next.Location = new System.Drawing.Point(142, 623);
+            this.next.Name = "next";
+            this.next.Size = new System.Drawing.Size(113, 23);
+            this.next.TabIndex = 32;
+            this.next.Text = ">>";
+            this.next.UseVisualStyleBackColor = true;
+            this.next.Click += new System.EventHandler(this.NextClick);
             // 
-            // button1
+            // back
             // 
-            this.button1.Location = new System.Drawing.Point(10, 623);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "<<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.back.Location = new System.Drawing.Point(10, 623);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(113, 23);
+            this.back.TabIndex = 31;
+            this.back.Text = "<<";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.BackClick);
             // 
             // groupBox4
             // 
@@ -958,13 +959,13 @@ namespace WindowsApp.Forms
             this.finesPage.Controls.Add(this.getUrl);
             this.finesPage.Controls.Add(this.label6);
             this.finesPage.Controls.Add(this.doGET_button);
-            this.finesPage.Controls.Add(this.label5);
+            this.finesPage.Controls.Add(this.responseLabel);
             this.finesPage.Controls.Add(this.partBox);
             this.finesPage.Controls.Add(this.modifedDate);
             this.finesPage.Controls.Add(this.label4);
             this.finesPage.Controls.Add(this.label3);
             this.finesPage.Controls.Add(this.label2);
-            this.finesPage.Controls.Add(this.respOut);
+            this.finesPage.Controls.Add(this.response);
             this.finesPage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.finesPage.Location = new System.Drawing.Point(4, 22);
             this.finesPage.Name = "finesPage";
@@ -973,6 +974,15 @@ namespace WindowsApp.Forms
             this.finesPage.TabIndex = 2;
             this.finesPage.Text = "Штрафы";
             this.finesPage.UseVisualStyleBackColor = true;
+            // 
+            // carPic
+            // 
+            this.carPic.Location = new System.Drawing.Point(547, 143);
+            this.carPic.Name = "carPic";
+            this.carPic.Size = new System.Drawing.Size(660, 437);
+            this.carPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.carPic.TabIndex = 10;
+            this.carPic.TabStop = false;
             // 
             // getUrl
             // 
@@ -998,17 +1008,17 @@ namespace WindowsApp.Forms
             this.doGET_button.TabIndex = 7;
             this.doGET_button.Text = "GET";
             this.doGET_button.UseVisualStyleBackColor = true;
-            this.doGET_button.Click += new System.EventHandler(this.doGET_button_Click);
+            this.doGET_button.Click += new System.EventHandler(this.TryToGetClick);
             // 
-            // label5
+            // responseLabel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(10, 116);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 24);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Response";
+            this.responseLabel.AutoSize = true;
+            this.responseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.responseLabel.Location = new System.Drawing.Point(10, 116);
+            this.responseLabel.Name = "responseLabel";
+            this.responseLabel.Size = new System.Drawing.Size(96, 24);
+            this.responseLabel.TabIndex = 6;
+            this.responseLabel.Text = "Response";
             // 
             // partBox
             // 
@@ -1052,13 +1062,13 @@ namespace WindowsApp.Forms
             this.label2.TabIndex = 1;
             this.label2.Text = "getFines";
             // 
-            // respOut
+            // response
             // 
-            this.respOut.Location = new System.Drawing.Point(14, 143);
-            this.respOut.Multiline = true;
-            this.respOut.Name = "respOut";
-            this.respOut.Size = new System.Drawing.Size(527, 290);
-            this.respOut.TabIndex = 0;
+            this.response.Location = new System.Drawing.Point(14, 143);
+            this.response.Multiline = true;
+            this.response.Name = "response";
+            this.response.Size = new System.Drawing.Size(527, 437);
+            this.response.TabIndex = 0;
             // 
             // tabPage1
             // 
@@ -1091,15 +1101,6 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.regionCodesTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
-            // 
-            // carPic
-            // 
-            this.carPic.Location = new System.Drawing.Point(691, 55);
-            this.carPic.Name = "carPic";
-            this.carPic.Size = new System.Drawing.Size(400, 222);
-            this.carPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.carPic.TabIndex = 10;
-            this.carPic.TabStop = false;
             // 
             // MainForm
             // 
@@ -1142,9 +1143,9 @@ namespace WindowsApp.Forms
             this.groupBox2.PerformLayout();
             this.finesPage.ResumeLayout(false);
             this.finesPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.carPic)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.carPic)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1206,11 +1207,11 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox passport_serialTextBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button deleteData;
+        private System.Windows.Forms.Button saveData;
+        private System.Windows.Forms.Button newData;
+        private System.Windows.Forms.Button next;
+        private System.Windows.Forms.Button back;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox realAddress;
@@ -1221,9 +1222,9 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox respOut;
+        private System.Windows.Forms.TextBox response;
         private System.Windows.Forms.Button doGET_button;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label responseLabel;
         private System.Windows.Forms.TextBox getUrl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage1;
