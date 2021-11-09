@@ -6,9 +6,9 @@ namespace REG_MARK_LIB
 {
     public class RegMark
     {
-        private string seriesChars = "ABCEHKMOPTYX";
+        private readonly string seriesChars = "ABCEHKMOPTYX";
 
-        private Regex markRule = new Regex(
+        private readonly Regex markRule = new Regex(
             @"^(?<before>[abekmhopctyx])(?<number>[0-9]{3})(?<after>[abekmhopctyx]{2})(?<region>[0-9]{2,3})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 

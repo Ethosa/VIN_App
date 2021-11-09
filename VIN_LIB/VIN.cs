@@ -21,12 +21,12 @@ namespace VIN_LIB
         // sign - Control sign
         // modelYear - vehicle model year
         // vis - vehicle identification section
-        public Regex vinRule = new Regex(
+        public readonly Regex vinRule = new Regex(
             @"^(?<wmi>[a-z1-9-[oiq]]{3})(?<vds>[a-z0-9-[oiq]]{5})(?<sign>[0-9x]{1})(?<modelYear>[a-y1-9-[oiqu]]{1})(?<vis>[a-z0-9-[oiq]]{7})$",
             RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
         // Сгенерированные коды стран с их названиями.
-        private string countryCodes =
+        private readonly string countryCodes =
             "AA-AH ЮАРAJ-AN Котд'Ивуар;BA-BE Ангола;BF-BK Кения;BL-BR Танзания;CA-CE Бенин;CF-CK Мадагаскар;CL-CR Тунис;DA-DE " +
             "Египет;DF-DK Марокко;DL-DR Замбия;EA-EE Эфиопия;EF-EK Мозамбик;FA-FE Гана;FF-FK Нигерия;JA-JT Япония;KA-KE " +
             "ШриЛанка;KF-KK Израиль;KL-KR Южная Корея;KS-K0 Казахстан;LA-L0 Китай;MA-ME Индия;MF-MK Индонезия;ML-MR " +
