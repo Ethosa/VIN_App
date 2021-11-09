@@ -60,6 +60,7 @@ namespace WindowsApp
             this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
             this.splitContainer1.Panel1.Controls.Add(this.label1);
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+           
             // 
             // splitContainer1.Panel2
             // 
