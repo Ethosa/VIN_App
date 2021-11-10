@@ -51,8 +51,23 @@ It is necessary to implement an interface in which the user can change informati
 
 
 ## Session 3
-  - [ ] Soon
+#### Database
+#### Add Driver Licence
+#### Driver Licence Card
+#### Driver Card
+#### Graphics
+
 ## Session 4
-  - [ ] Soon
+  #### Information Export
+  #### Database
+  #### Add Vehicle
+  #### Vehicle Card
+  
 ## Session 5
-  - [ ] Soon
+  #### Add Accident
+  #### Accident Info
+  #### Accident View
+  #### Unit Tests
+## Session 5
+ #### Unit Tests
+  
