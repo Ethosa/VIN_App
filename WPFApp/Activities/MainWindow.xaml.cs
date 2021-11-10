@@ -14,7 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPFApp.Database;
 
-namespace WPFApp
+namespace WPFApp.Activities
 {
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
