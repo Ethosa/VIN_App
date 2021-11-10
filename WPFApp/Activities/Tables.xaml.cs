@@ -51,9 +51,16 @@ namespace WPFApp.Activities
         private readonly Regex indexRule = new Regex(
             @"^\d{1,6}$", RegexOptions.IgnoreCase | RegexOptions.Compiled);
 
+
         public Tables()
         {
             InitializeComponent();
+            Loaded += new RoutedEventHandler(OnCreate);
+        }
+
+        private async void OnCreate(object sender, RoutedEventArgs args)
+        {
+            
         }
     }
 }

@@ -7,8 +7,24 @@
         mc:Ignorable="d"
         Title="Tables" Height="720" Width="1280">
     <Grid>
-        <DataGrid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1042"/>
-        <Image HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="54" Source="../Assets/gibdd_logo.png" Margin="1218,0,0,0"/>
+        <DataGrid x:Name="gibddDataGrid" HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1042">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Фамилия"/>
+                <DataGridTextColumn Header="Имя"/>
+                <DataGridTextColumn Header="Отчество"/>
+                <DataGridTextColumn Header="Серия паспорта"/>
+                <DataGridTextColumn Header="Номер паспорта"/>
+                <DataGridTextColumn Header="Почтовый индекс"/>
+                <DataGridTextColumn Header="Адрес прописки"/>
+                <DataGridTextColumn Header="Фактический адрес"/>
+                <DataGridTextColumn Header="Компания"/>
+                <DataGridTextColumn Header="Должность"/>
+                <DataGridTextColumn Header="Телефон"/>
+                <DataGridTextColumn Header="E-mail"/>
+                <DataGridTextColumn Header="Фото"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
 
     </Grid>
 </Window>
