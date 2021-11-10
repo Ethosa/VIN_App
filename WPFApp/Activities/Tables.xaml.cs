@@ -99,7 +99,7 @@ namespace WPFApp.Activities
 
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
-
+            driversDataGrid.Items.Add(null);
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
