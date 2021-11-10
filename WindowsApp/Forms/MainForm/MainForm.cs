@@ -226,8 +226,8 @@
             Console.WriteLine(link);
             try
             {
-                      CarFinePic.Image = Image.FromStream(
-                      new MemoryStream(new WebClient().DownloadData(link)));
+                CarFinePic.Image = Image.FromStream(
+                    new MemoryStream(new WebClient().DownloadData(link)));
             }
             catch
             {

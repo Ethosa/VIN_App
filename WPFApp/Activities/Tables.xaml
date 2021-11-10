@@ -15,7 +15,7 @@
         <TabControl HorizontalAlignment="Left" VerticalAlignment="Top">
             <TabItem Header="Данные" Width="Auto">
 
-                <DataGrid x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Mode=OneWay}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="742" Width="961" CanUserAddRows="False" CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="True" SelectedIndex="4">
+                <DataGrid AddingNewItem="DriversDataGridOnAddingNewItem" x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding Mode=OneWay}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="742" Width="961" CanUserAddRows="False" CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="True" SelectedIndex="4">
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="lastnameColumn" Binding="{Binding lastname}" Header="Фамилия" Width="SizeToHeader"/>
                         <DataGridTextColumn x:Name="firstnameColumn" Binding="{Binding firstname}" Header="Имя" Width="SizeToHeader"/>

@@ -98,14 +98,20 @@ namespace WPFApp.Activities
 
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
+            // TODO: Сделать добавление новых ячеек
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
         {
-
+            // Сделать сохранение в БД.
         }
 
         private void DeleteButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DriversDataGridOnAddingNewItem(object sender, AddingNewItemEventArgs e)
         {
 
         }
