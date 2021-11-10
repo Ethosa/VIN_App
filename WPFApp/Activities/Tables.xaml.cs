@@ -99,6 +99,8 @@ namespace WPFApp.Activities
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
             // TODO: Сделать добавление новых ячеек
+            gibddDataSet dataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
+            dataSet.drivers.AdddriversRow("", "", "", 0, 0, 0, "", "", "", "", "", "", "");
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
