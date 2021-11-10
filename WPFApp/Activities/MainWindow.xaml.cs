@@ -54,7 +54,10 @@ namespace WPFApp
                 return;
             else
             {
-                return;
+                if (wrongAuthCount < 3)
+                    ++wrongAuthCount;
+                else
+                    await AttemtsTimer(60);
             }
         }
 
