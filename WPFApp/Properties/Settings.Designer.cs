@@ -34,5 +34,16 @@ namespace WPFApp.Properties {
                 this["timeout"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=db-aws.rndn.ga;Initial Catalog=gibdd;User ID=app;Password=CallMeBigDe" +
+            "uce123")]
+        public string gibddConnectionString {
+            get {
+                return ((string)(this["gibddConnectionString"]));
+            }
+        }
     }
 }

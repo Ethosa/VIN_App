@@ -112,6 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="gibddDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>gibddDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -135,6 +140,17 @@
     </EntityDeploy>
     <None Include="Database\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="gibddDataSet.xsc">
+      <DependentUpon>gibddDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="gibddDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>gibddDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="gibddDataSet.xss">
+      <DependentUpon>gibddDataSet.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

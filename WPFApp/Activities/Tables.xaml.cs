@@ -62,5 +62,16 @@ namespace WPFApp.Activities
         {
             
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+
+            WPFApp.gibddDataSet gibddDataSet = ((WPFApp.gibddDataSet)(this.FindResource("gibddDataSet")));
+            // Загрузить данные в таблицу drivers. Можно изменить этот код как требуется.
+            WPFApp.gibddDataSetTableAdapters.driversTableAdapter gibddDataSetdriversTableAdapter = new WPFApp.gibddDataSetTableAdapters.driversTableAdapter();
+            gibddDataSetdriversTableAdapter.Fill(gibddDataSet.drivers);
+            System.Windows.Data.CollectionViewSource driversViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("driversViewSource")));
+            driversViewSource.View.MoveCurrentToFirst();
+        }
     }
 }
