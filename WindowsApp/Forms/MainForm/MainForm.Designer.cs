@@ -46,6 +46,9 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -109,7 +112,8 @@ namespace WindowsApp.Forms
             this.passport_serialTextBox1 = new System.Windows.Forms.TextBox();
             this.passport_serialTextBox = new System.Windows.Forms.TextBox();
             this.finesPage = new System.Windows.Forms.TabPage();
-            this.carPic = new System.Windows.Forms.PictureBox();
+            this.CarFinePic = new System.Windows.Forms.PictureBox();
+            this.FinesSummary = new System.Windows.Forms.DataGridView();
             this.getUrl = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.doGET_button = new System.Windows.Forms.Button();
@@ -161,7 +165,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.driverPhoto)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.finesPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carPic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarFinePic)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FinesSummary)).BeginInit();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -954,7 +959,8 @@ namespace WindowsApp.Forms
             // 
             // finesPage
             // 
-            this.finesPage.Controls.Add(this.carPic);
+            this.finesPage.Controls.Add(this.CarFinePic);
+            this.finesPage.Controls.Add(this.FinesSummary);
             this.finesPage.Controls.Add(this.getUrl);
             this.finesPage.Controls.Add(this.label6);
             this.finesPage.Controls.Add(this.doGET_button);
@@ -974,14 +980,51 @@ namespace WindowsApp.Forms
             this.finesPage.Text = "Штрафы";
             this.finesPage.UseVisualStyleBackColor = true;
             // 
-            // carPic
+            // CarFinePic
             // 
-            this.carPic.Location = new System.Drawing.Point(547, 143);
-            this.carPic.Name = "carPic";
-            this.carPic.Size = new System.Drawing.Size(660, 437);
-            this.carPic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.carPic.TabIndex = 10;
-            this.carPic.TabStop = false;
+            this.CarFinePic.Location = new System.Drawing.Point(547, 306);
+            this.CarFinePic.Name = "CarFinePic";
+            this.CarFinePic.Size = new System.Drawing.Size(660, 274);
+            this.CarFinePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.CarFinePic.TabIndex = 13;
+            this.CarFinePic.TabStop = false;
+            // 
+            // FinesSummary
+            // 
+            this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FinesSummary.Location = new System.Drawing.Point(547, 143);
+            this.FinesSummary.Name = "FinesSummary";
+            this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.FinesSummary.RowHeadersVisible = false;
+            this.FinesSummary.Size = new System.Drawing.Size(660, 156);
+            this.FinesSummary.TabIndex = 11;
+            this.FinesSummary.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.FinesSummary_CellContentDoubleClick);
             // 
             // getUrl
             // 
@@ -1142,7 +1185,8 @@ namespace WindowsApp.Forms
             this.groupBox2.PerformLayout();
             this.finesPage.ResumeLayout(false);
             this.finesPage.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.carPic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CarFinePic)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FinesSummary)).EndInit();
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -1228,6 +1272,7 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox carPic;
+        private System.Windows.Forms.DataGridView FinesSummary;
+        private System.Windows.Forms.PictureBox CarFinePic;
     }
 }

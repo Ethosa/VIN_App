@@ -63,6 +63,7 @@
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
             driversTableAdapter.Fill(gibddDataSet.drivers);
+
         }
 
         /// <summary>
@@ -172,8 +173,13 @@
             {
                 try
                 {
-                    carPic.Image = Image.FromStream(
-                        new MemoryStream(new WebClient().DownloadData(data[i]["photo"].ToString())));
+                    FinesSummary.DataSource = data;
+                    FinesSummary.Columns[0].Name = "Номер";
+                    FinesSummary.Columns[1].Name = "Гос.номер";
+                    FinesSummary.Columns[2].Name = "Вод. удостоверение";
+                    FinesSummary.Columns[3].Name = "Дата";
+                    FinesSummary.Columns[4].Name = "Фото";
+                    
                 }
                 catch
                 {
@@ -217,8 +223,32 @@
             return response;
         }
 
-        private void splitContainer1_SplitterMoved(object sender, SplitterEventArgs e)
+
+        public class JsonResult
         {
+            public int id { get; set; }
+            public string car_num { get; set; }
+            public string licence_num { get; set; }
+            public string create_date { get; set; }
+            public LinkArea photo { get; set; }
+        }
+
+
+
+        private void FinesSummary_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string link = FinesSummary.CurrentCell.Value.ToString();
+            Console.WriteLine(link);
+            try
+            {
+                      CarFinePic.Image = Image.FromStream(
+                      new MemoryStream(new WebClient().DownloadData(link)));
+            }
+            catch
+            {
+               
+            }
+            
 
         }
     }
