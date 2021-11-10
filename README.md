@@ -39,14 +39,35 @@
   - [x] Suggestions on City field
   - [x] Is E-Mail valid check
   #### Driver profile form
-  - [ ] Form created
+  - [x] Form created
 It is necessary to implement an interface in which the user can change information about the driver, as well as additional    information that will be implemented in the next sessions.
   #### Fines
   - [x] Form created
+  - [x] GET JSON
+  - [x] View car picture
+  - [ ] POST postFine [API method is down]
+  #### Information Export
+   - [ ] Import fines in .csv
+
 
 ## Session 3
-  - [ ] Soon
+#### Database
+#### Add Driver Licence
+#### Driver Licence Card
+#### Driver Card
+#### Graphics
+
 ## Session 4
-  - [ ] Soon
+  #### Information Export
+  #### Database
+  #### Add Vehicle
+  #### Vehicle Card
+  
 ## Session 5
-  - [ ] Soon
+  #### Add Accident
+  #### Accident Info
+  #### Accident View
+  #### Unit Tests
+## Session 5
+ #### Unit Tests
+  

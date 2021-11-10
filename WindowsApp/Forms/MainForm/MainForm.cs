@@ -200,7 +200,6 @@
         public string SendGetRequest(string url)
         {
             Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
-
             StreamReader streamReader = new StreamReader(stream);
             string response = streamReader.ReadToEnd();
             streamReader.Close();
@@ -215,25 +214,12 @@
             request.ContentType = "application/json";
             request.Timeout = 5000;
             Stream stream = request.GetResponse().GetResponseStream();
-
             StreamReader streamReader = new StreamReader(stream);
             string response = streamReader.ReadToEnd();
             streamReader.Close();
 
             return response;
         }
-
-
-        public class JsonResult
-        {
-            public int id { get; set; }
-            public string car_num { get; set; }
-            public string licence_num { get; set; }
-            public string create_date { get; set; }
-            public LinkArea photo { get; set; }
-        }
-
-
 
         private void FinesSummary_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -246,10 +232,7 @@
             }
             catch
             {
-               
             }
-            
-
         }
     }
 }
