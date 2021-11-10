@@ -45,6 +45,8 @@ namespace WPFApp.Activities
         /// <param name="args"></param>
         private async void OnCreate(object sender, RoutedEventArgs args)
         {
+            authLogin.Text = "inspector";
+            authPassword.Text = "inspector";
             int timeout = Properties.Settings.Default.timeout;
             if (timeout > 0)
             {

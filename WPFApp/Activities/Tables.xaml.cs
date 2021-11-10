@@ -57,7 +57,6 @@ namespace WPFApp.Activities
         public Tables()
         {
             InitializeComponent();
-            Loaded += new RoutedEventHandler(OnCreate);
         }
 
         /// <summary>
@@ -99,9 +98,6 @@ namespace WPFApp.Activities
 
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
-            driversDataGrid.Items.Add(null);
-            driversDataGrid.SelectedIndex = driversDataGrid.Items.Count - 1;
-            driversDataGrid.UpdateLayout();
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
