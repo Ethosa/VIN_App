@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WPFApp {
+namespace WPFApp.Database {
     
     
     /// <summary>
@@ -2387,7 +2387,7 @@ namespace WPFApp {
         }
     }
 }
-namespace WPFApp.gibddDataSetTableAdapters {
+namespace WPFApp.Database.gibddDataSetTableAdapters {
     
     
     /// <summary>

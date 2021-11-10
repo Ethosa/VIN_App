@@ -125,6 +125,7 @@ namespace WPFApp.Activities
         /// </summary>
         private void GoToTables()
         {
+            Hide();
             Tables window = new Tables();
             window.ShowDialog();
             Close();

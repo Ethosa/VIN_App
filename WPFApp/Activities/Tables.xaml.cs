@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WPFApp.Database;
+using WPFApp.Database.gibddDataSetTableAdapters;
 
 namespace WPFApp.Activities
 {
@@ -58,30 +59,42 @@ namespace WPFApp.Activities
             Loaded += new RoutedEventHandler(OnCreate);
         }
 
-        private async void OnCreate(object sender, RoutedEventArgs args)
+        /// <summary>
+        /// Вызывается при загрузке окна.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
+        private void OnCreate(object sender, RoutedEventArgs args)
         {
             
-        }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-
-            WPFApp.gibddDataSet gibddDataSet = ((WPFApp.gibddDataSet)(this.FindResource("gibddDataSet")));
+            gibddDataSet gibddDataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
             // Загрузить данные в таблицу drivers. Можно изменить этот код как требуется.
-            WPFApp.gibddDataSetTableAdapters.driversTableAdapter gibddDataSetdriversTableAdapter = new WPFApp.gibddDataSetTableAdapters.driversTableAdapter();
+            driversTableAdapter gibddDataSetdriversTableAdapter = new driversTableAdapter();
             gibddDataSetdriversTableAdapter.Fill(gibddDataSet.drivers);
-            System.Windows.Data.CollectionViewSource driversViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("driversViewSource")));
+            CollectionViewSource driversViewSource = ((CollectionViewSource)(FindResource("driversViewSource")));
             driversViewSource.View.MoveCurrentToFirst();
         }
 
+        /// <summary>
+        /// Переходит к следующей ячейке.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void NextButtonOnClick(object sender, RoutedEventArgs e)
         {
-
+            // TODO: Ограничить последним ID.
+            driversDataGrid.SelectedIndex++;
         }
 
+        /// <summary>
+        /// Переходит к предыдущей ячейке.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void PrevButtonOnClick(object sender, RoutedEventArgs e)
         {
-
+            if (driversDataGrid.SelectedIndex > 0)
+                driversDataGrid.SelectedIndex--;
         }
 
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
