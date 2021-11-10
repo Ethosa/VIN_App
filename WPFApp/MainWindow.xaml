@@ -1,0 +1,18 @@
+﻿<Window x:Class="WPFApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="360" Width="640">
+    <Grid>
+        <Button Content="Войти" HorizontalAlignment="Center" Margin="0,278,0,0" VerticalAlignment="Top" Width="176" Click="ButtonOnClick" x:Name="authButton"/>
+        <Label Content="Вход" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="authLabel"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Пароль" x:Name="authPassword"/>
+        <TextBox HorizontalAlignment="Center" Margin="0,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" ToolTip="Логин" x:Name="authLogin"/>
+        <Image HorizontalAlignment="Center" Height="100" VerticalAlignment="Top" Width="100" Source="/gibdd_logo.png" x:Name="logoImage"/>
+        <TextBlock Padding="0" HorizontalAlignment="Center" Margin="0,265,0,0" VerticalAlignment="Top" FontSize="10" Foreground="#FFBF4747" Width="176" x:Name="errorLabel" Height="13" TextAlignment="Center"/>
+
+    </Grid>
+</Window>

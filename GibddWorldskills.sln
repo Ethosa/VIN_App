@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibTest", "LibTest\LibTest.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebServer", "WebServer\WebServer.csproj", "{B1CAB4FD-502B-4F6F-A926-B16E74AD322E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFApp", "WPFApp\WPFApp.csproj", "{11762295-0008-4A80-9507-43241478EED8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{B1CAB4FD-502B-4F6F-A926-B16E74AD322E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1CAB4FD-502B-4F6F-A926-B16E74AD322E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1CAB4FD-502B-4F6F-A926-B16E74AD322E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11762295-0008-4A80-9507-43241478EED8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11762295-0008-4A80-9507-43241478EED8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11762295-0008-4A80-9507-43241478EED8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11762295-0008-4A80-9507-43241478EED8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
