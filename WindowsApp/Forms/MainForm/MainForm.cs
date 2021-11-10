@@ -169,16 +169,16 @@
         {
             JArray data = (JArray)GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
             response.Text = data.ToString();
+            FinesSummary.Columns[0].Name = "Номер";
+            FinesSummary.Columns[1].Name = "Гос.номер";
+            FinesSummary.Columns[2].Name = "Вод. удостоверение";
+            FinesSummary.Columns[3].Name = "Дата";
+            FinesSummary.Columns[4].Name = "Фото";
             for (int i = 0; i < data.Count; i++)
             {
                 try
                 {
                     FinesSummary.DataSource = data;
-                    FinesSummary.Columns[0].Name = "Номер";
-                    FinesSummary.Columns[1].Name = "Гос.номер";
-                    FinesSummary.Columns[2].Name = "Вод. удостоверение";
-                    FinesSummary.Columns[3].Name = "Дата";
-                    FinesSummary.Columns[4].Name = "Фото";
                     
                 }
                 catch
