@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WPFApp.Database;
 using WPFApp.Database.gibddDataSetTableAdapters;
+using WPFApp.Classes;
 
 namespace WPFApp.Activities
 {
@@ -66,7 +67,6 @@ namespace WPFApp.Activities
         /// <param name="args"></param>
         private void OnCreate(object sender, RoutedEventArgs args)
         {
-            
             gibddDataSet gibddDataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
             // Загрузить данные в таблицу drivers. Можно изменить этот код как требуется.
             driversTableAdapter gibddDataSetdriversTableAdapter = new driversTableAdapter();
@@ -82,8 +82,8 @@ namespace WPFApp.Activities
         /// <param name="e"></param>
         private void NextButtonOnClick(object sender, RoutedEventArgs e)
         {
-            // TODO: Ограничить последним ID.
-            driversDataGrid.SelectedIndex++;
+            if (driversDataGrid.SelectedIndex < driversDataGrid.Items.Count)
+                driversDataGrid.SelectedIndex++;
         }
 
         /// <summary>
@@ -100,6 +100,8 @@ namespace WPFApp.Activities
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
             driversDataGrid.Items.Add(null);
+            driversDataGrid.SelectedIndex = driversDataGrid.Items.Count - 1;
+            driversDataGrid.UpdateLayout();
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)

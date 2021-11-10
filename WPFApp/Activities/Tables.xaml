@@ -13,9 +13,9 @@
     </Window.Resources>
     <Grid DataContext="{StaticResource driversViewSource}">
         <TabControl HorizontalAlignment="Left" VerticalAlignment="Top">
-            <TabItem Header="Данные">
+            <TabItem Header="Данные" Width="Auto">
 
-                <DataGrid x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="742" Width="961">
+                <DataGrid x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="742" Width="961" CanUserAddRows="False" CanUserDeleteRows="False" IsSynchronizedWithCurrentItem="True" SelectedIndex="4">
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="lastnameColumn" Binding="{Binding lastname}" Header="Фамилия" Width="SizeToHeader"/>
                         <DataGridTextColumn x:Name="firstnameColumn" Binding="{Binding firstname}" Header="Имя" Width="SizeToHeader"/>
@@ -172,7 +172,7 @@
             <Label Content="Адрес проживания" Grid.Column="0" HorizontalAlignment="Left" Margin="0,0,0,30" Grid.Row="0" VerticalAlignment="Center"/>
             <TextBox x:Name="addressTextBox1" HorizontalAlignment="Left" Height="22" Margin="0,26,0,11" Grid.Row="0" Text="" VerticalAlignment="Center" Width="116"/>
             <TextBlock HorizontalAlignment="Left" Margin="-2,47,0,0" TextWrapping="Wrap" Text="город" VerticalAlignment="Top" FontSize="10" TextAlignment="Center" Width="116"/>
-            <TextBox x:Name="addressTextBox_Copy1" HorizontalAlignment="Left" Height="22" Margin="12,28,-137,13" Grid.Row="0" Text="{Binding addess_life, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="135" Grid.Column="1"/>
+            <TextBox x:Name="addressTextBox_Copy1" HorizontalAlignment="Left" Height="22" Margin="12,28,-137,13" Grid.Row="0" Text="{Binding address_life, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="135" Grid.Column="1"/>
             <TextBlock HorizontalAlignment="Left" Margin="12,47,-136,0" TextWrapping="Wrap" Text="адрес" VerticalAlignment="Top" FontSize="10" TextAlignment="Center" Width="135" Grid.Column="1"/>
         </Grid>
         <GroupBox Header="Адрес" HorizontalAlignment="Left" Height="170" Margin="970,247,0,0" VerticalAlignment="Top" Width="285">
