@@ -38,6 +38,11 @@ namespace WPFApp.Activities
             Loaded += new RoutedEventHandler(OnCreate);
         }
 
+        /// <summary>
+        /// Вызывается при загрузке окна.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="args"></param>
         private async void OnCreate(object sender, RoutedEventArgs args)
         {
             int timeout = Properties.Settings.Default.timeout;
@@ -48,6 +53,11 @@ namespace WPFApp.Activities
             }
         }
 
+        /// <summary>
+        /// Ждет указанное количество секунд.
+        /// </summary>
+        /// <param name="timeout"></param>
+        /// <returns></returns>
         private async Task AttemtsTimer(int timeout)
         {
             errorLabel.Text = $"Совершено {wrongAuthCount} неудачных попытки входа. Вход заблокирован на {timeout} секунд";
@@ -59,6 +69,11 @@ namespace WPFApp.Activities
             wrongAuthCount = 0;
         }
 
+        /// <summary>
+        /// Срабатывает при клике на кнгопку входа
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private async void AuthButtonOnClick(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(authLogin.Text) || string.IsNullOrEmpty(authPassword.Text))
@@ -76,14 +91,16 @@ namespace WPFApp.Activities
                 }
                 else
                 {
-                    Hide();
-                    Tables window = new Tables();
-                    window.ShowDialog();
-                    Close();
+                    GoToTables();
                 }
             }
         }
 
+        /// <summary>
+        /// Обновляет полученный таймаут
+        /// </summary>
+        /// <param name="timeout">таймаут</param>
+        /// <returns>Обновленный таймаут</returns>
         private async Task<int> UpdateTimeout(int timeout)
         {
             await Task.Delay(1000);
@@ -93,10 +110,24 @@ namespace WPFApp.Activities
             return timeout;
         }
 
+        /// <summary>
+        /// Сохраняет таймаут
+        /// </summary>
+        /// <param name="timeout">текущий таймаут</param>
         private void SaveTimeout(int timeout)
         {
             Properties.Settings.Default["timeout"] = timeout;
             Properties.Settings.Default.Save();
+        }
+
+        /// <summary>
+        /// Смена окна на окно таблиц.
+        /// </summary>
+        private void GoToTables()
+        {
+            Tables window = new Tables();
+            window.ShowDialog();
+            Close();
         }
     }
 }
