@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WPFApp.Activities"
         xmlns:WPFApp="clr-namespace:WPFApp" x:Class="WPFApp.Activities.Tables"
         mc:Ignorable="d"
-        Title="Tables" Height="720" Width="1280" Loaded="Window_Loaded">
+        Title="Tables" Height="800" Width="1280" Loaded="Window_Loaded">
     <Window.Resources>
         <WPFApp:gibddDataSet x:Key="gibddDataSet"/>
         <CollectionViewSource x:Key="driversViewSource" Source="{Binding drivers, Source={StaticResource gibddDataSet}}"/>
@@ -15,7 +15,7 @@
         <TabControl HorizontalAlignment="Left" VerticalAlignment="Top">
             <TabItem Header="Данные">
 
-                <DataGrid x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="662">
+                <DataGrid x:Name="driversDataGrid" AutoGenerateColumns="False" EnableRowVirtualization="True" ItemsSource="{Binding}" Margin="0,0,0,0" RowDetailsVisibilityMode="VisibleWhenSelected" Height="742" Width="961">
                     <DataGrid.Columns>
                         <DataGridTextColumn x:Name="lastnameColumn" Binding="{Binding lastname}" Header="Фамилия" Width="SizeToHeader"/>
                         <DataGridTextColumn x:Name="firstnameColumn" Binding="{Binding firstname}" Header="Имя" Width="SizeToHeader"/>
@@ -94,7 +94,7 @@
             <Label Content="Номер паспорта" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
             <TextBox x:Name="passport_numberTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding passport_number, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
         </Grid>
-        <Grid x:Name="grid6" HorizontalAlignment="Left" Margin="1015,515,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid6" HorizontalAlignment="Left" Margin="981,385,0,0" VerticalAlignment="Top" Width="274">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -103,9 +103,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Почтовый индекс" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="postcodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding postcode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="postcodeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-22,4" Grid.Row="0" Text="{Binding postcode, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="146"/>
         </Grid>
-        <Grid x:Name="grid8" HorizontalAlignment="Left" Margin="1025,552,-1,0" VerticalAlignment="Top">
+        <Grid x:Name="grid9" HorizontalAlignment="Left" Margin="970,441,0,0" VerticalAlignment="Top" Width="280">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -113,21 +113,10 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <Label Content="Фактический адрес" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="address_lifeTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding address_life, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <Label Content="Компания" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
+            <TextBox x:Name="companyTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-71,4" Grid.Row="0" Text="{Binding company, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="195"/>
         </Grid>
-        <Grid x:Name="grid9" HorizontalAlignment="Left" Margin="955,573,0,0" VerticalAlignment="Top">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Label Content="Место работы" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="companyTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding company, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-        </Grid>
-        <Grid x:Name="grid10" HorizontalAlignment="Left" Margin="1070,610,-1,0" VerticalAlignment="Top">
+        <Grid x:Name="grid10" HorizontalAlignment="Left" Margin="981,473,0,0" VerticalAlignment="Top" Width="269">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -136,9 +125,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Должность" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="jobnameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding jobname, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="jobnameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-54,4" Grid.Row="0" Text="{Binding jobname, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="178"/>
         </Grid>
-        <Grid x:Name="grid11" HorizontalAlignment="Left" Margin="1084,647,-1,0" VerticalAlignment="Top">
+        <Grid x:Name="grid11" HorizontalAlignment="Left" Margin="981,526,0,0" VerticalAlignment="Top" Width="269">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -147,9 +136,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Телефон" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="phoneTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="phoneTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-68,4" Grid.Row="0" Text="{Binding phone, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="192"/>
         </Grid>
-        <Grid x:Name="grid12" HorizontalAlignment="Left" Margin="919,649,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid12" HorizontalAlignment="Left" Margin="981,563,0,0" VerticalAlignment="Top" Width="269">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -158,9 +147,9 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="E-mail" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="emailTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding email, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="emailTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-82,4" Grid.Row="0" Text="{Binding email, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="206"/>
         </Grid>
-        <Grid x:Name="grid13" HorizontalAlignment="Left" Margin="919,610,0,0" VerticalAlignment="Top">
+        <Grid x:Name="grid13" HorizontalAlignment="Left" Margin="981,600,0,0" VerticalAlignment="Top" Width="269">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -169,7 +158,7 @@
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Label Content="Фотография" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center"/>
-            <TextBox x:Name="photoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding photo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            <TextBox x:Name="photoTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="3,4,-48,4" Grid.Row="0" Text="{Binding photo, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="172"/>
         </Grid>
         <GroupBox Header="Паспортные данные" HorizontalAlignment="Left" Height="85" Margin="970,163,0,0" VerticalAlignment="Top" Width="292"/>
         <Grid x:Name="grid7_Copy" HorizontalAlignment="Left" Margin="981,320,0,0" VerticalAlignment="Top" Height="60" Width="274">
@@ -186,7 +175,7 @@
             <TextBox x:Name="addressTextBox_Copy1" HorizontalAlignment="Left" Height="22" Margin="12,28,-137,13" Grid.Row="0" Text="{Binding addess_life, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="135" Grid.Column="1"/>
             <TextBlock HorizontalAlignment="Left" Margin="12,47,-136,0" TextWrapping="Wrap" Text="адрес" VerticalAlignment="Top" FontSize="10" TextAlignment="Center" Width="135" Grid.Column="1"/>
         </Grid>
-        <GroupBox Header="Адрес" HorizontalAlignment="Left" Height="144" Margin="970,247,0,0" VerticalAlignment="Top" Width="285">
+        <GroupBox Header="Адрес" HorizontalAlignment="Left" Height="170" Margin="970,247,0,0" VerticalAlignment="Top" Width="285">
             <Grid x:Name="grid7" HorizontalAlignment="Left" Margin="4,4,-2,0" VerticalAlignment="Top" Height="60" Width="271">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -202,6 +191,13 @@
                 <TextBlock HorizontalAlignment="Left" Margin="12,47,-133,0" TextWrapping="Wrap" Text="адрес" VerticalAlignment="Top" FontSize="10" TextAlignment="Center" Width="133" Grid.Column="1"/>
             </Grid>
         </GroupBox>
+        <GroupBox Header="Место работы" HorizontalAlignment="Left" Height="83" Margin="970,422,0,0" VerticalAlignment="Top" Width="280"/>
+        <GroupBox Header="Контактные данные" HorizontalAlignment="Left" Height="90" Margin="970,505,0,0" VerticalAlignment="Top" Width="280"/>
+        <Button x:Name="nextButton" Click="NextButtonOnClick" Content="&gt;&gt;" HorizontalAlignment="Left" Margin="1122,648,0,0" VerticalAlignment="Top" Width="128" Height="28"/>
+        <Button x:Name="prevButton" Click="PrevButtonOnClick" Content="&lt;&lt;" HorizontalAlignment="Left" Margin="981,648,0,0" VerticalAlignment="Top" Width="128" Height="28"/>
+        <Button x:Name="deleteButton" Click="DeleteButtonOnClick" Content="Удалить" HorizontalAlignment="Left" Margin="1122,681,0,0" VerticalAlignment="Top" Width="128" Height="28"/>
+        <Button x:Name="saveButton" Click="SaveButtonOnClick" Content="Сохранить" HorizontalAlignment="Left" Margin="981,681,0,0" VerticalAlignment="Top" Width="128" Height="28"/>
+        <Button x:Name="newButton" Click="NewButtonOnClick" Content="Новая запись" HorizontalAlignment="Left" Margin="981,714,0,0" VerticalAlignment="Top" Width="269" Height="28"/>
 
 
 

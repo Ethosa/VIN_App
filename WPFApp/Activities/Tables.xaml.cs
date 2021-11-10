@@ -73,5 +73,30 @@ namespace WPFApp.Activities
             System.Windows.Data.CollectionViewSource driversViewSource = ((System.Windows.Data.CollectionViewSource)(this.FindResource("driversViewSource")));
             driversViewSource.View.MoveCurrentToFirst();
         }
+
+        private void NextButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void PrevButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void NewButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SaveButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeleteButtonOnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
