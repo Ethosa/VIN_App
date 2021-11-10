@@ -179,7 +179,6 @@
                 try
                 {
                     FinesSummary.DataSource = data;
-                    
                 }
                 catch
                 {
