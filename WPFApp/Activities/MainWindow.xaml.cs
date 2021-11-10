@@ -77,6 +77,9 @@ namespace WPFApp.Activities
                 else
                 {
                     Hide();
+                    Tables window = new Tables();
+                    window.ShowDialog();
+                    Close();
                 }
             }
         }

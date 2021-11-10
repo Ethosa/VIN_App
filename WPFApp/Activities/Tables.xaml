@@ -7,6 +7,8 @@
         mc:Ignorable="d"
         Title="Tables" Height="720" Width="1280">
     <Grid>
-        
+        <DataGrid HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1042"/>
+        <Image HorizontalAlignment="Left" Height="54" VerticalAlignment="Top" Width="54" Source="../Assets/gibdd_logo.png" Margin="1218,0,0,0"/>
+
     </Grid>
 </Window>
