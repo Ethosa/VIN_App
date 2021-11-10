@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPFApp.Database;
 
 namespace WPFApp
 {
@@ -20,7 +21,17 @@ namespace WPFApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        /// <summary>
+        /// Количество неправильных попыток входа.
+        /// </summary>
         private int wrongAuthCount = 0;
+
+        /// <summary>
+        /// Доступ к БД.
+        /// </summary>
+        private gibddEntities db = new gibddEntities();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -54,10 +65,19 @@ namespace WPFApp
                 return;
             else
             {
-                if (wrongAuthCount < 3)
-                    ++wrongAuthCount;
+                user user = db.user.AsNoTracking().FirstOrDefault(u => u.uname == authLogin.Text && u.upass == authPassword.Text);
+                if (user == null)
+                {
+                    errorLabel.Text = "Пользователя не существует";
+                    if (wrongAuthCount < 3)
+                        ++wrongAuthCount;
+                    else
+                        await AttemtsTimer(60);
+                }
                 else
-                    await AttemtsTimer(60);
+                {
+                    Hide();
+                }
             }
         }
 
