@@ -7,23 +7,32 @@
         mc:Ignorable="d"
         Title="Tables" Height="720" Width="1280">
     <Grid>
-        <DataGrid x:Name="gibddDataGrid" HorizontalAlignment="Left" Height="689" VerticalAlignment="Top" Width="1042">
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Фамилия"/>
-                <DataGridTextColumn Header="Имя"/>
-                <DataGridTextColumn Header="Отчество"/>
-                <DataGridTextColumn Header="Серия паспорта"/>
-                <DataGridTextColumn Header="Номер паспорта"/>
-                <DataGridTextColumn Header="Почтовый индекс"/>
-                <DataGridTextColumn Header="Адрес прописки"/>
-                <DataGridTextColumn Header="Фактический адрес"/>
-                <DataGridTextColumn Header="Компания"/>
-                <DataGridTextColumn Header="Должность"/>
-                <DataGridTextColumn Header="Телефон"/>
-                <DataGridTextColumn Header="E-mail"/>
-                <DataGridTextColumn Header="Фото"/>
-            </DataGrid.Columns>
-        </DataGrid>
+        <TabControl HorizontalAlignment="Left" VerticalAlignment="Top">
+            <TabItem Header="TabItem">
+
+                <DataGrid x:Name="gibddDataGrid" HorizontalAlignment="Left" Height="664" VerticalAlignment="Top" Width="994" Margin="0,0
+                          ,0,0">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Фамилия"/>
+                        <DataGridTextColumn Header="Имя"/>
+                        <DataGridTextColumn Header="Отчество"/>
+                        <DataGridTextColumn Header="Серия паспорта"/>
+                        <DataGridTextColumn Header="Номер паспорта"/>
+                        <DataGridTextColumn Header="Почтовый индекс"/>
+                        <DataGridTextColumn Header="Адрес прописки"/>
+                        <DataGridTextColumn Header="Фактический адрес"/>
+                        <DataGridTextColumn Header="Компания"/>
+                        <DataGridTextColumn Header="Должность"/>
+                        <DataGridTextColumn Header="Телефон"/>
+                        <DataGridTextColumn Header="E-mail"/>
+                        <DataGridTextColumn Header="Фото"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </TabItem>
+            <TabItem Header="TabItem" Margin="0,-1,-4,-1">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
 
 
     </Grid>
