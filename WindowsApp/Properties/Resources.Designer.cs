@@ -63,6 +63,16 @@ namespace WindowsApp.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap driver_license_template {
+            get {
+                object obj = ResourceManager.GetObject("driver_license_template", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap emptyPhoto {
             get {
                 object obj = ResourceManager.GetObject("emptyPhoto", resourceCulture);
