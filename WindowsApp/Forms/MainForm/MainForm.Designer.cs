@@ -1139,6 +1139,7 @@ namespace WindowsApp.Forms
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1309, 856);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "Госавтоинспекция МВД России";
             this.Load += new System.EventHandler(this.MainForm_Load);
