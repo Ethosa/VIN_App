@@ -141,7 +141,7 @@
         /// </summary>
         /// <param name="sender">.</param>
         /// <param name="e">.</param>
-        private async void TryToGetClick(object sender, EventArgs e)
+        private void TryToGetClick(object sender, EventArgs e)
         {
             JArray data = (JArray)API.GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
             response.Text = data.ToString();
@@ -167,6 +167,19 @@
             }
             catch
             {
+            }
+        }
+
+        private void ExportFines(JArray data)
+        {
+            if (!Directory.Exists("fines"))
+                Directory.CreateDirectory("fines");
+            foreach (JObject fine in data)
+            {
+                // TODO: обработка штрафов и запись в файлы.
+                int id = Convert.ToInt32(fine["data"].ToString());
+                string firstname = "";
+                string lastname = "";
             }
         }
     }
