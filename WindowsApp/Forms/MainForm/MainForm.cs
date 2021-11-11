@@ -182,21 +182,26 @@
                 string firstname = "";
                 string lastname = "";
                 string path = "fines/fines_" + lastname + "_" + firstname + ".csv";
-                if (!File.Exists(path))
+                string status = "";
+
+                if (status.Equals("Не оплачен"))
                 {
-                    using (FileStream fs = File.Create(path))
+                    if (!File.Exists(path))
                     {
-                        byte[] s = new UTF8Encoding(true).GetBytes($"{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
-                        fs.Write(s, 0, s.Length);
+                        using (FileStream fs = File.Create(path))
+                        {
+                            byte[] s = new UTF8Encoding(true).GetBytes($"{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                            fs.Write(s, 0, s.Length);
+                        }
                     }
-                }
-                else
-                {
-                    using (FileStream fs = File.Open(path, FileMode.Append))
+                    else
                     {
-                        byte[] s = new UTF8Encoding(true).GetBytes($"\n{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
-                        fs.Write(s, 0, s.Length);
-                        fs.Close();
+                        using (FileStream fs = File.Open(path, FileMode.Append))
+                        {
+                            byte[] s = new UTF8Encoding(true).GetBytes($"\n{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                            fs.Write(s, 0, s.Length);
+                            fs.Close();
+                        }
                     }
                 }
             }
