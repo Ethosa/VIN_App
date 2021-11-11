@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов для изменения сведений,
 // связанных со сборкой.
-[assembly: AssemblyTitle("WindowsApp")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Госавтоинспекция МВД России")]
+[assembly: AssemblyDescription("Конкурсное задание для WSR 2021")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("WindowsApp")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCompany("КТК")]
+[assembly: AssemblyProduct("Госавтоинспекция МВД России")]
+[assembly: AssemblyCopyright("Ethosa & renardein")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
