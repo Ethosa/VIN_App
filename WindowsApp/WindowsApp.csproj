@@ -113,7 +113,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gibddModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Database\JsonResult.cs" />
+    <Compile Include="Modules\JsonResult.cs" />
     <Compile Include="Database\regionCodes.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
