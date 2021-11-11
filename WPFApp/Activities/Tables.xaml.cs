@@ -98,19 +98,26 @@ namespace WPFApp.Activities
 
         private void NewButtonOnClick(object sender, RoutedEventArgs e)
         {
-            // TODO: Сделать добавление новых ячеек
             gibddDataSet dataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
             dataSet.drivers.AdddriversRow("", "", "", 0, 0, 0, "", "", "", "", "", "", "");
+            CollectionViewSource driversViewSource = ((CollectionViewSource)(FindResource("driversViewSource")));
+            driversViewSource.View.MoveCurrentToFirst();
         }
 
         private void SaveButtonOnClick(object sender, RoutedEventArgs e)
         {
-            // Сделать сохранение в БД.
+            gibddDataSet dataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
+            dataSet.drivers.AcceptChanges();
+            CollectionViewSource driversViewSource = ((CollectionViewSource)(FindResource("driversViewSource")));
+            driversViewSource.View.MoveCurrentToFirst();
         }
 
         private void DeleteButtonOnClick(object sender, RoutedEventArgs e)
         {
-
+            gibddDataSet dataSet = ((gibddDataSet)(FindResource("gibddDataSet")));
+            dataSet.drivers.RemovedriversRow(dataSet.drivers[driversDataGrid.SelectedIndex]);
+            CollectionViewSource driversViewSource = ((CollectionViewSource)(FindResource("driversViewSource")));
+            driversViewSource.View.MoveCurrentToFirst();
         }
 
         private void DriversDataGridOnAddingNewItem(object sender, AddingNewItemEventArgs e)

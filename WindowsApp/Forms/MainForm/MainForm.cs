@@ -1,6 +1,5 @@
 ﻿namespace WindowsApp.Forms
 {
-    using Newtonsoft.Json;
     using Newtonsoft.Json.Linq;
     using System;
     using System.Drawing;
@@ -10,6 +9,7 @@
     using System.Threading.Tasks;
     using System.Windows.Forms;
     using WindowsApp.Database;
+    using WindowsApp.Modules;
 
     /// <summary>
     /// Defines the <see cref="MainForm" />.
@@ -136,30 +136,6 @@
         }
 
         /// <summary>
-        /// Возвращает штрафы за дату
-        /// </summary>
-        /// <param name="participant"></param>
-        /// <param name="date"></param>
-        /// <returns></returns>
-        public JObject GetFines(string participant, string date)
-        {
-            string url = $"http://solutions2019.hakta.pro/api/getFines?participant={participant}&modified=date";
-            return (JObject)JsonConvert.DeserializeObject(SendGetRequest(url));
-        }
-
-        /// <summary>
-        /// Отправляет сообщение о том, что регистрационный номер не опознан.
-        /// </summary>
-        /// <param name="id"></param>
-        /// <param name="message"></param>
-        /// <returns></returns>
-        public JObject PostFine(string id, string message)
-        {
-            string url = $"http://solutions2019.hakta.pro/api/postFine?id={id}&message={message}";
-            return (JObject)JsonConvert.DeserializeObject(SendPostRequest(url));
-        }
-
-        /// <summary>
         /// Срабатывает при нажатии на кнопку "GET".
         /// Отправляет GET запросы и стягивает картинки.
         /// </summary>
@@ -167,18 +143,18 @@
         /// <param name="e">.</param>
         private async void TryToGetClick(object sender, EventArgs e)
         {
-            JArray data = (JArray)GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
+            JArray data = (JArray)API.GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
             response.Text = data.ToString();
-            FinesSummary.Columns[0].Name = "Номер";
-            FinesSummary.Columns[1].Name = "Гос.номер";
-            FinesSummary.Columns[2].Name = "Вод. удостоверение";
-            FinesSummary.Columns[3].Name = "Дата";
-            FinesSummary.Columns[4].Name = "Фото";
             for (int i = 0; i < data.Count; i++)
             {
                 try
                 {
                     FinesSummary.DataSource = data;
+                    FinesSummary.Columns[0].Name = "Номер";
+                    FinesSummary.Columns[1].Name = "Гос.номер";
+                    FinesSummary.Columns[2].Name = "Вод. удостоверение";
+                    FinesSummary.Columns[3].Name = "Дата";
+                    FinesSummary.Columns[4].Name = "Фото";
                 }
                 catch
                 {
@@ -189,35 +165,6 @@
                     await Task.Delay(2000);
                 }
             }
-        }
-
-        /// <summary>
-        /// Отправляет GET запрос.
-        /// </summary>
-        /// <param name="url">URL, куда следует отправить запрос.</param>
-        /// <returns>Ответ.</returns>
-        public string SendGetRequest(string url)
-        {
-            Stream stream = WebRequest.Create(url).GetResponse().GetResponseStream();
-            StreamReader streamReader = new StreamReader(stream);
-            string response = streamReader.ReadToEnd();
-            streamReader.Close();
-
-            return response;
-        }
-
-        public string SendPostRequest(string url)
-        {
-            WebRequest request = WebRequest.Create(url);
-            request.Method = "POST";
-            request.ContentType = "application/json";
-            request.Timeout = 5000;
-            Stream stream = request.GetResponse().GetResponseStream();
-            StreamReader streamReader = new StreamReader(stream);
-            string response = streamReader.ReadToEnd();
-            streamReader.Close();
-
-            return response;
         }
 
         private void FinesSummary_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)

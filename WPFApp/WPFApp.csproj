@@ -71,7 +71,6 @@
       <DependentUpon>Tables.xaml</DependentUpon>
     </Compile>
     <Compile Include="Classes\API.cs" />
-    <Compile Include="Classes\Driver.cs" />
     <Compile Include="Database\driverPhoto.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

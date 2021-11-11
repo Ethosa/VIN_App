@@ -137,6 +137,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gibddDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Modules\API.cs" />
     <Compile Include="Modules\OpenForms.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
