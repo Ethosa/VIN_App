@@ -224,6 +224,7 @@
       <LastGenOutput>gibddModel.cs</LastGenOutput>
     </Content>
     <Content Include="gibdd_logo.ico" />
+    <None Include="Resources\driver_license_template.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

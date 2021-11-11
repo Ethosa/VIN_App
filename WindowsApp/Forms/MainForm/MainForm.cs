@@ -61,6 +61,12 @@
         /// <param name="e">.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet._Drivers_Cars". При необходимости она может быть перемещена или удалена.
+            this.drivers_CarsTableAdapter.Fill(this.gibddDataSet._Drivers_Cars);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet._Drivers_Lics". При необходимости она может быть перемещена или удалена.
+            this.drivers_LicsTableAdapter.Fill(this.gibddDataSet._Drivers_Lics);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.licences". При необходимости она может быть перемещена или удалена.
+            this.licencesTableAdapter.Fill(this.gibddDataSet.licences);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.drivers". При необходимости она может быть перемещена или удалена.
             driversTableAdapter.Fill(gibddDataSet.drivers);
 
@@ -96,6 +102,7 @@
         private void DeleteDataClick(object sender, EventArgs e)
         {
             bindingNavigatorDeleteItem.PerformClick();
+            driversBindingNavigatorSaveItem.PerformClick();
         }
 
         /// <summary>
