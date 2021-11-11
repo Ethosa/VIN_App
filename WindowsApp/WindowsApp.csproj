@@ -48,6 +48,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>gibdd_logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -114,7 +117,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gibddModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Database\JsonResult.cs" />
+    <Compile Include="Modules\JsonResult.cs" />
     <Compile Include="Database\regionCodes.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
@@ -220,6 +223,7 @@
       <DependentUpon>gibddModel.edmx</DependentUpon>
       <LastGenOutput>gibddModel.cs</LastGenOutput>
     </Content>
+    <Content Include="gibdd_logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
