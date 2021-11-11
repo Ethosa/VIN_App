@@ -213,5 +213,13 @@
                 }
             }
         }
+
+        private void bindingNavigationSaveItem1_Click(object sender, EventArgs e)
+        {
+            Validate();
+            drivers_LicsBindingSource.EndEdit();
+            // TODO: change to drivers license
+            tableAdapterManager.UpdateAll(gibddDataSet);
+        }
     }
 }

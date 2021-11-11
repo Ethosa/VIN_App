@@ -2511,6 +2511,13 @@ namespace WindowsApp.Database {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public _Drivers_CarsRow FindByVIN_номер(string VIN_номер) {
+                return ((_Drivers_CarsRow)(this.Rows.Find(new object[] {
+                            VIN_номер})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 _Drivers_CarsDataTable cln = ((_Drivers_CarsDataTable)(base.Clone()));
                 cln.InitVars();
@@ -2570,6 +2577,8 @@ namespace WindowsApp.Database {
                 base.Columns.Add(this.columnТип_двигателя);
                 this.columnПривод = new global::System.Data.DataColumn("Привод", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПривод);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Drivers-CarsKey1", new global::System.Data.DataColumn[] {
+                                this.columnVIN_номер}, true));
                 this.columnФамилия.AllowDBNull = false;
                 this.columnФамилия.MaxLength = 50;
                 this.columnИмя.AllowDBNull = false;
@@ -2584,6 +2593,7 @@ namespace WindowsApp.Database {
                 this.columnМодель.AllowDBNull = false;
                 this.columnМодель.MaxLength = 50;
                 this.columnVIN_номер.AllowDBNull = false;
+                this.columnVIN_номер.Unique = true;
                 this.columnVIN_номер.MaxLength = 50;
                 this.columnГод_выпуска.AllowDBNull = false;
                 this.columnВес.AllowDBNull = false;
@@ -2939,6 +2949,8 @@ namespace WindowsApp.Database {
                 base.Columns.Add(this.columnДата_выдачи);
                 this.columnДата_окончания = new global::System.Data.DataColumn("Дата окончания", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnДата_окончания);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Drivers-LicsKey1", new global::System.Data.DataColumn[] {
+                                this.columnВУ_Номер}, false));
                 this.columnФамилия.AllowDBNull = false;
                 this.columnФамилия.MaxLength = 50;
                 this.columnИмя.AllowDBNull = false;
@@ -2948,6 +2960,7 @@ namespace WindowsApp.Database {
                 this.columnВУ_Серия.AllowDBNull = false;
                 this.columnВУ_Серия.MaxLength = 5;
                 this.columnВУ_Номер.AllowDBNull = false;
+                this.columnВУ_Номер.Unique = true;
                 this.columnКатегории.AllowDBNull = false;
                 this.columnКатегории.MaxLength = 50;
                 this.columnДата_выдачи.AllowDBNull = false;
