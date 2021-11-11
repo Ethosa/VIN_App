@@ -147,23 +147,12 @@
             response.Text = data.ToString();
             for (int i = 0; i < data.Count; i++)
             {
-                try
-                {
-                    FinesSummary.DataSource = data;
-                    FinesSummary.Columns[0].Name = "Номер";
-                    FinesSummary.Columns[1].Name = "Гос.номер";
-                    FinesSummary.Columns[2].Name = "Вод. удостоверение";
-                    FinesSummary.Columns[3].Name = "Дата";
-                    FinesSummary.Columns[4].Name = "Фото";
-                }
-                catch
-                {
-                    continue;
-                }
-                finally
-                {
-                    await Task.Delay(2000);
-                }
+                FinesSummary.DataSource = data;
+                FinesSummary.Columns[0].Name = "Номер";
+                FinesSummary.Columns[1].Name = "Гос.номер";
+                FinesSummary.Columns[2].Name = "Вод. удостоверение";
+                FinesSummary.Columns[3].Name = "Дата";
+                FinesSummary.Columns[4].Name = "Фото";
             }
         }
 
