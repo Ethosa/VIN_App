@@ -5,8 +5,8 @@
     using System.Drawing;
     using System.IO;
     using System.Net;
+    using System.Text;
     using System.Text.RegularExpressions;
-    using System.Threading.Tasks;
     using System.Windows.Forms;
     using WindowsApp.Database;
     using WindowsApp.Modules;
@@ -144,6 +144,7 @@
         private void TryToGetClick(object sender, EventArgs e)
         {
             JArray data = (JArray)API.GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
+            ExportFines(data);
             response.Text = data.ToString();
             for (int i = 0; i < data.Count; i++)
             {
@@ -176,10 +177,28 @@
                 Directory.CreateDirectory("fines");
             foreach (JObject fine in data)
             {
-                // TODO: обработка штрафов и запись в файлы.
-                int id = Convert.ToInt32(fine["data"].ToString());
+                // TODO: загрузка firstname и lastname в Upper case.
+                string id = fine["id"].ToString();
                 string firstname = "";
                 string lastname = "";
+                string path = "fines/fines_" + lastname + "_" + firstname + ".csv";
+                if (!File.Exists(path))
+                {
+                    using (FileStream fs = File.Create(path))
+                    {
+                        byte[] s = new UTF8Encoding(true).GetBytes($"{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                        fs.Write(s, 0, s.Length);
+                    }
+                }
+                else
+                {
+                    using (FileStream fs = File.Open(path, FileMode.Append))
+                    {
+                        byte[] s = new UTF8Encoding(true).GetBytes($"\n{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                        fs.Write(s, 0, s.Length);
+                        fs.Close();
+                    }
+                }
             }
         }
     }
