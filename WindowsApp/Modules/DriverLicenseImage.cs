@@ -15,8 +15,22 @@ namespace WindowsApp.Modules
         {
             bitmap = new Bitmap(filename);
             graphics = Graphics.FromImage(bitmap);
+            SetupGraphics();
         }
 
+        public void DrawInfo()
+        {
 
+        }
+
+        public Bitmap GetBitmap()
+        {
+            return bitmap;
+        }
+
+        private void SetupGraphics()
+        {
+            graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+        }
     }
 }
