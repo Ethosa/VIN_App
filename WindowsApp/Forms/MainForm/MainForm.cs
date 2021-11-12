@@ -213,12 +213,17 @@
 
         private void DriverLicenseSaveItem(object sender, EventArgs e)
         {
+            // TODO: Допилить сохранение ВУ -_-
             Validate();
             drivers_LicsBindingSource.EndEdit();
-            gibddDataSet._Drivers_Lics.AcceptChanges();
-            // licencesTableAdapter.Fill();
-            // drivers_LicsTableAdapter.Fill(gibddDataSet._Drivers_Lics);
             // drivers_LicsTableAdapter.Update(gibddDataSet._Drivers_Lics);
+        }
+
+        private void DriverCarsSaveItem(object sender, EventArgs e)
+        {
+            // TODO: Допилить сохранение автомобилей -_-
+            Validate();
+            drivers_CarsBindingSource.EndEdit();
         }
     }
 }
