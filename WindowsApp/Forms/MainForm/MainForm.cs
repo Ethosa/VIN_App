@@ -202,7 +202,7 @@
                         using (FileStream fs = File.Create(path))
                         {
                             byte[] s = new UTF8Encoding(true).GetBytes(
-                                $"id;create_date;car_num;license_num;\n{fine["id"]};{fine["create_date"]};{fine["car_num"]};{fine["license_num"]}");
+                                $"id;date;car_num;license_num;\n{fine["id"]};{fine["create_date"]};{fine["car_num"]};{fine["license_num"]}");
                             fs.Write(s, 0, s.Length);
                         }
                     }
