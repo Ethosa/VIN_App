@@ -214,12 +214,13 @@
             }
         }
 
-        private void bindingNavigationSaveItem1_Click(object sender, EventArgs e)
+        private void BindingNavigationSaveItem1Click(object sender, EventArgs e)
         {
             Validate();
             drivers_LicsBindingSource.EndEdit();
-            // TODO: change to drivers license
-            tableAdapterManager.UpdateAll(gibddDataSet);
+            // gibddDataSet._Drivers_Lics.AcceptChanges();
+            // drivers_LicsTableAdapter.Fill(gibddDataSet._Drivers_Lics);
+            // drivers_LicsTableAdapter.Update(gibddDataSet._Drivers_Lics);
         }
     }
 }

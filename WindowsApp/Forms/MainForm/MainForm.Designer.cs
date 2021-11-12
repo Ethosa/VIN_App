@@ -56,6 +56,21 @@ namespace WindowsApp.Forms
             this.driversPage = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.driversDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gibddDataSet = new WindowsApp.Database.gibddDataSet();
             this.driversBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -113,6 +128,7 @@ namespace WindowsApp.Forms
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.drivers_LicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -125,23 +141,6 @@ namespace WindowsApp.Forms
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigationSaveItem1 = new System.Windows.Forms.ToolStripButton();
             this.drivers_LicsDataGridView = new System.Windows.Forms.DataGridView();
-            this.carPage = new System.Windows.Forms.TabPage();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.driversBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gibddDataSet = new WindowsApp.Database.gibddDataSet();
-            this.drivers_LicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,6 +149,7 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carPage = new System.Windows.Forms.TabPage();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
             this.licencesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.licencesTableAdapter();
@@ -184,6 +184,8 @@ namespace WindowsApp.Forms
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingNavigator)).BeginInit();
             this.driversBindingNavigator.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -200,10 +202,8 @@ namespace WindowsApp.Forms
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -477,6 +477,94 @@ namespace WindowsApp.Forms
             this.driversDataGridView.Size = new System.Drawing.Size(1025, 710);
             this.driversDataGridView.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "lastname";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "firstname";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "middlename";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "passport_serial";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Серия паспорта";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "passport_number";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Номер паспорта";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "postcode";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Почтовый индекс";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "address";
+            this.dataGridViewTextBoxColumn8.HeaderText = "Адрес прописки";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "address_life";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Фактический адрес";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "company";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Компания";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "jobname";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Должность";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "phone";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Телефон";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "email";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Почта";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "photo";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Фотография";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // driversBindingSource
+            // 
+            this.driversBindingSource.DataMember = "drivers";
+            this.driversBindingSource.DataSource = this.gibddDataSet;
+            // 
+            // gibddDataSet
+            // 
+            this.gibddDataSet.DataSetName = "gibddDataSet";
+            this.gibddDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // driversBindingNavigator
             // 
             this.driversBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -560,7 +648,6 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1127,6 +1214,11 @@ namespace WindowsApp.Forms
             this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem1.Text = "Добавить";
             // 
+            // drivers_LicsBindingSource
+            // 
+            this.drivers_LicsBindingSource.DataMember = "Drivers-Lics";
+            this.drivers_LicsBindingSource.DataSource = this.gibddDataSet;
+            // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
@@ -1170,7 +1262,6 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -1212,7 +1303,7 @@ namespace WindowsApp.Forms
             this.bindingNavigationSaveItem1.Name = "bindingNavigationSaveItem1";
             this.bindingNavigationSaveItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigationSaveItem1.Text = "&Сохранить";
-            this.bindingNavigationSaveItem1.Click += new System.EventHandler(this.bindingNavigationSaveItem1_Click);
+            this.bindingNavigationSaveItem1.Click += new System.EventHandler(this.BindingNavigationSaveItem1Click);
             // 
             // drivers_LicsDataGridView
             // 
@@ -1234,109 +1325,6 @@ namespace WindowsApp.Forms
             this.drivers_LicsDataGridView.RowHeadersVisible = false;
             this.drivers_LicsDataGridView.Size = new System.Drawing.Size(1025, 735);
             this.drivers_LicsDataGridView.TabIndex = 0;
-            // 
-            // carPage
-            // 
-            this.carPage.Location = new System.Drawing.Point(4, 22);
-            this.carPage.Name = "carPage";
-            this.carPage.Padding = new System.Windows.Forms.Padding(3);
-            this.carPage.Size = new System.Drawing.Size(1301, 741);
-            this.carPage.TabIndex = 4;
-            this.carPage.Text = "Авто";
-            this.carPage.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "lastname";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "firstname";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "middlename";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "passport_serial";
-            this.dataGridViewTextBoxColumn5.HeaderText = "Серия паспорта";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "passport_number";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Номер паспорта";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "postcode";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Почтовый индекс";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "address";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Адрес прописки";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "address_life";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Фактический адрес";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "company";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Компания";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "jobname";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Должность";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "phone";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Телефон";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "email";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Почта";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "photo";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Фотография";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // driversBindingSource
-            // 
-            this.driversBindingSource.DataMember = "drivers";
-            this.driversBindingSource.DataSource = this.gibddDataSet;
-            // 
-            // gibddDataSet
-            // 
-            this.gibddDataSet.DataSetName = "gibddDataSet";
-            this.gibddDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // drivers_LicsBindingSource
-            // 
-            this.drivers_LicsBindingSource.DataMember = "Drivers-Lics";
-            this.drivers_LicsBindingSource.DataSource = this.gibddDataSet;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1385,6 +1373,16 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn21.DataPropertyName = "Дата окончания";
             this.dataGridViewTextBoxColumn21.HeaderText = "Дата окончания";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
+            // carPage
+            // 
+            this.carPage.Location = new System.Drawing.Point(4, 22);
+            this.carPage.Name = "carPage";
+            this.carPage.Padding = new System.Windows.Forms.Padding(3);
+            this.carPage.Size = new System.Drawing.Size(1301, 741);
+            this.carPage.TabIndex = 4;
+            this.carPage.Text = "Авто";
+            this.carPage.UseVisualStyleBackColor = true;
             // 
             // driversTableAdapter
             // 
@@ -1448,6 +1446,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.driversDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driversBindingNavigator)).EndInit();
             this.driversBindingNavigator.ResumeLayout(false);
             this.driversBindingNavigator.PerformLayout();
@@ -1472,10 +1472,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.driversBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gibddDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).EndInit();
             this.ResumeLayout(false);
