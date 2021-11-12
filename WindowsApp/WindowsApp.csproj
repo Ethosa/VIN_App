@@ -117,6 +117,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gibddModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Modules\DriverLicenseImage.cs" />
     <Compile Include="Modules\JsonResult.cs" />
     <Compile Include="Database\regionCodes.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
