@@ -224,7 +224,8 @@
             // TODO: Допилить сохранение ВУ -_-
             Validate();
             drivers_LicsBindingSource.EndEdit();
-            licencesBindingSource.AddNew();
+            licencesBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(gibddDataSet);
             // drivers_LicsTableAdapter.Update(gibddDataSet._Drivers_Lics);
         }
 
@@ -233,6 +234,12 @@
             // TODO: Допилить сохранение автомобилей -_-
             Validate();
             drivers_CarsBindingSource.EndEdit();
+            tableAdapterManager.UpdateAll(gibddDataSet);
+        }
+
+        private void DriverLicensePaintClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
