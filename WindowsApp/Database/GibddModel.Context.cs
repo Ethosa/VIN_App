@@ -27,7 +27,11 @@ namespace WindowsApp.Database
     
         public virtual DbSet<driverPhoto> driverPhoto { get; set; }
         public virtual DbSet<drivers> drivers { get; set; }
+        public virtual DbSet<fines> fines { get; set; }
+        public virtual DbSet<licences> licences { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<user> user { get; set; }
+        public virtual DbSet<vehicles> vehicles { get; set; }
         public virtual DbSet<regionCodes> regionCodes { get; set; }
     }
 }

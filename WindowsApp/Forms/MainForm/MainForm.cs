@@ -175,26 +175,34 @@
             }
         }
 
+        /// <summary>
+        /// Экспорт штрафов в CSV файлы.
+        /// </summary>
+        /// <param name="data"></param>
         private void ExportFines(JArray data)
         {
             if (!Directory.Exists("fines"))
                 Directory.CreateDirectory("fines");
             foreach (JObject fine in data)
             {
-                // TODO: загрузка firstname и lastname в Upper case.
-                string id = fine["id"].ToString();
-                string firstname = "";
-                string lastname = "";
-                string path = "fines/fines_" + lastname + "_" + firstname + ".csv";
-                string status = "";
+                fines fineInfo = db.fines.SqlQuery($"SELECT * FROM fines WHERE[id] = {fine["id"]}").AsNoTracking().SingleAsync().Result;
+                string firstname = fineInfo.firstname.ToUpper();
+                string lastname = fineInfo.lastname.ToUpper();
+                string status = fineInfo.status;
+                string carNum = fine["car_num"].ToString();
 
-                if (status.Equals("Не оплачен"))
+                if (string.IsNullOrEmpty(status) || !status.Equals("Передан в ФССП"))
                 {
+                    db.fines.SqlQuery($"UPDATE fines SET status = N'Передан в ФССП' WHERE id = {fine["id"]}").AsNoTracking().FirstOrDefaultAsync();
+                    db.SaveChanges();
+                    string path = "fines/fines_" + lastname + "_" + firstname + ".csv";
+                    
                     if (!File.Exists(path))
                     {
                         using (FileStream fs = File.Create(path))
                         {
-                            byte[] s = new UTF8Encoding(true).GetBytes($"{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                            byte[] s = new UTF8Encoding(true).GetBytes(
+                                $"id;create_date;car_num;license_num;\n{fine["id"]};{fine["create_date"]};{fine["car_num"]};{fine["license_num"]}");
                             fs.Write(s, 0, s.Length);
                         }
                     }
@@ -202,7 +210,7 @@
                     {
                         using (FileStream fs = File.Open(path, FileMode.Append))
                         {
-                            byte[] s = new UTF8Encoding(true).GetBytes($"\n{fine["id"]};\"{fine["create_date"]}\";{fine["car_num"]};{fine["license_num"]}");
+                            byte[] s = new UTF8Encoding(true).GetBytes($"\n{fine["id"]};{fine["create_date"]};{fine["car_num"]};{fine["license_num"]}");
                             fs.Write(s, 0, s.Length);
                             fs.Close();
                         }
@@ -216,6 +224,7 @@
             // TODO: Допилить сохранение ВУ -_-
             Validate();
             drivers_LicsBindingSource.EndEdit();
+            licencesBindingSource.AddNew();
             // drivers_LicsTableAdapter.Update(gibddDataSet._Drivers_Lics);
         }
 

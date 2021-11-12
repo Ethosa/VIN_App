@@ -14,6 +14,13 @@ namespace WindowsApp.Database
     
     public partial class drivers
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public drivers()
+        {
+            this.licences = new HashSet<licences>();
+            this.vehicles = new HashSet<vehicles>();
+        }
+    
         public int id { get; set; }
         public string firstname { get; set; }
         public string lastname { get; set; }
@@ -28,5 +35,10 @@ namespace WindowsApp.Database
         public string phone { get; set; }
         public string email { get; set; }
         public string photo { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<licences> licences { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<vehicles> vehicles { get; set; }
     }
 }

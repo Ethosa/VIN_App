@@ -9,8 +9,8 @@
           <Key>
             <PropertyRef Name="pid" />
           </Key>
-          <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="filename" Type="nvarchar" MaxLength="30" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="filename" Type="nvarchar" MaxLength="50" />
           <Property Name="image_data" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="drivers">
@@ -32,6 +32,27 @@
           <Property Name="email" Type="nvarchar" MaxLength="50" />
           <Property Name="photo" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
+        <EntityType Name="fines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="status" Type="text" />
+          <Property Name="firstname" Type="text" />
+          <Property Name="lastname" Type="text" />
+        </EntityType>
+        <EntityType Name="licences">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="licence_date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="expire_date" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="categories" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="licence_series" Type="nvarchar" MaxLength="5" Nullable="false" />
+          <Property Name="licence_number" Type="int" Nullable="false" />
+          <Property Name="driver_id" Type="int" Nullable="false" />
+        </EntityType>
         <!--Ошибки, обнаруженные при создании:
 предупреждение 6002: В таблице или представлении "gibdd.dbo.regionCodes" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="regionCodes">
@@ -47,6 +68,16 @@
           <Property Name="OKATO_code" Type="nvarchar" MaxLength="50" />
           <Property Name="ISO_3166_2" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="uid" />
@@ -55,10 +86,53 @@
           <Property Name="uname" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="upass" Type="nvarchar" MaxLength="15" Nullable="false" />
         </EntityType>
+        <EntityType Name="vehicles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="VIN" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Manufacturer" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Year" Type="int" Nullable="false" />
+          <Property Name="Weight" Type="int" Nullable="false" />
+          <Property Name="Color" Type="int" Nullable="false" />
+          <Property Name="Engine_Type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="type_of_drive" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="driver_id" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_licences_drivers">
+          <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+          <End Role="licences" Type="Self.licences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drivers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="licences">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicles_drivers">
+          <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+          <End Role="vehicles" Type="Self.vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drivers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vehicles">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="Хранилище gibddModelContainer">
           <EntitySet Name="driverPhoto" EntityType="Self.driverPhoto" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="drivers" EntityType="Self.drivers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="fines" EntityType="Self.fines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="licences" EntityType="Self.licences" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="user" EntityType="Self.user" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vehicles" EntityType="Self.vehicles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="regionCodes" EntityType="Self.regionCodes" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [regionCodes].[Region_name_EN] AS [Region_name_EN], 
@@ -69,6 +143,14 @@
     [regionCodes].[ISO_3166_2] AS [ISO_3166_2]
     FROM [dbo].[regionCodes] AS [regionCodes]</DefiningQuery>
           </EntitySet>
+          <AssociationSet Name="FK_licences_drivers" Association="Self.FK_licences_drivers">
+            <End Role="drivers" EntitySet="drivers" />
+            <End Role="licences" EntitySet="licences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicles_drivers" Association="Self.FK_vehicles_drivers">
+            <End Role="drivers" EntitySet="drivers" />
+            <End Role="vehicles" EntitySet="vehicles" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -79,8 +161,8 @@
           <Key>
             <PropertyRef Name="pid" />
           </Key>
-          <Property Name="pid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="filename" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="pid" Type="Int32" Nullable="false" />
+          <Property Name="filename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="image_data" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="drivers">
@@ -101,6 +183,40 @@
           <Property Name="phone" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="licences" Relationship="Self.FK_licences_drivers" FromRole="drivers" ToRole="licences" />
+          <NavigationProperty Name="vehicles" Relationship="Self.FK_vehicles_drivers" FromRole="drivers" ToRole="vehicles" />
+        </EntityType>
+        <EntityType Name="fines">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="status" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="firstname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="lastname" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="licences">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="licence_date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="expire_date" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="categories" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="licence_series" Type="String" MaxLength="5" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="licence_number" Type="Int32" Nullable="false" />
+          <Property Name="driver_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="drivers" Relationship="Self.FK_licences_drivers" FromRole="licences" ToRole="drivers" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="user">
           <Key>
@@ -109,6 +225,22 @@
           <Property Name="uid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="uname" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="upass" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vehicles">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="VIN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Manufacturer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Model" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Year" Type="Int32" Nullable="false" />
+          <Property Name="Weight" Type="Int32" Nullable="false" />
+          <Property Name="Color" Type="Int32" Nullable="false" />
+          <Property Name="Engine_Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="type_of_drive" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="driver_id" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="drivers" Relationship="Self.FK_vehicles_drivers" FromRole="vehicles" ToRole="drivers" />
         </EntityType>
         <EntityType Name="regionCodes">
           <Key>
@@ -123,11 +255,47 @@
           <Property Name="OKATO_code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="ISO_3166_2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
+        <Association Name="FK_licences_drivers">
+          <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+          <End Role="licences" Type="Self.licences" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drivers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="licences">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_vehicles_drivers">
+          <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+          <End Role="vehicles" Type="Self.vehicles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="drivers">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="vehicles">
+              <PropertyRef Name="driver_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="gibddEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="driverPhoto" EntityType="Self.driverPhoto" />
           <EntitySet Name="drivers" EntityType="Self.drivers" />
+          <EntitySet Name="fines" EntityType="Self.fines" />
+          <EntitySet Name="licences" EntityType="Self.licences" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="user" EntityType="Self.user" />
+          <EntitySet Name="vehicles" EntityType="Self.vehicles" />
           <EntitySet Name="regionCodes" EntityType="Self.regionCodes" />
+          <AssociationSet Name="FK_licences_drivers" Association="Self.FK_licences_drivers">
+            <End Role="drivers" EntitySet="drivers" />
+            <End Role="licences" EntitySet="licences" />
+          </AssociationSet>
+          <AssociationSet Name="FK_vehicles_drivers" Association="Self.FK_vehicles_drivers">
+            <End Role="drivers" EntitySet="drivers" />
+            <End Role="vehicles" EntitySet="vehicles" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -164,12 +332,62 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="fines">
+            <EntityTypeMapping TypeName="gibddModel.fines">
+              <MappingFragment StoreEntitySet="fines">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="firstname" ColumnName="firstname" />
+                <ScalarProperty Name="lastname" ColumnName="lastname" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="licences">
+            <EntityTypeMapping TypeName="gibddModel.licences">
+              <MappingFragment StoreEntitySet="licences">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="licence_date" ColumnName="licence_date" />
+                <ScalarProperty Name="expire_date" ColumnName="expire_date" />
+                <ScalarProperty Name="categories" ColumnName="categories" />
+                <ScalarProperty Name="licence_series" ColumnName="licence_series" />
+                <ScalarProperty Name="licence_number" ColumnName="licence_number" />
+                <ScalarProperty Name="driver_id" ColumnName="driver_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="gibddModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="user">
             <EntityTypeMapping TypeName="gibddModel.user">
               <MappingFragment StoreEntitySet="user">
                 <ScalarProperty Name="uid" ColumnName="uid" />
                 <ScalarProperty Name="uname" ColumnName="uname" />
                 <ScalarProperty Name="upass" ColumnName="upass" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vehicles">
+            <EntityTypeMapping TypeName="gibddModel.vehicles">
+              <MappingFragment StoreEntitySet="vehicles">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Manufacturer" ColumnName="Manufacturer" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="Weight" ColumnName="Weight" />
+                <ScalarProperty Name="Color" ColumnName="Color" />
+                <ScalarProperty Name="Engine_Type" ColumnName="Engine_Type" />
+                <ScalarProperty Name="type_of_drive" ColumnName="type_of_drive" />
+                <ScalarProperty Name="driver_id" ColumnName="driver_id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

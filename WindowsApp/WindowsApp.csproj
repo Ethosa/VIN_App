@@ -102,6 +102,9 @@
     <Compile Include="Database\drivers.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\fines.cs">
+      <DependentUpon>gibddModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\gibddModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,14 +120,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>gibddModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Modules\DriverLicenseImage.cs" />
-    <Compile Include="Modules\JsonResult.cs" />
+    <Compile Include="Database\licences.cs">
+      <DependentUpon>gibddModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\regionCodes.cs">
+      <DependentUpon>gibddModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Database\sysdiagrams.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\user.cs">
       <DependentUpon>gibddModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Database\vehicles.cs">
+      <DependentUpon>gibddModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DriverLicenseImage.cs" />
+    <Compile Include="Modules\JsonResult.cs" />
     <Compile Include="Forms\AuthForm\AuthForm.cs">
       <SubType>Form</SubType>
     </Compile>
