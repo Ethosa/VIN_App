@@ -153,15 +153,12 @@
             JArray data = (JArray)API.GetFines(partBox.Text, modifedDate.Value.ToString())["data"];
             ExportFines(data);
             response.Text = data.ToString();
-            for (int i = 0; i < data.Count; i++)
-            {
-                FinesSummary.DataSource = data;
-                FinesSummary.Columns[0].Name = "Номер";
-                FinesSummary.Columns[1].Name = "Гос.номер";
-                FinesSummary.Columns[2].Name = "Вод. удостоверение";
-                FinesSummary.Columns[3].Name = "Дата";
-                FinesSummary.Columns[4].Name = "Фото";
-            }
+            FinesSummary.DataSource = data;
+            FinesSummary.Columns[0].Name = "Номер";
+            FinesSummary.Columns[1].Name = "Гос.номер";
+            FinesSummary.Columns[2].Name = "Вод. удостоверение";
+            FinesSummary.Columns[3].Name = "Дата";
+            FinesSummary.Columns[4].Name = "Фото";
         }
 
         private void FinesSummary_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -218,7 +215,8 @@
         {
             Validate();
             drivers_LicsBindingSource.EndEdit();
-            // gibddDataSet._Drivers_Lics.AcceptChanges();
+            gibddDataSet._Drivers_Lics.AcceptChanges();
+            // licencesTableAdapter.Fill();
             // drivers_LicsTableAdapter.Fill(gibddDataSet._Drivers_Lics);
             // drivers_LicsTableAdapter.Update(gibddDataSet._Drivers_Lics);
         }

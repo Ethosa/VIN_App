@@ -46,9 +46,9 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -126,7 +126,7 @@ namespace WindowsApp.Forms
             this.response = new System.Windows.Forms.TextBox();
             this.licPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorDriverLicenses = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.drivers_LicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -200,8 +200,8 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorDriverLicenses)).BeginInit();
+            this.bindingNavigatorDriverLicenses.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).BeginInit();
@@ -648,6 +648,7 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1030,34 +1031,34 @@ namespace WindowsApp.Forms
             // 
             this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle5;
             this.FinesSummary.Location = new System.Drawing.Point(547, 143);
             this.FinesSummary.Name = "FinesSummary";
             this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.FinesSummary.RowHeadersVisible = false;
             this.FinesSummary.Size = new System.Drawing.Size(660, 156);
             this.FinesSummary.TabIndex = 11;
@@ -1168,20 +1169,20 @@ namespace WindowsApp.Forms
             // 
             // splitContainer3.Panel1
             // 
-            this.splitContainer3.Panel1.Controls.Add(this.bindingNavigator1);
+            this.splitContainer3.Panel1.Controls.Add(this.bindingNavigatorDriverLicenses);
             this.splitContainer3.Panel1.Controls.Add(this.drivers_LicsDataGridView);
             this.splitContainer3.Size = new System.Drawing.Size(1295, 735);
             this.splitContainer3.SplitterDistance = 1025;
             this.splitContainer3.TabIndex = 0;
             // 
-            // bindingNavigator1
+            // bindingNavigatorDriverLicenses
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
-            this.bindingNavigator1.BindingSource = this.drivers_LicsBindingSource;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorDriverLicenses.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigatorDriverLicenses.BindingSource = this.drivers_LicsBindingSource;
+            this.bindingNavigatorDriverLicenses.CountItem = this.bindingNavigatorCountItem1;
+            this.bindingNavigatorDriverLicenses.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigatorDriverLicenses.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bindingNavigatorDriverLicenses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem1,
             this.bindingNavigatorMovePreviousItem1,
             this.bindingNavigatorSeparator3,
@@ -1194,16 +1195,16 @@ namespace WindowsApp.Forms
             this.bindingNavigatorAddNewItem1,
             this.bindingNavigatorDeleteItem1,
             this.bindingNavigationSaveItem1});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 710);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem1;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1025, 25);
-            this.bindingNavigator1.TabIndex = 1;
-            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bindingNavigatorDriverLicenses.Location = new System.Drawing.Point(0, 710);
+            this.bindingNavigatorDriverLicenses.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
+            this.bindingNavigatorDriverLicenses.MoveLastItem = this.bindingNavigatorMoveLastItem1;
+            this.bindingNavigatorDriverLicenses.MoveNextItem = this.bindingNavigatorMoveNextItem1;
+            this.bindingNavigatorDriverLicenses.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigatorDriverLicenses.Name = "bindingNavigatorDriverLicenses";
+            this.bindingNavigatorDriverLicenses.PositionItem = this.bindingNavigatorPositionItem1;
+            this.bindingNavigatorDriverLicenses.Size = new System.Drawing.Size(1025, 25);
+            this.bindingNavigatorDriverLicenses.TabIndex = 1;
+            this.bindingNavigatorDriverLicenses.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem1
             // 
@@ -1262,6 +1263,7 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -1469,9 +1471,9 @@ namespace WindowsApp.Forms
             this.splitContainer3.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigatorDriverLicenses)).EndInit();
+            this.bindingNavigatorDriverLicenses.ResumeLayout(false);
+            this.bindingNavigatorDriverLicenses.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).EndInit();
@@ -1568,7 +1570,7 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.TabPage carPage;
         private System.Windows.Forms.BindingSource drivers_CarsBindingSource;
         private Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter drivers_CarsTableAdapter;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.BindingNavigator bindingNavigatorDriverLicenses;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
