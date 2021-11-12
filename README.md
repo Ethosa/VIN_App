@@ -47,7 +47,7 @@ It is necessary to implement an interface in which the user can change informati
   - [x] View car picture
   - [ ] POST postFine [API method is down]
   #### Information Export
-   - [ ] Import fines in .csv
+   - [x] Import fines in .csv
 
 
 ## Session 3
