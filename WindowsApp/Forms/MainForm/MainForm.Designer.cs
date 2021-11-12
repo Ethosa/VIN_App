@@ -46,9 +46,9 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -159,18 +159,18 @@ namespace WindowsApp.Forms
             this.drivers_CarsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsAddItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsPrevItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsNextItem = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.driverCarsSaveItem = new System.Windows.Forms.ToolStripButton();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -1058,34 +1058,34 @@ namespace WindowsApp.Forms
             // 
             this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
             this.FinesSummary.Location = new System.Drawing.Point(547, 143);
             this.FinesSummary.Name = "FinesSummary";
             this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.FinesSummary.RowHeadersVisible = false;
             this.FinesSummary.Size = new System.Drawing.Size(660, 156);
             this.FinesSummary.TabIndex = 11;
@@ -1466,43 +1466,43 @@ namespace WindowsApp.Forms
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.toolStripButton1;
+            this.bindingNavigator1.AddNewItem = this.driverCarsAddItem;
             this.bindingNavigator1.BindingSource = this.drivers_CarsBindingSource;
             this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.toolStripButton2;
+            this.bindingNavigator1.DeleteItem = this.driverCarsDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton3,
-            this.toolStripButton4,
+            this.driverCarsFirstItem,
+            this.driverCarsPrevItem,
             this.toolStripSeparator1,
             this.toolStripTextBox1,
             this.toolStripLabel1,
             this.toolStripSeparator2,
-            this.toolStripButton5,
-            this.toolStripButton6,
+            this.driverCarsNextItem,
+            this.driverCarsLastItem,
             this.toolStripSeparator3,
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton7});
+            this.driverCarsAddItem,
+            this.driverCarsDeleteItem,
+            this.driverCarsSaveItem});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 710);
-            this.bindingNavigator1.MoveFirstItem = this.toolStripButton3;
-            this.bindingNavigator1.MoveLastItem = this.toolStripButton6;
-            this.bindingNavigator1.MoveNextItem = this.toolStripButton5;
-            this.bindingNavigator1.MovePreviousItem = this.toolStripButton4;
+            this.bindingNavigator1.MoveFirstItem = this.driverCarsFirstItem;
+            this.bindingNavigator1.MoveLastItem = this.driverCarsLastItem;
+            this.bindingNavigator1.MoveNextItem = this.driverCarsNextItem;
+            this.bindingNavigator1.MovePreviousItem = this.driverCarsPrevItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
             this.bindingNavigator1.Size = new System.Drawing.Size(1025, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // toolStripButton1
+            // driverCarsAddItem
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Добавить";
+            this.driverCarsAddItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsAddItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsAddItem.Image")));
+            this.driverCarsAddItem.Name = "driverCarsAddItem";
+            this.driverCarsAddItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsAddItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsAddItem.Text = "Добавить";
             // 
             // toolStripLabel1
             // 
@@ -1511,32 +1511,32 @@ namespace WindowsApp.Forms
             this.toolStripLabel1.Text = "для {0}";
             this.toolStripLabel1.ToolTipText = "Общее число элементов";
             // 
-            // toolStripButton2
+            // driverCarsDeleteItem
             // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Удалить";
+            this.driverCarsDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsDeleteItem.Image")));
+            this.driverCarsDeleteItem.Name = "driverCarsDeleteItem";
+            this.driverCarsDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsDeleteItem.Text = "Удалить";
             // 
-            // toolStripButton3
+            // driverCarsFirstItem
             // 
-            this.toolStripButton3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton3.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton3.Text = "Переместить в начало";
+            this.driverCarsFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsFirstItem.Image")));
+            this.driverCarsFirstItem.Name = "driverCarsFirstItem";
+            this.driverCarsFirstItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsFirstItem.Text = "Переместить в начало";
             // 
-            // toolStripButton4
+            // driverCarsPrevItem
             // 
-            this.toolStripButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton4.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton4.Text = "Переместить назад";
+            this.driverCarsPrevItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsPrevItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsPrevItem.Image")));
+            this.driverCarsPrevItem.Name = "driverCarsPrevItem";
+            this.driverCarsPrevItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsPrevItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsPrevItem.Text = "Переместить назад";
             // 
             // toolStripSeparator1
             // 
@@ -1558,37 +1558,37 @@ namespace WindowsApp.Forms
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton5
+            // driverCarsNextItem
             // 
-            this.toolStripButton5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton5.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton5.Text = "Переместить вперед";
+            this.driverCarsNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsNextItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsNextItem.Image")));
+            this.driverCarsNextItem.Name = "driverCarsNextItem";
+            this.driverCarsNextItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsNextItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsNextItem.Text = "Переместить вперед";
             // 
-            // toolStripButton6
+            // driverCarsLastItem
             // 
-            this.toolStripButton6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton6.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton6.Text = "Переместить в конец";
+            this.driverCarsLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsLastItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsLastItem.Image")));
+            this.driverCarsLastItem.Name = "driverCarsLastItem";
+            this.driverCarsLastItem.RightToLeftAutoMirrorImage = true;
+            this.driverCarsLastItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsLastItem.Text = "Переместить в конец";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
             // 
-            // toolStripButton7
+            // driverCarsSaveItem
             // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "&Сохранить";
+            this.driverCarsSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverCarsSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("driverCarsSaveItem.Image")));
+            this.driverCarsSaveItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.driverCarsSaveItem.Name = "driverCarsSaveItem";
+            this.driverCarsSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.driverCarsSaveItem.Text = "&Сохранить";
             // 
             // dataGridView2
             // 
@@ -1819,18 +1819,18 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.ToolStripButton bindingNavigationSaveItem1;
         private System.Windows.Forms.SplitContainer splitContainer4;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton driverCarsAddItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
+        private System.Windows.Forms.ToolStripButton driverCarsDeleteItem;
+        private System.Windows.Forms.ToolStripButton driverCarsFirstItem;
+        private System.Windows.Forms.ToolStripButton driverCarsPrevItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripButton driverCarsNextItem;
+        private System.Windows.Forms.ToolStripButton driverCarsLastItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton driverCarsSaveItem;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
