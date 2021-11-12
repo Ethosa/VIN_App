@@ -18,16 +18,26 @@ namespace WindowsApp.Modules
             SetupGraphics();
         }
 
+        /// <summary>
+        /// Рисует данные ВУ.
+        /// </summary>
         public void DrawInfo()
         {
 
         }
 
+        /// <summary>
+        /// Возвращает bitmap.
+        /// </summary>
+        /// <returns></returns>
         public Bitmap GetBitmap()
         {
             return bitmap;
         }
 
+        /// <summary>
+        /// Настройка Graphics
+        /// </summary>
         private void SetupGraphics()
         {
             graphics.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
