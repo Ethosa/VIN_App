@@ -211,7 +211,7 @@
             }
         }
 
-        private void BindingNavigationSaveItem1Click(object sender, EventArgs e)
+        private void DriverLicenseSaveItem(object sender, EventArgs e)
         {
             Validate();
             drivers_LicsBindingSource.EndEdit();

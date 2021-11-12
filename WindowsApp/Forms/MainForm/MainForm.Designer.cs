@@ -45,10 +45,10 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -127,19 +127,19 @@ namespace WindowsApp.Forms
             this.licPage = new System.Windows.Forms.TabPage();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.bindingNavigatorDriverLicenses = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseAddItem = new System.Windows.Forms.ToolStripButton();
             this.drivers_LicsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem1 = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.driverLicensePrevItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem1 = new System.Windows.Forms.ToolStripTextBox();
             this.bindingNavigatorSeparator4 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseNextItem = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigationSaveItem1 = new System.Windows.Forms.ToolStripButton();
+            this.driverLicenseSaveItem = new System.Windows.Forms.ToolStripButton();
             this.drivers_LicsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -150,15 +150,23 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carPage = new System.Windows.Forms.TabPage();
-            this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
-            this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
-            this.licencesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.licencesTableAdapter();
-            this.licencesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.drivers_LicsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_LicsTableAdapter();
-            this.drivers_CarsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.drivers_CarsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.drivers_CarsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.drivers_CarsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.driverCarsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.driverCarsAddItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.driverCarsDeleteItem = new System.Windows.Forms.ToolStripButton();
@@ -171,12 +179,12 @@ namespace WindowsApp.Forms
             this.driverCarsLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.driverCarsSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
+            this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
+            this.licencesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.licencesTableAdapter();
+            this.licencesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.drivers_LicsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_LicsTableAdapter();
+            this.drivers_CarsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -225,14 +233,14 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).BeginInit();
             this.carPage.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverCarsBindingNavigator)).BeginInit();
+            this.driverCarsBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -1058,34 +1066,34 @@ namespace WindowsApp.Forms
             // 
             this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle5;
             this.FinesSummary.Location = new System.Drawing.Point(547, 143);
             this.FinesSummary.Name = "FinesSummary";
             this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.FinesSummary.RowHeadersVisible = false;
             this.FinesSummary.Size = new System.Drawing.Size(660, 156);
             this.FinesSummary.TabIndex = 11;
@@ -1204,43 +1212,43 @@ namespace WindowsApp.Forms
             // 
             // bindingNavigatorDriverLicenses
             // 
-            this.bindingNavigatorDriverLicenses.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigatorDriverLicenses.AddNewItem = this.driverLicenseAddItem;
             this.bindingNavigatorDriverLicenses.BindingSource = this.drivers_LicsBindingSource;
             this.bindingNavigatorDriverLicenses.CountItem = this.bindingNavigatorCountItem1;
-            this.bindingNavigatorDriverLicenses.DeleteItem = this.bindingNavigatorDeleteItem1;
+            this.bindingNavigatorDriverLicenses.DeleteItem = this.driverLicenseDeleteItem;
             this.bindingNavigatorDriverLicenses.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.bindingNavigatorDriverLicenses.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem1,
-            this.bindingNavigatorMovePreviousItem1,
+            this.driverLicenseFirstItem,
+            this.driverLicensePrevItem,
             this.bindingNavigatorSeparator3,
             this.bindingNavigatorPositionItem1,
             this.bindingNavigatorCountItem1,
             this.bindingNavigatorSeparator4,
-            this.bindingNavigatorMoveNextItem1,
-            this.bindingNavigatorMoveLastItem1,
+            this.driverLicenseNextItem,
+            this.driverLicenseLastItem,
             this.bindingNavigatorSeparator5,
-            this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1,
-            this.bindingNavigationSaveItem1});
+            this.driverLicenseAddItem,
+            this.driverLicenseDeleteItem,
+            this.driverLicenseSaveItem});
             this.bindingNavigatorDriverLicenses.Location = new System.Drawing.Point(0, 710);
-            this.bindingNavigatorDriverLicenses.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
-            this.bindingNavigatorDriverLicenses.MoveLastItem = this.bindingNavigatorMoveLastItem1;
-            this.bindingNavigatorDriverLicenses.MoveNextItem = this.bindingNavigatorMoveNextItem1;
-            this.bindingNavigatorDriverLicenses.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
+            this.bindingNavigatorDriverLicenses.MoveFirstItem = this.driverLicenseFirstItem;
+            this.bindingNavigatorDriverLicenses.MoveLastItem = this.driverLicenseLastItem;
+            this.bindingNavigatorDriverLicenses.MoveNextItem = this.driverLicenseNextItem;
+            this.bindingNavigatorDriverLicenses.MovePreviousItem = this.driverLicensePrevItem;
             this.bindingNavigatorDriverLicenses.Name = "bindingNavigatorDriverLicenses";
             this.bindingNavigatorDriverLicenses.PositionItem = this.bindingNavigatorPositionItem1;
             this.bindingNavigatorDriverLicenses.Size = new System.Drawing.Size(1025, 25);
             this.bindingNavigatorDriverLicenses.TabIndex = 1;
             this.bindingNavigatorDriverLicenses.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem1
+            // driverLicenseAddItem
             // 
-            this.bindingNavigatorAddNewItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem1.Image")));
-            this.bindingNavigatorAddNewItem1.Name = "bindingNavigatorAddNewItem1";
-            this.bindingNavigatorAddNewItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem1.Text = "Добавить";
+            this.driverLicenseAddItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseAddItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseAddItem.Image")));
+            this.driverLicenseAddItem.Name = "driverLicenseAddItem";
+            this.driverLicenseAddItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicenseAddItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseAddItem.Text = "Добавить";
             // 
             // drivers_LicsBindingSource
             // 
@@ -1254,32 +1262,32 @@ namespace WindowsApp.Forms
             this.bindingNavigatorCountItem1.Text = "для {0}";
             this.bindingNavigatorCountItem1.ToolTipText = "Общее число элементов";
             // 
-            // bindingNavigatorDeleteItem1
+            // driverLicenseDeleteItem
             // 
-            this.bindingNavigatorDeleteItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem1.Image")));
-            this.bindingNavigatorDeleteItem1.Name = "bindingNavigatorDeleteItem1";
-            this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem1.Text = "Удалить";
+            this.driverLicenseDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseDeleteItem.Image")));
+            this.driverLicenseDeleteItem.Name = "driverLicenseDeleteItem";
+            this.driverLicenseDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicenseDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseDeleteItem.Text = "Удалить";
             // 
-            // bindingNavigatorMoveFirstItem1
+            // driverLicenseFirstItem
             // 
-            this.bindingNavigatorMoveFirstItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem1.Image")));
-            this.bindingNavigatorMoveFirstItem1.Name = "bindingNavigatorMoveFirstItem1";
-            this.bindingNavigatorMoveFirstItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem1.Text = "Переместить в начало";
+            this.driverLicenseFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseFirstItem.Image")));
+            this.driverLicenseFirstItem.Name = "driverLicenseFirstItem";
+            this.driverLicenseFirstItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicenseFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseFirstItem.Text = "Переместить в начало";
             // 
-            // bindingNavigatorMovePreviousItem1
+            // driverLicensePrevItem
             // 
-            this.bindingNavigatorMovePreviousItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem1.Image")));
-            this.bindingNavigatorMovePreviousItem1.Name = "bindingNavigatorMovePreviousItem1";
-            this.bindingNavigatorMovePreviousItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem1.Text = "Переместить назад";
+            this.driverLicensePrevItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicensePrevItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicensePrevItem.Image")));
+            this.driverLicensePrevItem.Name = "driverLicensePrevItem";
+            this.driverLicensePrevItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicensePrevItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicensePrevItem.Text = "Переместить назад";
             // 
             // bindingNavigatorSeparator3
             // 
@@ -1301,38 +1309,38 @@ namespace WindowsApp.Forms
             this.bindingNavigatorSeparator4.Name = "bindingNavigatorSeparator4";
             this.bindingNavigatorSeparator4.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigatorMoveNextItem1
+            // driverLicenseNextItem
             // 
-            this.bindingNavigatorMoveNextItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem1.Image")));
-            this.bindingNavigatorMoveNextItem1.Name = "bindingNavigatorMoveNextItem1";
-            this.bindingNavigatorMoveNextItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveNextItem1.Text = "Переместить вперед";
+            this.driverLicenseNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseNextItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseNextItem.Image")));
+            this.driverLicenseNextItem.Name = "driverLicenseNextItem";
+            this.driverLicenseNextItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicenseNextItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseNextItem.Text = "Переместить вперед";
             // 
-            // bindingNavigatorMoveLastItem1
+            // driverLicenseLastItem
             // 
-            this.bindingNavigatorMoveLastItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem1.Image")));
-            this.bindingNavigatorMoveLastItem1.Name = "bindingNavigatorMoveLastItem1";
-            this.bindingNavigatorMoveLastItem1.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveLastItem1.Text = "Переместить в конец";
+            this.driverLicenseLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseLastItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseLastItem.Image")));
+            this.driverLicenseLastItem.Name = "driverLicenseLastItem";
+            this.driverLicenseLastItem.RightToLeftAutoMirrorImage = true;
+            this.driverLicenseLastItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseLastItem.Text = "Переместить в конец";
             // 
             // bindingNavigatorSeparator5
             // 
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // bindingNavigationSaveItem1
+            // driverLicenseSaveItem
             // 
-            this.bindingNavigationSaveItem1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigationSaveItem1.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigationSaveItem1.Image")));
-            this.bindingNavigationSaveItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.bindingNavigationSaveItem1.Name = "bindingNavigationSaveItem1";
-            this.bindingNavigationSaveItem1.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigationSaveItem1.Text = "&Сохранить";
-            this.bindingNavigationSaveItem1.Click += new System.EventHandler(this.BindingNavigationSaveItem1Click);
+            this.driverLicenseSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.driverLicenseSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("driverLicenseSaveItem.Image")));
+            this.driverLicenseSaveItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.driverLicenseSaveItem.Name = "driverLicenseSaveItem";
+            this.driverLicenseSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.driverLicenseSaveItem.Text = "&Сохранить";
+            this.driverLicenseSaveItem.Click += new System.EventHandler(this.DriverLicenseSaveItem);
             // 
             // drivers_LicsDataGridView
             // 
@@ -1414,42 +1422,6 @@ namespace WindowsApp.Forms
             this.carPage.Text = "Авто";
             this.carPage.UseVisualStyleBackColor = true;
             // 
-            // driversTableAdapter
-            // 
-            this.driversTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.driversTableAdapter = this.driversTableAdapter;
-            this.tableAdapterManager.finesTableAdapter = null;
-            this.tableAdapterManager.licencesTableAdapter = this.licencesTableAdapter;
-            this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.userTableAdapter = null;
-            this.tableAdapterManager.vehiclesTableAdapter = null;
-            // 
-            // licencesTableAdapter
-            // 
-            this.licencesTableAdapter.ClearBeforeFill = true;
-            // 
-            // licencesBindingSource
-            // 
-            this.licencesBindingSource.DataMember = "licences";
-            this.licencesBindingSource.DataSource = this.gibddDataSet;
-            // 
-            // drivers_LicsTableAdapter
-            // 
-            this.drivers_LicsTableAdapter.ClearBeforeFill = true;
-            // 
-            // drivers_CarsBindingSource
-            // 
-            this.drivers_CarsBindingSource.DataMember = "Drivers-Cars";
-            this.drivers_CarsBindingSource.DataSource = this.gibddDataSet;
-            // 
-            // drivers_CarsTableAdapter
-            // 
-            this.drivers_CarsTableAdapter.ClearBeforeFill = true;
-            // 
             // splitContainer4
             // 
             this.splitContainer4.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1458,20 +1430,130 @@ namespace WindowsApp.Forms
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.bindingNavigator1);
-            this.splitContainer4.Panel1.Controls.Add(this.dataGridView2);
+            this.splitContainer4.Panel1.Controls.Add(this.drivers_CarsDataGridView);
+            this.splitContainer4.Panel1.Controls.Add(this.driverCarsBindingNavigator);
             this.splitContainer4.Size = new System.Drawing.Size(1295, 735);
             this.splitContainer4.SplitterDistance = 1025;
             this.splitContainer4.TabIndex = 2;
             // 
-            // bindingNavigator1
+            // drivers_CarsDataGridView
             // 
-            this.bindingNavigator1.AddNewItem = this.driverCarsAddItem;
-            this.bindingNavigator1.BindingSource = this.drivers_CarsBindingSource;
-            this.bindingNavigator1.CountItem = this.toolStripLabel1;
-            this.bindingNavigator1.DeleteItem = this.driverCarsDeleteItem;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.drivers_CarsDataGridView.AutoGenerateColumns = false;
+            this.drivers_CarsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.drivers_CarsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.drivers_CarsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34});
+            this.drivers_CarsDataGridView.DataSource = this.drivers_CarsBindingSource;
+            this.drivers_CarsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.drivers_CarsDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.drivers_CarsDataGridView.Name = "drivers_CarsDataGridView";
+            this.drivers_CarsDataGridView.RowHeadersVisible = false;
+            this.drivers_CarsDataGridView.Size = new System.Drawing.Size(1025, 710);
+            this.drivers_CarsDataGridView.TabIndex = 1;
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Фамилия";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Фамилия";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "Имя";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Отчество";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "ВУ Серия";
+            this.dataGridViewTextBoxColumn25.HeaderText = "ВУ Серия";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "ВУ Номер";
+            this.dataGridViewTextBoxColumn26.HeaderText = "ВУ Номер";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "ТС Изготовитель";
+            this.dataGridViewTextBoxColumn27.HeaderText = "ТС Изготовитель";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Модель";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Модель";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "VIN номер";
+            this.dataGridViewTextBoxColumn29.HeaderText = "VIN номер";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Год выпуска";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Год выпуска";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "Вес";
+            this.dataGridViewTextBoxColumn31.HeaderText = "Вес";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Цвет";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Цвет";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "Тип двигателя";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Тип двигателя";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "Привод";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Привод";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            // 
+            // drivers_CarsBindingSource
+            // 
+            this.drivers_CarsBindingSource.DataMember = "Drivers-Cars";
+            this.drivers_CarsBindingSource.DataSource = this.gibddDataSet;
+            // 
+            // driverCarsBindingNavigator
+            // 
+            this.driverCarsBindingNavigator.AddNewItem = this.driverCarsAddItem;
+            this.driverCarsBindingNavigator.BindingSource = this.drivers_CarsBindingSource;
+            this.driverCarsBindingNavigator.CountItem = this.toolStripLabel1;
+            this.driverCarsBindingNavigator.DeleteItem = this.driverCarsDeleteItem;
+            this.driverCarsBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.driverCarsBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.driverCarsFirstItem,
             this.driverCarsPrevItem,
             this.toolStripSeparator1,
@@ -1484,16 +1566,16 @@ namespace WindowsApp.Forms
             this.driverCarsAddItem,
             this.driverCarsDeleteItem,
             this.driverCarsSaveItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 710);
-            this.bindingNavigator1.MoveFirstItem = this.driverCarsFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.driverCarsLastItem;
-            this.bindingNavigator1.MoveNextItem = this.driverCarsNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.driverCarsPrevItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.toolStripTextBox1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(1025, 25);
-            this.bindingNavigator1.TabIndex = 1;
-            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.driverCarsBindingNavigator.Location = new System.Drawing.Point(0, 710);
+            this.driverCarsBindingNavigator.MoveFirstItem = this.driverCarsFirstItem;
+            this.driverCarsBindingNavigator.MoveLastItem = this.driverCarsLastItem;
+            this.driverCarsBindingNavigator.MoveNextItem = this.driverCarsNextItem;
+            this.driverCarsBindingNavigator.MovePreviousItem = this.driverCarsPrevItem;
+            this.driverCarsBindingNavigator.Name = "driverCarsBindingNavigator";
+            this.driverCarsBindingNavigator.PositionItem = this.toolStripTextBox1;
+            this.driverCarsBindingNavigator.Size = new System.Drawing.Size(1025, 25);
+            this.driverCarsBindingNavigator.TabIndex = 1;
+            this.driverCarsBindingNavigator.Text = "bindingNavigator1";
             // 
             // driverCarsAddItem
             // 
@@ -1590,53 +1672,36 @@ namespace WindowsApp.Forms
             this.driverCarsSaveItem.Size = new System.Drawing.Size(23, 22);
             this.driverCarsSaveItem.Text = "&Сохранить";
             // 
-            // dataGridView2
+            // driversTableAdapter
             // 
-            this.dataGridView2.AutoGenerateColumns = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31});
-            this.dataGridView2.DataSource = this.drivers_CarsBindingSource;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.Size = new System.Drawing.Size(1025, 735);
-            this.dataGridView2.TabIndex = 0;
+            this.driversTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn27
+            // tableAdapterManager
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Фамилия";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.driversTableAdapter = this.driversTableAdapter;
+            this.tableAdapterManager.finesTableAdapter = null;
+            this.tableAdapterManager.licencesTableAdapter = this.licencesTableAdapter;
+            this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.userTableAdapter = null;
+            this.tableAdapterManager.vehiclesTableAdapter = null;
             // 
-            // dataGridViewTextBoxColumn28
+            // licencesTableAdapter
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Имя";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.licencesTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn29
+            // licencesBindingSource
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Отчество";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.licencesBindingSource.DataMember = "licences";
+            this.licencesBindingSource.DataSource = this.gibddDataSet;
             // 
-            // dataGridViewTextBoxColumn30
+            // drivers_LicsTableAdapter
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "ВУ Серия";
-            this.dataGridViewTextBoxColumn30.HeaderText = "ВУ Серия";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.drivers_LicsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn31
+            // drivers_CarsTableAdapter
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "ВУ Номер";
-            this.dataGridViewTextBoxColumn31.HeaderText = "ВУ Номер";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.drivers_CarsTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
@@ -1693,16 +1758,16 @@ namespace WindowsApp.Forms
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drivers_LicsDataGridView)).EndInit();
             this.carPage.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).EndInit();
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.driverCarsBindingNavigator)).EndInit();
+            this.driverCarsBindingNavigator.ResumeLayout(false);
+            this.driverCarsBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1796,16 +1861,16 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.BindingSource drivers_CarsBindingSource;
         private Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter drivers_CarsTableAdapter;
         private System.Windows.Forms.BindingNavigator bindingNavigatorDriverLicenses;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
+        private System.Windows.Forms.ToolStripButton driverLicenseAddItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
+        private System.Windows.Forms.ToolStripButton driverLicenseDeleteItem;
+        private System.Windows.Forms.ToolStripButton driverLicenseFirstItem;
+        private System.Windows.Forms.ToolStripButton driverLicensePrevItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
         private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator4;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
+        private System.Windows.Forms.ToolStripButton driverLicenseNextItem;
+        private System.Windows.Forms.ToolStripButton driverLicenseLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.DataGridView drivers_LicsDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
@@ -1816,9 +1881,9 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
-        private System.Windows.Forms.ToolStripButton bindingNavigationSaveItem1;
+        private System.Windows.Forms.ToolStripButton driverLicenseSaveItem;
         private System.Windows.Forms.SplitContainer splitContainer4;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.BindingNavigator driverCarsBindingNavigator;
         private System.Windows.Forms.ToolStripButton driverCarsAddItem;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
         private System.Windows.Forms.ToolStripButton driverCarsDeleteItem;
@@ -1831,11 +1896,19 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.ToolStripButton driverCarsLastItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton driverCarsSaveItem;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView drivers_CarsDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
     }
 }
