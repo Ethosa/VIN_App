@@ -45,10 +45,18 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label emailLabel;
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
+            System.Windows.Forms.Label vINLabel;
+            System.Windows.Forms.Label manufacturerLabel;
+            System.Windows.Forms.Label modelLabel;
+            System.Windows.Forms.Label yearLabel;
+            System.Windows.Forms.Label weightLabel;
+            System.Windows.Forms.Label colorLabel;
+            System.Windows.Forms.Label engine_TypeLabel;
+            System.Windows.Forms.Label type_of_driveLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -154,8 +162,7 @@ namespace WindowsApp.Forms
             this.driverLicenseImage = new System.Windows.Forms.PictureBox();
             this.carPage = new System.Windows.Forms.TabPage();
             this.splitContainer4 = new System.Windows.Forms.SplitContainer();
-            this.drivers_CarsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehiclesDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -164,11 +171,7 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.drivers_CarsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.vehiclesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.driverCarsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.driverCarsAddItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
@@ -182,15 +185,20 @@ namespace WindowsApp.Forms
             this.driverCarsLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.driverCarsSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.type_of_driveTextBox = new System.Windows.Forms.TextBox();
+            this.engine_TypeTextBox = new System.Windows.Forms.TextBox();
+            this.colorTextBox = new System.Windows.Forms.TextBox();
+            this.weightTextBox = new System.Windows.Forms.TextBox();
+            this.yearTextBox = new System.Windows.Forms.TextBox();
+            this.modelTextBox = new System.Windows.Forms.TextBox();
+            this.manufacturerTextBox = new System.Windows.Forms.TextBox();
+            this.vinTextBox = new System.Windows.Forms.TextBox();
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
             this.licencesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.licencesTableAdapter();
-            this.vehiclesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.vehiclesTableAdapter();
             this.licencesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drivers_LicsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_LicsTableAdapter();
-            this.drivers_CarsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.vehiclesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.vehiclesTableAdapter();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -206,6 +214,14 @@ namespace WindowsApp.Forms
             emailLabel = new System.Windows.Forms.Label();
             passport_serialLabel1 = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
+            vINLabel = new System.Windows.Forms.Label();
+            manufacturerLabel = new System.Windows.Forms.Label();
+            modelLabel = new System.Windows.Forms.Label();
+            yearLabel = new System.Windows.Forms.Label();
+            weightLabel = new System.Windows.Forms.Label();
+            colorLabel = new System.Windows.Forms.Label();
+            engine_TypeLabel = new System.Windows.Forms.Label();
+            type_of_driveLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -243,13 +259,13 @@ namespace WindowsApp.Forms
             this.carPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).BeginInit();
             this.splitContainer4.Panel1.SuspendLayout();
+            this.splitContainer4.Panel2.SuspendLayout();
             this.splitContainer4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverCarsBindingNavigator)).BeginInit();
             this.driverCarsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // firstnameLabel
@@ -387,6 +403,78 @@ namespace WindowsApp.Forms
             idLabel.Size = new System.Drawing.Size(18, 13);
             idLabel.TabIndex = 35;
             idLabel.Text = "id:";
+            // 
+            // vINLabel
+            // 
+            vINLabel.AutoSize = true;
+            vINLabel.Location = new System.Drawing.Point(55, 6);
+            vINLabel.Name = "vINLabel";
+            vINLabel.Size = new System.Drawing.Size(28, 13);
+            vINLabel.TabIndex = 0;
+            vINLabel.Text = "VIN:";
+            // 
+            // manufacturerLabel
+            // 
+            manufacturerLabel.AutoSize = true;
+            manufacturerLabel.Location = new System.Drawing.Point(2, 32);
+            manufacturerLabel.Name = "manufacturerLabel";
+            manufacturerLabel.Size = new System.Drawing.Size(81, 13);
+            manufacturerLabel.TabIndex = 2;
+            manufacturerLabel.Text = "Изготовитель:";
+            // 
+            // modelLabel
+            // 
+            modelLabel.AutoSize = true;
+            modelLabel.Location = new System.Drawing.Point(34, 58);
+            modelLabel.Name = "modelLabel";
+            modelLabel.Size = new System.Drawing.Size(49, 13);
+            modelLabel.TabIndex = 4;
+            modelLabel.Text = "Модель:";
+            // 
+            // yearLabel
+            // 
+            yearLabel.AutoSize = true;
+            yearLabel.Location = new System.Drawing.Point(55, 84);
+            yearLabel.Name = "yearLabel";
+            yearLabel.Size = new System.Drawing.Size(28, 13);
+            yearLabel.TabIndex = 6;
+            yearLabel.Text = "Год:";
+            // 
+            // weightLabel
+            // 
+            weightLabel.AutoSize = true;
+            weightLabel.Location = new System.Drawing.Point(54, 114);
+            weightLabel.Name = "weightLabel";
+            weightLabel.Size = new System.Drawing.Size(29, 13);
+            weightLabel.TabIndex = 8;
+            weightLabel.Text = "Вес:";
+            // 
+            // colorLabel
+            // 
+            colorLabel.AutoSize = true;
+            colorLabel.Location = new System.Drawing.Point(48, 136);
+            colorLabel.Name = "colorLabel";
+            colorLabel.Size = new System.Drawing.Size(35, 13);
+            colorLabel.TabIndex = 10;
+            colorLabel.Text = "Цвет:";
+            // 
+            // engine_TypeLabel
+            // 
+            engine_TypeLabel.AutoSize = true;
+            engine_TypeLabel.Location = new System.Drawing.Point(13, 162);
+            engine_TypeLabel.Name = "engine_TypeLabel";
+            engine_TypeLabel.Size = new System.Drawing.Size(70, 13);
+            engine_TypeLabel.TabIndex = 12;
+            engine_TypeLabel.Text = "Тип движка:";
+            // 
+            // type_of_driveLabel
+            // 
+            type_of_driveLabel.AutoSize = true;
+            type_of_driveLabel.Location = new System.Drawing.Point(9, 188);
+            type_of_driveLabel.Name = "type_of_driveLabel";
+            type_of_driveLabel.Size = new System.Drawing.Size(74, 13);
+            type_of_driveLabel.TabIndex = 14;
+            type_of_driveLabel.Text = "Тип привода:";
             // 
             // splitContainer1
             // 
@@ -692,6 +780,7 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1074,34 +1163,34 @@ namespace WindowsApp.Forms
             // 
             this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle5;
             this.FinesSummary.Location = new System.Drawing.Point(547, 143);
             this.FinesSummary.Name = "FinesSummary";
             this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.FinesSummary.RowHeadersVisible = false;
             this.FinesSummary.Size = new System.Drawing.Size(660, 156);
             this.FinesSummary.TabIndex = 11;
@@ -1312,6 +1401,7 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem1.AutoSize = false;
+            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -1473,19 +1563,38 @@ namespace WindowsApp.Forms
             // 
             // splitContainer4.Panel1
             // 
-            this.splitContainer4.Panel1.Controls.Add(this.drivers_CarsDataGridView);
+            this.splitContainer4.Panel1.Controls.Add(this.vehiclesDataGridView);
             this.splitContainer4.Panel1.Controls.Add(this.driverCarsBindingNavigator);
+            // 
+            // splitContainer4.Panel2
+            // 
+            this.splitContainer4.Panel2.AutoScroll = true;
+            this.splitContainer4.Panel2.Controls.Add(type_of_driveLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.type_of_driveTextBox);
+            this.splitContainer4.Panel2.Controls.Add(engine_TypeLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.engine_TypeTextBox);
+            this.splitContainer4.Panel2.Controls.Add(colorLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.colorTextBox);
+            this.splitContainer4.Panel2.Controls.Add(weightLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.weightTextBox);
+            this.splitContainer4.Panel2.Controls.Add(yearLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.yearTextBox);
+            this.splitContainer4.Panel2.Controls.Add(modelLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.modelTextBox);
+            this.splitContainer4.Panel2.Controls.Add(manufacturerLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.manufacturerTextBox);
+            this.splitContainer4.Panel2.Controls.Add(vINLabel);
+            this.splitContainer4.Panel2.Controls.Add(this.vinTextBox);
             this.splitContainer4.Size = new System.Drawing.Size(1295, 735);
             this.splitContainer4.SplitterDistance = 1025;
             this.splitContainer4.TabIndex = 2;
             // 
-            // drivers_CarsDataGridView
+            // vehiclesDataGridView
             // 
-            this.drivers_CarsDataGridView.AutoGenerateColumns = false;
-            this.drivers_CarsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.drivers_CarsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.drivers_CarsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn22,
+            this.vehiclesDataGridView.AutoGenerateColumns = false;
+            this.vehiclesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.vehiclesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vehiclesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn23,
             this.dataGridViewTextBoxColumn24,
             this.dataGridViewTextBoxColumn25,
@@ -1493,106 +1602,72 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28,
             this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34});
-            this.drivers_CarsDataGridView.DataSource = this.drivers_CarsBindingSource;
-            this.drivers_CarsDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.drivers_CarsDataGridView.Location = new System.Drawing.Point(0, 0);
-            this.drivers_CarsDataGridView.Name = "drivers_CarsDataGridView";
-            this.drivers_CarsDataGridView.RowHeadersVisible = false;
-            this.drivers_CarsDataGridView.Size = new System.Drawing.Size(1025, 710);
-            this.drivers_CarsDataGridView.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Фамилия";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.dataGridViewTextBoxColumn30});
+            this.vehiclesDataGridView.DataSource = this.vehiclesBindingSource;
+            this.vehiclesDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vehiclesDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.vehiclesDataGridView.Name = "vehiclesDataGridView";
+            this.vehiclesDataGridView.RowHeadersVisible = false;
+            this.vehiclesDataGridView.Size = new System.Drawing.Size(1025, 710);
+            this.vehiclesDataGridView.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn23
             // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "Имя";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "VIN";
+            this.dataGridViewTextBoxColumn23.HeaderText = "VIN";
             this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
             // 
             // dataGridViewTextBoxColumn24
             // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Отчество";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Отчество";
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Manufacturer";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Изготовитель";
             this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
             // 
             // dataGridViewTextBoxColumn25
             // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "ВУ Серия";
-            this.dataGridViewTextBoxColumn25.HeaderText = "ВУ Серия";
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Model";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Модель";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
             // dataGridViewTextBoxColumn26
             // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "ВУ Номер";
-            this.dataGridViewTextBoxColumn26.HeaderText = "ВУ Номер";
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "Year";
+            this.dataGridViewTextBoxColumn26.HeaderText = "Год";
             this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
             // 
             // dataGridViewTextBoxColumn27
             // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "ТС Изготовитель";
-            this.dataGridViewTextBoxColumn27.HeaderText = "ТС Изготовитель";
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Weight";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Вес";
             this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
             // 
             // dataGridViewTextBoxColumn28
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Модель";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Модель";
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Color";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Цвет";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             // 
             // dataGridViewTextBoxColumn29
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "VIN номер";
-            this.dataGridViewTextBoxColumn29.HeaderText = "VIN номер";
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Engine_Type";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Тип движка";
             this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
             // 
             // dataGridViewTextBoxColumn30
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Год выпуска";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Год выпуска";
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "type_of_drive";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Тип привода";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             // 
-            // dataGridViewTextBoxColumn31
+            // vehiclesBindingSource
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "Вес";
-            this.dataGridViewTextBoxColumn31.HeaderText = "Вес";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Цвет";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Цвет";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "Тип двигателя";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Тип двигателя";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "Привод";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Привод";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // drivers_CarsBindingSource
-            // 
-            this.drivers_CarsBindingSource.DataMember = "Drivers-Cars";
-            this.drivers_CarsBindingSource.DataSource = this.gibddDataSet;
+            this.vehiclesBindingSource.DataMember = "vehicles";
+            this.vehiclesBindingSource.DataSource = this.gibddDataSet;
             // 
             // driverCarsBindingNavigator
             // 
             this.driverCarsBindingNavigator.AddNewItem = this.driverCarsAddItem;
-            this.driverCarsBindingNavigator.BindingSource = this.drivers_CarsBindingSource;
+            this.driverCarsBindingNavigator.BindingSource = this.vehiclesBindingSource;
             this.driverCarsBindingNavigator.CountItem = this.toolStripLabel1;
             this.driverCarsBindingNavigator.DeleteItem = this.driverCarsDeleteItem;
             this.driverCarsBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -1628,6 +1703,7 @@ namespace WindowsApp.Forms
             this.driverCarsAddItem.RightToLeftAutoMirrorImage = true;
             this.driverCarsAddItem.Size = new System.Drawing.Size(23, 22);
             this.driverCarsAddItem.Text = "Добавить";
+            this.driverCarsAddItem.Click += new System.EventHandler(this.CarAddNewClick);
             // 
             // toolStripLabel1
             // 
@@ -1672,6 +1748,7 @@ namespace WindowsApp.Forms
             // 
             this.toolStripTextBox1.AccessibleName = "Положение";
             this.toolStripTextBox1.AutoSize = false;
+            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1715,6 +1792,70 @@ namespace WindowsApp.Forms
             this.driverCarsSaveItem.Text = "&Сохранить";
             this.driverCarsSaveItem.Click += new System.EventHandler(this.DriverCarsSaveItem);
             // 
+            // type_of_driveTextBox
+            // 
+            this.type_of_driveTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "type_of_drive", true));
+            this.type_of_driveTextBox.Location = new System.Drawing.Point(89, 185);
+            this.type_of_driveTextBox.Name = "type_of_driveTextBox";
+            this.type_of_driveTextBox.Size = new System.Drawing.Size(171, 20);
+            this.type_of_driveTextBox.TabIndex = 15;
+            // 
+            // engine_TypeTextBox
+            // 
+            this.engine_TypeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Engine_Type", true));
+            this.engine_TypeTextBox.Location = new System.Drawing.Point(89, 159);
+            this.engine_TypeTextBox.Name = "engine_TypeTextBox";
+            this.engine_TypeTextBox.Size = new System.Drawing.Size(171, 20);
+            this.engine_TypeTextBox.TabIndex = 13;
+            // 
+            // colorTextBox
+            // 
+            this.colorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Color", true));
+            this.colorTextBox.Location = new System.Drawing.Point(89, 133);
+            this.colorTextBox.Name = "colorTextBox";
+            this.colorTextBox.Size = new System.Drawing.Size(171, 20);
+            this.colorTextBox.TabIndex = 11;
+            // 
+            // weightTextBox
+            // 
+            this.weightTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Weight", true));
+            this.weightTextBox.Location = new System.Drawing.Point(89, 107);
+            this.weightTextBox.Name = "weightTextBox";
+            this.weightTextBox.Size = new System.Drawing.Size(171, 20);
+            this.weightTextBox.TabIndex = 9;
+            // 
+            // yearTextBox
+            // 
+            this.yearTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Year", true));
+            this.yearTextBox.Location = new System.Drawing.Point(89, 81);
+            this.yearTextBox.Name = "yearTextBox";
+            this.yearTextBox.Size = new System.Drawing.Size(171, 20);
+            this.yearTextBox.TabIndex = 7;
+            // 
+            // modelTextBox
+            // 
+            this.modelTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Model", true));
+            this.modelTextBox.Location = new System.Drawing.Point(89, 55);
+            this.modelTextBox.Name = "modelTextBox";
+            this.modelTextBox.Size = new System.Drawing.Size(171, 20);
+            this.modelTextBox.TabIndex = 5;
+            // 
+            // manufacturerTextBox
+            // 
+            this.manufacturerTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "Manufacturer", true));
+            this.manufacturerTextBox.Location = new System.Drawing.Point(89, 29);
+            this.manufacturerTextBox.Name = "manufacturerTextBox";
+            this.manufacturerTextBox.Size = new System.Drawing.Size(171, 20);
+            this.manufacturerTextBox.TabIndex = 3;
+            // 
+            // vinTextBox
+            // 
+            this.vinTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.vehiclesBindingSource, "VIN", true));
+            this.vinTextBox.Location = new System.Drawing.Point(89, 3);
+            this.vinTextBox.Name = "vinTextBox";
+            this.vinTextBox.Size = new System.Drawing.Size(172, 20);
+            this.vinTextBox.TabIndex = 1;
+            // 
             // driversTableAdapter
             // 
             this.driversTableAdapter.ClearBeforeFill = true;
@@ -1727,15 +1868,11 @@ namespace WindowsApp.Forms
             this.tableAdapterManager.licencesTableAdapter = this.licencesTableAdapter;
             this.tableAdapterManager.UpdateOrder = WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.userTableAdapter = null;
-            this.tableAdapterManager.vehiclesTableAdapter = this.vehiclesTableAdapter;
+            this.tableAdapterManager.vehiclesTableAdapter = null;
             // 
             // licencesTableAdapter
             // 
             this.licencesTableAdapter.ClearBeforeFill = true;
-            // 
-            // vehiclesTableAdapter
-            // 
-            this.vehiclesTableAdapter.ClearBeforeFill = true;
             // 
             // licencesBindingSource
             // 
@@ -1746,13 +1883,9 @@ namespace WindowsApp.Forms
             // 
             this.drivers_LicsTableAdapter.ClearBeforeFill = true;
             // 
-            // drivers_CarsTableAdapter
+            // vehiclesTableAdapter
             // 
-            this.drivers_CarsTableAdapter.ClearBeforeFill = true;
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(WindowsApp.Database.gibddDataSet.vehiclesDataTable);
+            this.vehiclesTableAdapter.ClearBeforeFill = true;
             // 
             // MainForm
             // 
@@ -1813,15 +1946,16 @@ namespace WindowsApp.Forms
             this.carPage.ResumeLayout(false);
             this.splitContainer4.Panel1.ResumeLayout(false);
             this.splitContainer4.Panel1.PerformLayout();
+            this.splitContainer4.Panel2.ResumeLayout(false);
+            this.splitContainer4.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer4)).EndInit();
             this.splitContainer4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.drivers_CarsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.vehiclesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.driverCarsBindingNavigator)).EndInit();
             this.driverCarsBindingNavigator.ResumeLayout(false);
             this.driverCarsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.licencesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1912,8 +2046,6 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.BindingSource drivers_LicsBindingSource;
         private Database.gibddDataSetTableAdapters.Drivers_LicsTableAdapter drivers_LicsTableAdapter;
         private System.Windows.Forms.TabPage carPage;
-        private System.Windows.Forms.BindingSource drivers_CarsBindingSource;
-        private Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter drivers_CarsTableAdapter;
         private System.Windows.Forms.BindingNavigator bindingNavigatorDriverLicenses;
         private System.Windows.Forms.ToolStripButton driverLicenseAddItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
@@ -1950,8 +2082,12 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.ToolStripButton driverCarsLastItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton driverCarsSaveItem;
-        private System.Windows.Forms.DataGridView drivers_CarsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.PictureBox driverLicenseImage;
+        private System.Windows.Forms.Button driverLicenseButton;
+        private System.Windows.Forms.Button driverLicenseSaveImageButton;
+        private System.Windows.Forms.BindingSource vehiclesBindingSource;
+        private Database.gibddDataSetTableAdapters.vehiclesTableAdapter vehiclesTableAdapter;
+        private System.Windows.Forms.DataGridView vehiclesDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn24;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn25;
@@ -1960,15 +2096,13 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private Database.gibddDataSetTableAdapters.vehiclesTableAdapter vehiclesTableAdapter;
-        private System.Windows.Forms.PictureBox driverLicenseImage;
-        private System.Windows.Forms.Button driverLicenseButton;
-        private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.Button driverLicenseSaveImageButton;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.TextBox vinTextBox;
+        private System.Windows.Forms.TextBox type_of_driveTextBox;
+        private System.Windows.Forms.TextBox engine_TypeTextBox;
+        private System.Windows.Forms.TextBox colorTextBox;
+        private System.Windows.Forms.TextBox weightTextBox;
+        private System.Windows.Forms.TextBox yearTextBox;
+        private System.Windows.Forms.TextBox modelTextBox;
+        private System.Windows.Forms.TextBox manufacturerTextBox;
     }
 }

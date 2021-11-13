@@ -241,5 +241,11 @@
     <Content Include="gibdd_logo.ico" />
     <None Include="Resources\driver_license_template.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\REG_MARK_LIB\REG_MARK_LIB.csproj">
+      <Project>{9ea480a1-708d-4d0d-988e-08ec60bb6b0e}</Project>
+      <Name>REG_MARK_LIB</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

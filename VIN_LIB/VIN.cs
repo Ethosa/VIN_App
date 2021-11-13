@@ -14,7 +14,7 @@ namespace VIN_LIB
         // Словарь countries содержит в себе информацию о странах по их кодам.
         // AA: ЮАР; 1A: США, etc.
         private Dictionary<string, string> countries = new Dictionary<string, string>();
-        
+
         // Регулярка ниже парсит VIN и режет на отдельные куски.
         // wmi - World Manufacturers entification
         // vds - vehicle description section
@@ -135,7 +135,8 @@ namespace VIN_LIB
             string[] codes = countryCodes.Split(';');
             foreach (string code in codes)
             {
-                string[] codeInfo = code.Split(' ', 2);
+                char[] sep = { ' ' };
+                string[] codeInfo = code.Split(sep, 2);
                 // Преобразует AA-AH в правило A[A-H]
                 if ((codeInfo[0][1] >= 'A' && codeInfo[0][1] <= 'Z') && (codeInfo[0][4] >= '0' && codeInfo[0][4] <= '9'))
                     countries.Add(

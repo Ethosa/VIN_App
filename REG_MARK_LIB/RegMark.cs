@@ -54,12 +54,13 @@ namespace REG_MARK_LIB
                 // Если число меньше 999, то просто увеличиваем его.
                 ++num;
                 result = GetValue(matched, "before") + num.ToString("000") + GetValue(matched, "after");
-            } else
+            }
+            else
             {
                 // В противном случае возвращаем число к 000 и разбираем символы, если это возможно.
                 int[] indexes = { seriesChars.IndexOf(series[0]), seriesChars.IndexOf(series[1]), seriesChars.IndexOf(series[2]) };
                 if (indexes[0] < length)
-                    result = series[0] + "000" + series[1] + seriesChars[indexes[2]+1];
+                    result = series[0] + "000" + series[1] + seriesChars[indexes[2] + 1];
                 else if (indexes[1] < length)
                     result = series[0] + "000" + seriesChars[indexes[1] + 1] + seriesChars[0];
                 else if (indexes[0] < length)
@@ -106,7 +107,7 @@ namespace REG_MARK_LIB
             int result = Convert.ToInt32(GetValue(matched, "number"));
             result += seriesChars.IndexOf(GetValue(matched, "after")[1]) * 1000;
             result += seriesChars.IndexOf(GetValue(matched, "after")[0]) * 1000 * seriesChars.Length;
-            result += seriesChars.IndexOf(GetValue(matched, "before")[0]) * 1000 * seriesChars.Length*seriesChars.Length;
+            result += seriesChars.IndexOf(GetValue(matched, "before")[0]) * 1000 * seriesChars.Length * seriesChars.Length;
             return result;
         }
     }

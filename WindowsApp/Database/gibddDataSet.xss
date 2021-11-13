@@ -9,13 +9,13 @@
     <Shape ID="DesignTable:drivers" ZOrder="9" X="70" Y="70" Height="305" Width="184" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:user" ZOrder="8" X="324" Y="70" Height="134" Width="169" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
     <Shape ID="DesignTable:fines" ZOrder="7" X="563" Y="70" Height="153" Width="172" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
-    <Shape ID="DesignTable:licences" ZOrder="6" X="805" Y="70" Height="210" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
-    <Shape ID="DesignTable:vehicles" ZOrder="5" X="1064" Y="70" Height="267" Width="190" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
-    <Shape ID="DesignTable:Drivers-Cars" ZOrder="1" X="1324" Y="70" Height="305" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:Drivers-Lics" ZOrder="4" X="1582" Y="73" Height="229" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
+    <Shape ID="DesignTable:licences" ZOrder="1" X="805" Y="70" Height="210" Width="189" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="159" />
+    <Shape ID="DesignTable:vehicles" ZOrder="6" X="1064" Y="70" Height="267" Width="190" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:Drivers-Cars" ZOrder="2" X="1324" Y="70" Height="305" Width="215" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:Drivers-Lics" ZOrder="5" X="1582" Y="73" Height="229" Width="212" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="178" />
   </Shapes>
   <Connectors>
-    <Connector ID="DesignRelation:FK_licences_drivers" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:FK_licences_drivers" ZOrder="4" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>254</X>
@@ -27,7 +27,7 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_vehicles_drivers" ZOrder="2" LineWidth="11">
+    <Connector ID="DesignRelation:FK_vehicles_drivers" ZOrder="3" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>254</X>

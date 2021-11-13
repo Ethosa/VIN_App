@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 using WindowsApp.Database;
 using WindowsApp.Modules;
 
+
 namespace WindowsApp.Forms
 {
 
@@ -62,8 +63,8 @@ namespace WindowsApp.Forms
         /// <param name="e">.</param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet._Drivers_Cars". При необходимости она может быть перемещена или удалена.
-            this.drivers_CarsTableAdapter.Fill(this.gibddDataSet._Drivers_Cars);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.vehicles". При необходимости она может быть перемещена или удалена.
+            this.vehiclesTableAdapter.Fill(this.gibddDataSet.vehicles);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet._Drivers_Lics". При необходимости она может быть перемещена или удалена.
             this.drivers_LicsTableAdapter.Fill(this.gibddDataSet._Drivers_Lics);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "gibddDataSet.licences". При необходимости она может быть перемещена или удалена.
@@ -231,7 +232,7 @@ namespace WindowsApp.Forms
         {
             // TODO: Допилить сохранение автомобилей -_-
             Validate();
-            drivers_CarsBindingSource.EndEdit();
+            // drivers_CarsBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(gibddDataSet);
         }
 
@@ -276,6 +277,11 @@ namespace WindowsApp.Forms
                     stream.Close();
                 }
             }
+        }
+
+        private void CarAddNewClick(object sender, EventArgs e)
+        {
+
         }
     }
 }
