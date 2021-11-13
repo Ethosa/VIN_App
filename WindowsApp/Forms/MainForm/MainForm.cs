@@ -1,15 +1,16 @@
-﻿namespace WindowsApp.Forms
+﻿using System;
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Drawing;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
+using Newtonsoft.Json.Linq;
+using WindowsApp.Database;
+using WindowsApp.Modules;
+
+namespace WindowsApp.Forms
 {
-    using Newtonsoft.Json.Linq;
-    using System;
-    using System.Drawing;
-    using System.IO;
-    using System.Net;
-    using System.Text;
-    using System.Text.RegularExpressions;
-    using System.Windows.Forms;
-    using WindowsApp.Database;
-    using WindowsApp.Modules;
 
     /// <summary>
     /// Defines the <see cref="MainForm" />.
@@ -186,16 +187,13 @@
             foreach (JObject fine in data)
             {
                 fines fineInfo = db.fines.SqlQuery($"SELECT * FROM fines WHERE[id] = {fine["id"]}").AsNoTracking().SingleAsync().Result;
-                string firstname = fineInfo.firstname.ToUpper();
-                string lastname = fineInfo.lastname.ToUpper();
-                string status = fineInfo.status;
                 string carNum = fine["car_num"].ToString();
 
-                if (string.IsNullOrEmpty(status) || !status.Equals("Передан в ФССП"))
+                if (string.IsNullOrEmpty(fineInfo.status) || !fineInfo.status.Equals("Передан в ФССП"))
                 {
                     db.fines.SqlQuery($"UPDATE fines SET status = N'Передан в ФССП' WHERE id = {fine["id"]}").AsNoTracking().FirstOrDefaultAsync();
                     db.SaveChanges();
-                    string path = "fines/fines_" + lastname + "_" + firstname + ".csv";
+                    string path = "fines/fines_" + fineInfo.lastname.ToUpper() + "_" + fineInfo.firstname.ToUpper() + ".csv";
                     
                     if (!File.Exists(path))
                     {
@@ -239,7 +237,33 @@
 
         private void DriverLicensePaintClick(object sender, EventArgs e)
         {
+            int id = drivers_LicsDataGridView.CurrentCell.RowIndex + 1;
+            drivers current = db.drivers.SqlQuery($"select * from drivers where id = {id}").AsNoTracking().FirstOrDefaultAsync().Result;
+            licences license = db.licences.SqlQuery($"select * from licences where id = {id}").AsNoTracking().FirstOrDefaultAsync().Result;
+            DriverLicenseImage img = new DriverLicenseImage(Properties.Resources.driver_license_template);
+            img.DrawInfo(current.lastname, current.firstname, current.middlename, license.categories, current.address,
+                         license.licence_date.ToShortDateString(), license.expire_date.ToShortDateString(), license.licence_number.ToString(), license.licence_series);
+            driverLicenseImage.Image = img.GetBitmap();
+            driverLicenseSaveImageButton.Enabled = true;
+        }
 
+        private void DriverLicenseSaveImage(object sender, EventArgs e)
+        {
+            SaveFileDialog dialog = new SaveFileDialog();
+            Stream stream;
+            dialog.Filter = "image files (*.jpg)|*.jpg";
+            dialog.FilterIndex = 2;
+            dialog.RestoreDirectory = true;
+
+            if (dialog.ShowDialog() == DialogResult.OK)
+            {
+                if ((stream = dialog.OpenFile()) != null)
+                {
+                    byte[] data = DriverLicenseImage.GetBytes(driverLicenseImage.Image);
+                    stream.Write(data, 0, data.Length);
+                    stream.Close();
+                }
+            }
         }
     }
 }

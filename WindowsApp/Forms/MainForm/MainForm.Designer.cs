@@ -46,9 +46,9 @@ namespace WindowsApp.Forms
             System.Windows.Forms.Label passport_serialLabel1;
             System.Windows.Forms.Label idLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -149,6 +149,7 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.driverLicenseSaveImageButton = new System.Windows.Forms.Button();
             this.driverLicenseButton = new System.Windows.Forms.Button();
             this.driverLicenseImage = new System.Windows.Forms.PictureBox();
             this.carPage = new System.Windows.Forms.TabPage();
@@ -184,11 +185,12 @@ namespace WindowsApp.Forms
             this.driversTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.driversTableAdapter();
             this.tableAdapterManager = new WindowsApp.Database.gibddDataSetTableAdapters.TableAdapterManager();
             this.licencesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.licencesTableAdapter();
+            this.vehiclesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.vehiclesTableAdapter();
             this.licencesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.drivers_LicsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_LicsTableAdapter();
             this.drivers_CarsTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.Drivers_CarsTableAdapter();
-            this.vehiclesTableAdapter = new WindowsApp.Database.gibddDataSetTableAdapters.vehiclesTableAdapter();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             firstnameLabel = new System.Windows.Forms.Label();
             photoLabel = new System.Windows.Forms.Label();
             middlenameLabel = new System.Windows.Forms.Label();
@@ -1072,34 +1074,34 @@ namespace WindowsApp.Forms
             // 
             this.FinesSummary.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FinesSummary.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.FinesSummary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FinesSummary.DefaultCellStyle = dataGridViewCellStyle8;
             this.FinesSummary.Location = new System.Drawing.Point(547, 143);
             this.FinesSummary.Name = "FinesSummary";
             this.FinesSummary.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FinesSummary.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.FinesSummary.RowHeadersVisible = false;
             this.FinesSummary.Size = new System.Drawing.Size(660, 156);
             this.FinesSummary.TabIndex = 11;
@@ -1215,6 +1217,7 @@ namespace WindowsApp.Forms
             // 
             // splitContainer3.Panel2
             // 
+            this.splitContainer3.Panel2.Controls.Add(this.driverLicenseSaveImageButton);
             this.splitContainer3.Panel2.Controls.Add(this.driverLicenseButton);
             this.splitContainer3.Panel2.Controls.Add(this.driverLicenseImage);
             this.splitContainer3.Size = new System.Drawing.Size(1295, 735);
@@ -1421,11 +1424,22 @@ namespace WindowsApp.Forms
             this.dataGridViewTextBoxColumn21.HeaderText = "Дата окончания";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
+            // driverLicenseSaveImageButton
+            // 
+            this.driverLicenseSaveImageButton.Enabled = false;
+            this.driverLicenseSaveImageButton.Location = new System.Drawing.Point(136, 707);
+            this.driverLicenseSaveImageButton.Name = "driverLicenseSaveImageButton";
+            this.driverLicenseSaveImageButton.Size = new System.Drawing.Size(124, 23);
+            this.driverLicenseSaveImageButton.TabIndex = 2;
+            this.driverLicenseSaveImageButton.Text = "Сохранить";
+            this.driverLicenseSaveImageButton.UseVisualStyleBackColor = true;
+            this.driverLicenseSaveImageButton.Click += new System.EventHandler(this.DriverLicenseSaveImage);
+            // 
             // driverLicenseButton
             // 
             this.driverLicenseButton.Location = new System.Drawing.Point(3, 707);
             this.driverLicenseButton.Name = "driverLicenseButton";
-            this.driverLicenseButton.Size = new System.Drawing.Size(257, 23);
+            this.driverLicenseButton.Size = new System.Drawing.Size(127, 23);
             this.driverLicenseButton.TabIndex = 1;
             this.driverLicenseButton.Text = "Отобразить ВУ";
             this.driverLicenseButton.UseVisualStyleBackColor = true;
@@ -1433,9 +1447,9 @@ namespace WindowsApp.Forms
             // 
             // driverLicenseImage
             // 
-            this.driverLicenseImage.Location = new System.Drawing.Point(2, 557);
+            this.driverLicenseImage.Location = new System.Drawing.Point(2, 550);
             this.driverLicenseImage.Name = "driverLicenseImage";
-            this.driverLicenseImage.Size = new System.Drawing.Size(258, 144);
+            this.driverLicenseImage.Size = new System.Drawing.Size(264, 151);
             this.driverLicenseImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.driverLicenseImage.TabIndex = 0;
             this.driverLicenseImage.TabStop = false;
@@ -1719,6 +1733,10 @@ namespace WindowsApp.Forms
             // 
             this.licencesTableAdapter.ClearBeforeFill = true;
             // 
+            // vehiclesTableAdapter
+            // 
+            this.vehiclesTableAdapter.ClearBeforeFill = true;
+            // 
             // licencesBindingSource
             // 
             this.licencesBindingSource.DataMember = "licences";
@@ -1731,10 +1749,6 @@ namespace WindowsApp.Forms
             // drivers_CarsTableAdapter
             // 
             this.drivers_CarsTableAdapter.ClearBeforeFill = true;
-            // 
-            // vehiclesTableAdapter
-            // 
-            this.vehiclesTableAdapter.ClearBeforeFill = true;
             // 
             // bindingSource1
             // 
@@ -1954,5 +1968,7 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.PictureBox driverLicenseImage;
         private System.Windows.Forms.Button driverLicenseButton;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Button driverLicenseSaveImageButton;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
