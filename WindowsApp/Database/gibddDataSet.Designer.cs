@@ -2184,7 +2184,6 @@ namespace WindowsApp.Database {
                 this.columnEngine_Type.MaxLength = 50;
                 this.columntype_of_drive.AllowDBNull = false;
                 this.columntype_of_drive.MaxLength = 50;
-                this.columndriver_id.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3743,7 +3742,12 @@ namespace WindowsApp.Database {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int driver_id {
                 get {
-                    return ((int)(this[this.tablevehicles.driver_idColumn]));
+                    try {
+                        return ((int)(this[this.tablevehicles.driver_idColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'driver_id\' в таблице \'vehicles\' равно DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tablevehicles.driver_idColumn] = value;
@@ -3759,6 +3763,18 @@ namespace WindowsApp.Database {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_vehicles_drivers"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isdriver_idNull() {
+                return this.IsNull(this.tablevehicles.driver_idColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setdriver_idNull() {
+                this[this.tablevehicles.driver_idColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6151,7 +6167,7 @@ SELECT id, licence_date, expire_date, categories, licence_series, licence_number
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[vehicles] WHERE (([id] = @Original_id) AND ([VIN] = @Original_VIN) AND ([Manufacturer] = @Original_Manufacturer) AND ([Model] = @Original_Model) AND ([Year] = @Original_Year) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([Engine_Type] = @Original_Engine_Type) AND ([type_of_drive] = @Original_type_of_drive) AND ([driver_id] = @Original_driver_id))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[vehicles] WHERE (([id] = @Original_id) AND ([VIN] = @Original_VIN) AND ([Manufacturer] = @Original_Manufacturer) AND ([Model] = @Original_Model) AND ([Year] = @Original_Year) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([Engine_Type] = @Original_Engine_Type) AND ([type_of_drive] = @Original_type_of_drive) AND ((@IsNull_driver_id = 1 AND [driver_id] IS NULL) OR ([driver_id] = @Original_driver_id)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VIN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VIN", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -6162,13 +6178,13 @@ SELECT id, licence_date, expire_date, categories, licence_series, licence_number
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Engine_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Engine_Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type_of_drive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type_of_drive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_driver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "driver_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_driver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "driver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[vehicles] ([id], [VIN], [Manufacturer], [Model], [Year], [Weight], [Color], [Engine_Type], [type_of_drive], [driver_id]) VALUES (@id, @VIN, @Manufacturer, @Model, @Year, @Weight, @Color, @Engine_Type, @type_of_drive, @driver_id);
-SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_drive, driver_id FROM vehicles WHERE (id = @id)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[vehicles] ([VIN], [Manufacturer], [Model], [Year], [Weight], [Color], [Engine_Type], [type_of_drive], [driver_id]) VALUES (@VIN, @Manufacturer, @Model, @Year, @Weight, @Color, @Engine_Type, @type_of_drive, @driver_id);
+SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_drive, driver_id FROM vehicles WHERE (id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VIN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VIN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacturer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6180,10 +6196,9 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@driver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "driver_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[vehicles] SET [id] = @id, [VIN] = @VIN, [Manufacturer] = @Manufacturer, [Model] = @Model, [Year] = @Year, [Weight] = @Weight, [Color] = @Color, [Engine_Type] = @Engine_Type, [type_of_drive] = @type_of_drive, [driver_id] = @driver_id WHERE (([id] = @Original_id) AND ([VIN] = @Original_VIN) AND ([Manufacturer] = @Original_Manufacturer) AND ([Model] = @Original_Model) AND ([Year] = @Original_Year) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([Engine_Type] = @Original_Engine_Type) AND ([type_of_drive] = @Original_type_of_drive) AND ([driver_id] = @Original_driver_id));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[vehicles] SET [VIN] = @VIN, [Manufacturer] = @Manufacturer, [Model] = @Model, [Year] = @Year, [Weight] = @Weight, [Color] = @Color, [Engine_Type] = @Engine_Type, [type_of_drive] = @type_of_drive, [driver_id] = @driver_id WHERE (([id] = @Original_id) AND ([VIN] = @Original_VIN) AND ([Manufacturer] = @Original_Manufacturer) AND ([Model] = @Original_Model) AND ([Year] = @Original_Year) AND ([Weight] = @Original_Weight) AND ([Color] = @Original_Color) AND ([Engine_Type] = @Original_Engine_Type) AND ([type_of_drive] = @Original_type_of_drive) AND ((@IsNull_driver_id = 1 AND [driver_id] IS NULL) OR ([driver_id] = @Original_driver_id)));
 SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_drive, driver_id FROM vehicles WHERE (id = @id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VIN", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VIN", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Manufacturer", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Manufacturer", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Model", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Model", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -6202,7 +6217,9 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Color", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Color", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Engine_Type", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Engine_Type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type_of_drive", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "type_of_drive", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_driver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "driver_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_driver_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "driver_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6280,7 +6297,7 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, string Original_VIN, string Original_Manufacturer, string Original_Model, int Original_Year, int Original_Weight, int Original_Color, string Original_Engine_Type, string Original_type_of_drive, int Original_driver_id) {
+        public virtual int Delete(int Original_id, string Original_VIN, string Original_Manufacturer, string Original_Model, int Original_Year, int Original_Weight, int Original_Color, string Original_Engine_Type, string Original_type_of_drive, global::System.Nullable<int> Original_driver_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_VIN == null)) {
                 throw new global::System.ArgumentNullException("Original_VIN");
@@ -6315,7 +6332,14 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
             else {
                 this.Adapter.DeleteCommand.Parameters[8].Value = ((string)(Original_type_of_drive));
             }
-            this.Adapter.DeleteCommand.Parameters[9].Value = ((int)(Original_driver_id));
+            if ((Original_driver_id.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_driver_id.Value));
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6336,42 +6360,46 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int id, string VIN, string Manufacturer, string Model, int Year, int Weight, int Color, string Engine_Type, string type_of_drive, int driver_id) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(id));
+        public virtual int Insert(string VIN, string Manufacturer, string Model, int Year, int Weight, int Color, string Engine_Type, string type_of_drive, global::System.Nullable<int> driver_id) {
             if ((VIN == null)) {
                 throw new global::System.ArgumentNullException("VIN");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(VIN));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(VIN));
             }
             if ((Manufacturer == null)) {
                 throw new global::System.ArgumentNullException("Manufacturer");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Manufacturer));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Manufacturer));
             }
             if ((Model == null)) {
                 throw new global::System.ArgumentNullException("Model");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Model));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Model));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Year));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Weight));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Color));
+            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(Year));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Weight));
+            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Color));
             if ((Engine_Type == null)) {
                 throw new global::System.ArgumentNullException("Engine_Type");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Engine_Type));
+                this.Adapter.InsertCommand.Parameters[6].Value = ((string)(Engine_Type));
             }
             if ((type_of_drive == null)) {
                 throw new global::System.ArgumentNullException("type_of_drive");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[8].Value = ((string)(type_of_drive));
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(type_of_drive));
             }
-            this.Adapter.InsertCommand.Parameters[9].Value = ((int)(driver_id));
+            if ((driver_id.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[8].Value = ((int)(driver_id.Value));
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6393,7 +6421,6 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(
-                    int id, 
                     string VIN, 
                     string Manufacturer, 
                     string Model, 
@@ -6402,7 +6429,7 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
                     int Color, 
                     string Engine_Type, 
                     string type_of_drive, 
-                    int driver_id, 
+                    global::System.Nullable<int> driver_id, 
                     int Original_id, 
                     string Original_VIN, 
                     string Original_Manufacturer, 
@@ -6412,77 +6439,90 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
                     int Original_Color, 
                     string Original_Engine_Type, 
                     string Original_type_of_drive, 
-                    int Original_driver_id) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(id));
+                    global::System.Nullable<int> Original_driver_id, 
+                    int id) {
             if ((VIN == null)) {
                 throw new global::System.ArgumentNullException("VIN");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(VIN));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(VIN));
             }
             if ((Manufacturer == null)) {
                 throw new global::System.ArgumentNullException("Manufacturer");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Manufacturer));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Manufacturer));
             }
             if ((Model == null)) {
                 throw new global::System.ArgumentNullException("Model");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Model));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Model));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Year));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Weight));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Color));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Year));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Weight));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Color));
             if ((Engine_Type == null)) {
                 throw new global::System.ArgumentNullException("Engine_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Engine_Type));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Engine_Type));
             }
             if ((type_of_drive == null)) {
                 throw new global::System.ArgumentNullException("type_of_drive");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(type_of_drive));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(type_of_drive));
             }
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(driver_id));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_id));
+            if ((driver_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(driver_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_id));
             if ((Original_VIN == null)) {
                 throw new global::System.ArgumentNullException("Original_VIN");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_VIN));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_VIN));
             }
             if ((Original_Manufacturer == null)) {
                 throw new global::System.ArgumentNullException("Original_Manufacturer");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Manufacturer));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_Manufacturer));
             }
             if ((Original_Model == null)) {
                 throw new global::System.ArgumentNullException("Original_Model");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(Original_Model));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_Model));
             }
-            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Year));
-            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Weight));
-            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Color));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_Year));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Weight));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((int)(Original_Color));
             if ((Original_Engine_Type == null)) {
                 throw new global::System.ArgumentNullException("Original_Engine_Type");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_Engine_Type));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((string)(Original_Engine_Type));
             }
             if ((Original_type_of_drive == null)) {
                 throw new global::System.ArgumentNullException("Original_type_of_drive");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((string)(Original_type_of_drive));
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((string)(Original_type_of_drive));
             }
-            this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_driver_id));
+            if ((Original_driver_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_driver_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+            }
+            this.Adapter.UpdateCommand.Parameters[20].Value = ((int)(id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6512,7 +6552,7 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
                     int Color, 
                     string Engine_Type, 
                     string type_of_drive, 
-                    int driver_id, 
+                    global::System.Nullable<int> driver_id, 
                     int Original_id, 
                     string Original_VIN, 
                     string Original_Manufacturer, 
@@ -6522,8 +6562,8 @@ SELECT id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_d
                     int Original_Color, 
                     string Original_Engine_Type, 
                     string Original_type_of_drive, 
-                    int Original_driver_id) {
-            return this.Update(Original_id, VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_drive, driver_id, Original_id, Original_VIN, Original_Manufacturer, Original_Model, Original_Year, Original_Weight, Original_Color, Original_Engine_Type, Original_type_of_drive, Original_driver_id);
+                    global::System.Nullable<int> Original_driver_id) {
+            return this.Update(VIN, Manufacturer, Model, Year, Weight, Color, Engine_Type, type_of_drive, driver_id, Original_id, Original_VIN, Original_Manufacturer, Original_Model, Original_Year, Original_Weight, Original_Color, Original_Engine_Type, Original_type_of_drive, Original_driver_id, Original_id);
         }
     }
     

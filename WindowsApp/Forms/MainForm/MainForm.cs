@@ -230,9 +230,8 @@ namespace WindowsApp.Forms
 
         private void DriverCarsSaveItem(object sender, EventArgs e)
         {
-            // TODO: Допилить сохранение автомобилей -_-
             Validate();
-            // drivers_CarsBindingSource.EndEdit();
+            vehiclesBindingSource.EndEdit();
             tableAdapterManager.UpdateAll(gibddDataSet);
         }
 
@@ -286,7 +285,7 @@ namespace WindowsApp.Forms
 
         private void SaveNewCarButtonClick(object sender, EventArgs e)
         {
-            driverCarsAddItem.PerformClick();
+            saveNewCarButton.PerformClick();
         }
     }
 }
