@@ -68,8 +68,6 @@ It is necessary to implement an interface in which the user can change informati
   - [ ] ident Info
   - [ ] Accident View
   - [x] Unit Tests
-## Session 5
-  - [ ] Unit Tests
   - [x] кто я .......
 ## Session 7 (DLC)
   - [ ] Commit suicide
