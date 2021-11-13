@@ -56,9 +56,9 @@ namespace WindowsApp.Modules
         public float DrawPart(string number, string text, string hint, float x, float y)
         {
             graphics.DrawString(number, font, numBrush, new PointF(x, y));
-            graphics.DrawString(text, font, brush, new PointF(x + 40, y));
-            graphics.DrawString(hint, font, hintBrush, new PointF(x + 40, y + 27));
-            return y + 60;
+            graphics.DrawString(text, font, brush, new PointF(x + font.Size*1.5f, y));
+            graphics.DrawString(hint, font, hintBrush, new PointF(x + font.Size * 1.5f, y + font.Size * 1.2f));
+            return y + font.Size * 2.5f;
         }
 
         /// <summary>
