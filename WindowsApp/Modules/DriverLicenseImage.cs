@@ -30,6 +30,7 @@ namespace WindowsApp.Modules
 
         /// <summary>
         /// Рисует данные ВУ.
+        /// помоггите пожалвуйтста 
         /// </summary>
         public void DrawInfo(string lastname, string firstname, string middlename, string categories,
                              string address, string dateFrom, string dateTo, string licNum, string licSerial)
@@ -43,6 +44,15 @@ namespace WindowsApp.Modules
             DrawPart("9.", categories, "", x, y + 24*4);
         }
 
+        /// <summary>
+        /// Рисует отдельную строку с подсказкой, чтобы моя шиза была в порядке
+        /// </summary>
+        /// <param name="number">номер строки .. а зачем</param>
+        /// <param name="text">текст строки</param>
+        /// <param name="hint">подсказка снизу</param>
+        /// <param name="x">позиция в X</param>
+        /// <param name="y">позиция в Y</param>
+        /// <returns></returns>
         public float DrawPart(string number, string text, string hint, float x, float y)
         {
             graphics.DrawString(number, font, numBrush, new PointF(x, y));
