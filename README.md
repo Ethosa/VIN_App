@@ -51,23 +51,26 @@ It is necessary to implement an interface in which the user can change informati
 
 
 ## Session 3
-#### Database
-#### Add Driver Licence
-#### Driver Licence Card
-#### Driver Card
-#### Graphics
+  - [x] Database
+  - [ ] Add Driver License
+  - [x] Driver Licence Card
+  - [x] Driver Card
+  - [x] Graphics
 
 ## Session 4
-  #### Information Export
-  #### Database
-  #### Add Vehicle
-  #### Vehicle Card
+  - [ ] Information Export
+  - [ ] Database
+  - [ ] Add Vehicle
+  - [ ] Vehicle Card
   
 ## Session 5
-  #### Add Accident
-  #### Accident Info
-  #### Accident View
-  #### Unit Tests
+  - [ ] Add Accident
+  - [ ] ident Info
+  - [ ] Accident View
+  - [x] Unit Tests
 ## Session 5
- #### Unit Tests
+  - [ ] Unit Tests
+  - [x] кто я .......
+## Session 7 (DLC)
+  - [ ] Commit suicide
   
