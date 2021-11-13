@@ -235,6 +235,11 @@ namespace WindowsApp.Forms
             tableAdapterManager.UpdateAll(gibddDataSet);
         }
 
+        /// <summary>
+        /// Отрисовка карточки водительского удостоверения и отображение её в driverLicenseImage.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DriverLicensePaintClick(object sender, EventArgs e)
         {
             int id = drivers_LicsDataGridView.CurrentCell.RowIndex + 1;
@@ -247,6 +252,11 @@ namespace WindowsApp.Forms
             driverLicenseSaveImageButton.Enabled = true;
         }
 
+        /// <summary>
+        /// Вызывает <see cref="SaveFileDialog"/> для сохранения карточки водителя в файл.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DriverLicenseSaveImage(object sender, EventArgs e)
         {
             SaveFileDialog dialog = new SaveFileDialog();
