@@ -70,6 +70,11 @@ namespace WindowsApp.Modules
             return bitmap;
         }
 
+        /// <summary>
+        /// Преобразует <see cref="Image"/> в <see cref="byte"/>
+        /// </summary>
+        /// <param name="img"></param>
+        /// <returns></returns>
         public static byte[] GetBytes(Image img)
         {
             using (MemoryStream stream = new MemoryStream())
