@@ -283,5 +283,10 @@ namespace WindowsApp.Forms
         {
 
         }
+
+        private void SaveNewCarButtonClick(object sender, EventArgs e)
+        {
+            driverCarsAddItem.PerformClick();
+        }
     }
 }

@@ -185,6 +185,7 @@ namespace WindowsApp.Forms
             this.driverCarsLastItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.driverCarsSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.SaveNewCarButton = new System.Windows.Forms.Button();
             this.type_of_driveTextBox = new System.Windows.Forms.TextBox();
             this.engine_TypeTextBox = new System.Windows.Forms.TextBox();
             this.colorTextBox = new System.Windows.Forms.TextBox();
@@ -780,7 +781,6 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -1401,7 +1401,6 @@ namespace WindowsApp.Forms
             // 
             this.bindingNavigatorPositionItem1.AccessibleName = "Положение";
             this.bindingNavigatorPositionItem1.AutoSize = false;
-            this.bindingNavigatorPositionItem1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem1.Name = "bindingNavigatorPositionItem1";
             this.bindingNavigatorPositionItem1.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem1.Text = "0";
@@ -1569,6 +1568,7 @@ namespace WindowsApp.Forms
             // splitContainer4.Panel2
             // 
             this.splitContainer4.Panel2.AutoScroll = true;
+            this.splitContainer4.Panel2.Controls.Add(this.SaveNewCarButton);
             this.splitContainer4.Panel2.Controls.Add(type_of_driveLabel);
             this.splitContainer4.Panel2.Controls.Add(this.type_of_driveTextBox);
             this.splitContainer4.Panel2.Controls.Add(engine_TypeLabel);
@@ -1748,7 +1748,6 @@ namespace WindowsApp.Forms
             // 
             this.toolStripTextBox1.AccessibleName = "Положение";
             this.toolStripTextBox1.AutoSize = false;
-            this.toolStripTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
             this.toolStripTextBox1.Size = new System.Drawing.Size(50, 23);
             this.toolStripTextBox1.Text = "0";
@@ -1791,6 +1790,16 @@ namespace WindowsApp.Forms
             this.driverCarsSaveItem.Size = new System.Drawing.Size(23, 22);
             this.driverCarsSaveItem.Text = "&Сохранить";
             this.driverCarsSaveItem.Click += new System.EventHandler(this.DriverCarsSaveItem);
+            // 
+            // SaveNewCarButton
+            // 
+            this.SaveNewCarButton.Location = new System.Drawing.Point(8, 239);
+            this.SaveNewCarButton.Name = "SaveNewCarButton";
+            this.SaveNewCarButton.Size = new System.Drawing.Size(252, 23);
+            this.SaveNewCarButton.TabIndex = 16;
+            this.SaveNewCarButton.Text = "Сохранить";
+            this.SaveNewCarButton.UseVisualStyleBackColor = true;
+            this.SaveNewCarButton.Click += new System.EventHandler(this.SaveNewCarButtonClick);
             // 
             // type_of_driveTextBox
             // 
@@ -2104,5 +2113,6 @@ namespace WindowsApp.Forms
         private System.Windows.Forms.TextBox yearTextBox;
         private System.Windows.Forms.TextBox modelTextBox;
         private System.Windows.Forms.TextBox manufacturerTextBox;
+        private System.Windows.Forms.Button SaveNewCarButton;
     }
 }
